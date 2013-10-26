@@ -7,6 +7,6 @@ public class ItemStones extends ItemBlockMulti {
 			"Smooth Orthogneiss", "Orthogneiss", "Smooth Slate", "Slate", "Smooth Travertine", "Travertine" };
 
 	public ItemStones(int par1) {
-		super(par1, MysticStones.Stones, STONE_TYPES);
+		super(par1, MysticStones.stones, STONE_TYPES);
 	}
 }

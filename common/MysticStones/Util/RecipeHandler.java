@@ -14,35 +14,35 @@ public class RecipeHandler {
 	public static final String[] STONES = { "anorthositeSmooth", "Anorthosite", "limestoneSmooth", "limestone", "marbleSmooth", "marble", "migmatiteSmooth", "migmatite", "orthogneissSmooth",
 			"orthogneiss", "slateSmooth", "slate", "travertineSmooth", "travertine" };
 
-	public static void CraftElse() {
+	public static void craftElse() {
 		//smelting
 		for (int i = 1; i < 14; i += 2) {
-			FurnaceRecipes.smelting().addSmelting(MysticStones.Stones.blockID, i, new ItemStack(MysticStones.Stones, 1, i - 1), 0.1F);
+			FurnaceRecipes.smelting().addSmelting(MysticStones.stones.blockID, i, new ItemStack(MysticStones.stones, 1, i - 1), 0.1F);
 		}
 	}
 
-	public static void CraftPlanks() {
+	public static void craftPlanks() {
 		for (int i = 0; i < 7; i++) {
-			ItemStack stack = new ItemStack(MysticStones.Planks, 1, i);
+			ItemStack stack = new ItemStack(MysticStones.planks, 1, i);
 			OreDictionary.registerOre("plankWood", stack);
-			OreDictionary.registerOre(STONES[2 * i], new ItemStack(MysticStones.Stones, 1, 2 * i));
-			OreDictionary.registerOre(STONES[2 * i + 1], new ItemStack(MysticStones.Stones, 1, 2 * i + 1));
+			OreDictionary.registerOre(STONES[2 * i], new ItemStack(MysticStones.stones, 1, 2 * i));
+			OreDictionary.registerOre(STONES[2 * i + 1], new ItemStack(MysticStones.stones, 1, 2 * i + 1));
 			GameRegistry.addRecipe(new ShapelessOreRecipe(stack, "plankWood", STONES[2 * i]));
 			GameRegistry.addRecipe(new ShapelessOreRecipe(stack, "plankWood", STONES[2 * i + 1]));
 		}
 	}
 
-	public static void CraftReinforced() {
+	public static void craftReinforced() {
 		if (Loader.isModLoaded("MysticOres")) {
 			for (int i = 0; i < MATERIALS.length; i++) {
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MysticStones.ReinforcedBricks, 1, i), true, "#$#", "$$$", "#$#", '$', MATERIALS[i], '#', "stone"));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MysticStones.reinforcedBricks, 1, i), true, "#$#", "$$$", "#$#", '$', MATERIALS[i], '#', "stone"));
 			}
 		}
 	}
 
-	public static void CraftStoneBricks() {
+	public static void craftStoneBricks() {
 		for (int i = 0; i < 7; i++) {
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MysticStones.StoneBricks, 4, i), "##", "##", '#', STONES[2 * i]));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MysticStones.stoneBricks, 4, i), "##", "##", '#', STONES[2 * i]));
 		}
 	}
 }

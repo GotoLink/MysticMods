@@ -7,6 +7,6 @@ public class ItemStoneBricks extends ItemBlockMulti {
 			"Travertine Bricks" };
 
 	public ItemStoneBricks(int par1) {
-		super(par1, MysticStones.StoneBricks, STONEBRICK_TYPES);
+		super(par1, MysticStones.stoneBricks, STONEBRICK_TYPES);
 	}
 }

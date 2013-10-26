@@ -13,7 +13,7 @@ public class ItemReinforced extends ItemBlockMulti {
 			"Agate Bricks" };
 
 	public ItemReinforced(int par1) {
-		super(par1, MysticStones.ReinforcedBricks, BRICK_TYPE);
+		super(par1, MysticStones.reinforcedBricks, BRICK_TYPE);
 	}
 
 	@Override

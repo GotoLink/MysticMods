@@ -11,6 +11,6 @@ public class TabMysticStones extends CreativeTabs {
 
 	@Override
 	public ItemStack getIconItemStack() {
-		return new ItemStack(MysticStones.ReinforcedBricks, 1, 4);
+		return new ItemStack(MysticStones.reinforcedBricks, 1, 4);
 	}
 }

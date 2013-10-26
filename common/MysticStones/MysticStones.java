@@ -22,30 +22,30 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "Mystic Stones", name = "Mystic Stones", version = "0.1")
+@Mod(modid = "MysticStones", name = "Mystic Stones", version = "0.1")
 @NetworkMod(clientSideRequired = true)
 public class MysticStones {
-	@Instance("Mystic Stones")
+	@Instance("MysticStones")
 	public static MysticStones instance;
-	public static Block Planks, Stones, StoneBricks, ReinforcedBricks;
+	public static Block planks, stones, stoneBricks, reinforcedBricks;
 	public static final CreativeTabs MysticStonesTab = new TabMysticStones("MysticStonesTab");
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.initialize(event.getSuggestedConfigurationFile());
-		Planks = new BlockPlanks(Config.PlanksID);
-		Stones = new BlockStones(Config.StonesID);
-		StoneBricks = new BlockStoneBricks(Config.StoneBricksID);
-		ReinforcedBricks = new BlockReinforced(Config.ReinforcedBricksID);
-		GameRegistry.registerBlock(Planks, ItemPlanks.class, "Planks");
-		GameRegistry.registerBlock(Stones, ItemStones.class, "Stones");
-		GameRegistry.registerBlock(StoneBricks, ItemStoneBricks.class, "StoneBricks");
-		GameRegistry.registerBlock(ReinforcedBricks, ItemReinforced.class, "Reinforcedbricks");
+		planks = new BlockPlanks(Config.planksID);
+		stones = new BlockStones(Config.stonesID);
+		stoneBricks = new BlockStoneBricks(Config.stoneBricksID);
+		reinforcedBricks = new BlockReinforced(Config.reinforcedBricksID);
+		GameRegistry.registerBlock(planks, ItemPlanks.class, "Planks");
+		GameRegistry.registerBlock(stones, ItemStones.class, "Stones");
+		GameRegistry.registerBlock(stoneBricks, ItemStoneBricks.class, "StoneBricks");
+		GameRegistry.registerBlock(reinforcedBricks, ItemReinforced.class, "Reinforcedbricks");
 		Localizations.Initialize();
-		RecipeHandler.CraftPlanks();
-		RecipeHandler.CraftStoneBricks();
-		RecipeHandler.CraftReinforced();
-		RecipeHandler.CraftElse();
+		RecipeHandler.craftPlanks();
+		RecipeHandler.craftStoneBricks();
+		RecipeHandler.craftReinforced();
+		RecipeHandler.craftElse();
 		GameRegistry.registerWorldGenerator(new WorldGeneratorStones());
 	}
 }
