@@ -14,30 +14,39 @@ public class WorldGenMystic implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		if (Config.ruinAllowId.contains(world.provider.dimensionId)) {
+		if (Config.allowId[0].contains(world.provider.dimensionId)) {
 			generateRuins(world, random, chunkX * 16, chunkZ * 16);
 		}
-		if (Config.dungeonAllowId.contains(world.provider.dimensionId)) {
+		if (Config.allowId[1].contains(world.provider.dimensionId)) {
 			generateDungeon(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 
 	private void generateDungeon(World world, Random random, int blockX, int blockZ) {
+		int Xcoord1, Ycoord1, Zcoord1;
 		for (int i = 0; i < Config.DunRarity; i++) {
-			int Xcoord1 = blockX + random.nextInt(16) + 8;
-			int Ycoord1 = random.nextInt(9) + 28;
-			int Zcoord1 = blockZ + random.nextInt(16) + 8;
-			dungeon.generate(world, random, Xcoord1, Ycoord1, Zcoord1);
+			Xcoord1 = blockX + random.nextInt(16) + 8;
+			Ycoord1 = random.nextInt(9) + 28;
+			Zcoord1 = blockZ + random.nextInt(16) + 8;
+			if (!Config.allowId[3].contains(world.getBiomeGenForCoords(Xcoord1, Zcoord1).biomeID)) {
+				continue;
+			}
+			if (dungeon.generate(world, random, Xcoord1, Ycoord1, Zcoord1))
+				break;
 		}
 	}
 
 	private void generateRuins(World world, Random random, int blockX, int blockZ) {
+		int Xcoord1, Ycoord1, Zcoord1;
 		for (int i = 0; i < Config.RuinRarity; i++) {
-			int Xcoord1 = blockX + random.nextInt(16) + 8;
-			int Ycoord1 = random.nextInt(11) + 60;
-			int Zcoord1 = blockZ + random.nextInt(16) + 8;
-			ruin.generate(world, random, Xcoord1, Ycoord1, Zcoord1);
-			ruin1.generate(world, random, Xcoord1, Ycoord1, Zcoord1);
+			Xcoord1 = blockX + random.nextInt(16) + 8;
+			Ycoord1 = random.nextInt(11) + 60;
+			Zcoord1 = blockZ + random.nextInt(16) + 8;
+			if (!Config.allowId[2].contains(world.getBiomeGenForCoords(Xcoord1, Zcoord1).biomeID)) {
+				continue;
+			}
+			if (ruin.generate(world, random, Xcoord1, Ycoord1, Zcoord1) || ruin1.generate(world, random, Xcoord1, Ycoord1, Zcoord1))
+				break;
 		}
 	}
 }
