@@ -6,23 +6,22 @@ import java.util.Random;
 import mysticworld.MysticWorld;
 import mysticworld.items.ItemHandler;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.Icon;
 import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
-import net.minecraftforge.common.ForgeDirection;
-import net.minecraftforge.common.IPlantable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBush extends Block implements IPlantable {
+public class BlockBush extends BlockFlower {
 	Icon[] textures;
 
 	public BlockBush(int id) {
@@ -32,19 +31,6 @@ public class BlockBush extends Block implements IPlantable {
 		setResistance(0.1F);
 		setStepSound(Block.soundGrassFootstep);
 		setBlockBounds(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F);
-	}
-
-	@Override
-	public boolean canBlockStay(World par1World, int par2, int par3, int par4) {
-		Block soil = blocksList[par1World.getBlockId(par2, par3 - 1, par4)];
-		return (par1World.getFullBlockLightValue(par2, par3, par4) >= 8 || par1World.canBlockSeeTheSky(par2, par3, par4))
-				&& (soil != null && soil.canSustainPlant(par1World, par2, par3 - 1, par4, ForgeDirection.UP, this));
-	}
-
-	//Plant Specific Stuff
-	@Override
-	public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4) {
-		return super.canPlaceBlockAt(par1World, par2, par3, par4) && canBlockStay(par1World, par2, par3, par4);
 	}
 
 	@Override
@@ -68,24 +54,14 @@ public class BlockBush extends Block implements IPlantable {
 	}
 
 	@Override
-	public int getDamageValue(World par1World, int par2, int par3, int par4) {
-		return par1World.getBlockMetadata(par2, par3, par4);
+	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
+		return AxisAlignedBB.getAABBPool().getAABB(par2 + this.minX, par3 + this.minY, par4 + this.minZ, par2 + this.maxX, par3 + this.maxY, par4 + this.maxZ);
 	}
 
-	//Sprite Inits
 	@Override
+	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int side, int meta) {
 		return textures[meta];
-	}
-
-	@Override
-	public int getPlantID(World world, int x, int y, int z) {
-		return 0;
-	}
-
-	@Override
-	public int getPlantMetadata(World world, int x, int y, int z) {
-		return 0;
 	}
 
 	@Override
@@ -100,6 +76,12 @@ public class BlockBush extends Block implements IPlantable {
 	}
 
 	@Override
+	public int getRenderType() {
+		return 0;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(int i, CreativeTabs tab, List list) {
 		for (int j = 0; j < 12; j++) {
 			list.add(new ItemStack(i, 1, j));
@@ -107,32 +89,10 @@ public class BlockBush extends Block implements IPlantable {
 	}
 
 	@Override
-	public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6) {
-		super.harvestBlock(par1World, par2EntityPlayer, par3, par4, par5, par6);
-	}
-
-	@Override
 	public int idDropped(int par1, Random par2Random, int par3) {
 		return ItemHandler.bushFruit.itemID;
 	}
 
-	@Override
-	public int idPicked(World par1World, int par2, int par3, int par4) {
-		return blockID;
-	}
-
-	@Override
-	public boolean isOpaqueCube() {
-		return false;
-	}
-
-	@Override
-	public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5) {
-		super.onNeighborBlockChange(par1World, par2, par3, par4, par5);
-		this.checkBushChange(par1World, par2, par3, par4);
-	}
-
-	//Meta Inits
 	@Override
 	public int quantityDroppedWithBonus(int par1, Random par2Random) {
 		return 1 + par2Random.nextInt(par1 * 2 + 1);
@@ -148,23 +108,7 @@ public class BlockBush extends Block implements IPlantable {
 	}
 
 	@Override
-	public boolean renderAsNormalBlock() {
-		return false;
-	}
-
-	@Override
-	public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random) {
-		this.checkBushChange(par1World, par2, par3, par4);
-	}
-
 	protected boolean canThisPlantGrowOnThisBlockID(int par1) {
 		return par1 == Block.grass.blockID || par1 == Block.dirt.blockID;
-	}
-
-	protected final void checkBushChange(World par1World, int par2, int par3, int par4) {
-		if (!this.canBlockStay(par1World, par2, par3, par4)) {
-			this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-			par1World.setBlockToAir(par2, par3, par4);
-		}
 	}
 }
