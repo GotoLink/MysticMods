@@ -22,6 +22,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * repository, many thanks friend c:
  * 
  */
+@Deprecated(/* replaced by vanilla */)
 public class Localizations {
 	private Localizations() {
 	}

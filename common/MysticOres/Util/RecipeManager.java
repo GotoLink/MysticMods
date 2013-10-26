@@ -105,6 +105,6 @@ public class RecipeManager {
 		ToolRecipes.AdvancedShovelRecipe(Items.BloodstoneShovel, OreDictManager.ORES[7]);
 		ToolRecipes.AdvancedAxeRecipe(Items.BloodstoneAxe, OreDictManager.ORES[7]);
 		ToolRecipes.AdvancedHoeRecipe(Items.BloodstoneHoe, OreDictManager.ORES[7]);
-		GameRegistry.addRecipe(new ItemStack(Items.Satchel, 1), "#$#", "$%$", "#$#", '#', Item.silk, '$', OreDictManager.INGOTS[9], '%', Block.enderChest);
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.Satchel, 1), "#$#", "$%$", "#$#", '#', Item.silk, '$', OreDictManager.INGOTS[9], '%', Block.enderChest));
 	}
 }
