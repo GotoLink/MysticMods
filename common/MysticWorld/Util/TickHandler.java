@@ -47,12 +47,8 @@ public class TickHandler implements IScheduledTickHandler {
 
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
-		Random rand = new Random();
 		EntityPlayer player = (EntityPlayer) tickData[0];
-		World world = player.worldObj;
-		InventoryPlayer inventory = player.inventory;
-		ItemStack itemstack = inventory.getCurrentItem();
-		pillarTick(player, world, inventory, rand);
+		pillarTick(player, player.worldObj, player.inventory, new Random());
 	}
 
 	private static void pillarTick(EntityPlayer player, World world, InventoryPlayer inventory, Random rand) {
