@@ -14,22 +14,11 @@ import mysticworld.entity.EntityChargeEnergy;
 import mysticworld.entity.EntityChargeFire;
 import mysticworld.entity.EntityChargeWater;
 import mysticworld.items.ItemHandler;
-import mysticworld.renderer.BlockPillarInsertRenderer;
-import mysticworld.renderer.ItemOrbAirRenderer;
-import mysticworld.renderer.ItemOrbEarthRenderer;
-import mysticworld.renderer.ItemOrbEnergyRenderer;
-import mysticworld.renderer.ItemOrbFireRenderer;
-import mysticworld.renderer.ItemOrbWaterRenderer;
-import mysticworld.renderer.ItemStaffAirRenderer;
-import mysticworld.renderer.ItemStaffEarthRenderer;
-import mysticworld.renderer.ItemStaffEnergyRenderer;
-import mysticworld.renderer.ItemStaffFireRenderer;
-import mysticworld.renderer.ItemStaffWaterRenderer;
-import mysticworld.renderer.RenderStaffPower;
-import mysticworld.renderer.TileEntityPillarInsertRenderer;
+import mysticworld.renderer.*;
 import mysticworld.tiles.TileEntityPillarInsert;
 import mysticworld.util.CommonProxy;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -37,6 +26,7 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
 	public final Minecraft mc = Minecraft.getMinecraft();
+	public static final ResourceLocation particle = new ResourceLocation("textures/particle/particles.png");
 
 	@Override
 	public int addArmor(String armor) {

@@ -1,5 +1,6 @@
 package mysticworld.client.fx;
 
+import mysticworld.client.ClientProxy;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.MathHelper;
@@ -11,6 +12,8 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class PowerAirFX extends EntityFX {
+	public static final ResourceLocation airFX = new ResourceLocation("mysticmods", "textures/misc/airFX.png");
+
 	public PowerAirFX(World world, double x, double y, double z) {
 		super(world, x, y, z);
 	}
@@ -80,7 +83,7 @@ public class PowerAirFX extends EntityFX {
 		GL11.glDepthMask(false);
 		GL11.glEnable(3042);
 		GL11.glBlendFunc(770, 1);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(new ResourceLocation("MysticMods:textures" + "/misc/airFX.png"));
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(airFX);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
 		float scale = 0.1F * this.particleScale;
 		float xPos = (float) (this.prevPosX + (this.posX - this.prevPosX) * par2 - interpPosX);
@@ -97,7 +100,7 @@ public class PowerAirFX extends EntityFX {
 		GL11.glDisable(3042);
 		GL11.glDepthMask(true);
 		GL11.glPopMatrix();
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(new ResourceLocation("minecraft:textures" + "/particle/particles.png"));
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(ClientProxy.particle);
 		tessellator.startDrawingQuads();
 	}
 }
