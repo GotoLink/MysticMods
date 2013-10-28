@@ -50,7 +50,7 @@ public class ItemImbuedShard extends Item {
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[SHARD_TYPES.length];
 		for (int i = 0; i < SHARD_TYPES.length; ++i) {
-			icons[i] = iconRegister.registerIcon("MysticMods:Shard" + SHARD_TYPES[i]);
+			icons[i] = iconRegister.registerIcon("mysticmods:Shard" + SHARD_TYPES[i]);
 		}
 	}
 }

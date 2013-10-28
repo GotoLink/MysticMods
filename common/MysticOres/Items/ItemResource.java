@@ -48,6 +48,6 @@ public class ItemResource extends Item {
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[RESOURCE_TYPES.length];
 		for (int i = 0; i < RESOURCE_TYPES.length; ++i)
-			icons[i] = iconRegister.registerIcon("MysticMods:" + RESOURCE_TYPES[i]);
+			icons[i] = iconRegister.registerIcon("mysticmods:" + RESOURCE_TYPES[i]);
 	}
 }

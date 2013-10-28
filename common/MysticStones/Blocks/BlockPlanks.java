@@ -21,7 +21,7 @@ public class BlockPlanks extends BlockMulti {
 	public void registerIcons(IconRegister iconRegister) {
 		textures = new Icon[ItemPlanks.PLANK_TYPE.length];
 		for (int i = 0; i < textures.length; i++) {
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemPlanks.PLANK_TYPE[i]);
+			textures[i] = iconRegister.registerIcon("mysticmods:" + ItemPlanks.PLANK_TYPE[i]);
 		}
 	}
 }

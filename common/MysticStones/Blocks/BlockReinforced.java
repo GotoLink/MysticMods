@@ -27,7 +27,7 @@ public class BlockReinforced extends BlockMulti {
 	public void registerIcons(IconRegister iconRegister) {
 		textures = new Icon[ItemReinforced.BRICK_TYPE.length];
 		for (int i = 0; i < textures.length; i++) {
-			textures[i] = iconRegister.registerIcon("MysticMods" + ":" + ItemReinforced.BRICK_TYPE[i]);
+			textures[i] = iconRegister.registerIcon("mysticmods:" + ItemReinforced.BRICK_TYPE[i]);
 		}
 	}
 }

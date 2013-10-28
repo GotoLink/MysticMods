@@ -6,7 +6,6 @@ import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,11 +23,6 @@ public class BlockPlatform extends Block {
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
-	}
-
-	@Override
-	public void onEntityWalking(World world, int x, int y, int z, Entity entity) {
-		super.onEntityWalking(world, x, y, z, entity);
 	}
 
 	@Override
@@ -51,7 +45,7 @@ public class BlockPlatform extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("MysticMods" + ":" + "Platform");
+		this.blockIcon = iconRegister.registerIcon("mysticmods:" + "Platform");
 	}
 
 	@Override

@@ -37,7 +37,7 @@ public class BlockLightCube extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("MysticMods" + ":" + "lightCube");
+		this.blockIcon = iconRegister.registerIcon("mysticmods:" + "lightCube");
 	}
 
 	@Override

@@ -24,7 +24,7 @@ public class BlockPillar extends Block {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("MysticMods" + ":" + "Pillar");
+		this.blockIcon = iconRegister.registerIcon("mysticmods:" + "Pillar");
 	}
 
 	@Override
