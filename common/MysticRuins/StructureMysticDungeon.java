@@ -393,14 +393,14 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 1, l1 + 1, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 1, l1 + 1);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Zombie");
+						spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1, k1 + 2, l1 + 1, Block.chest.blockID);
 					ChestFiller.fillWithRares(world.getBlockTileEntity(j1, k1 + 2, l1 + 1));
 					world.setBlock(j1, k1 + 3, l1 + 1, Block.mobSpawner.blockID);
-					TileEntityMobSpawner spawnerII = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 3, l1 + 1);
-					if (spawnerII != null) {
-						spawnerII.getSpawnerLogic().setMobID("CaveSpider");
+					spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 3, l1 + 1);
+					if (spawner != null) {
+						spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1, k1 + 1, l1 + 2, 0);
 					world.setBlock(j1, k1 + 2, l1 + 2, 0);
@@ -444,7 +444,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 1, l1 + 3, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 1, l1 + 3);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Creeper");
+						spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 					}
 				}
 			}
@@ -477,7 +477,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 2, l1 + 2, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 2, l1 + 2);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Skeleton");
+						spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1, k1 + 3, l1 + 2, Block.bookShelf.blockID);
 					world.setBlock(j1, k1 + 1, l1 + 3, Block.bookShelf.blockID);
@@ -523,7 +523,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 1, l1 + 2, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 1, l1 + 2);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Blaze");
+						spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1, k1 + 1, l1 + 3, Block.blockGold.blockID);
 				}
@@ -573,7 +573,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 					world.setBlock(j1, k1 + 2, l1 - 1, Block.mobSpawner.blockID);
 					TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1, k1 + 2, l1 - 1);
 					if (spawner != null) {
-						spawner.getSpawnerLogic().setMobID("Zombie");
+						spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 					}
 					world.setBlock(j1, k1 + 1, l1 - 2, 0);
 					world.setBlock(j1, k1 + 2, l1 - 2, 0);
@@ -1808,7 +1808,7 @@ public class StructureMysticDungeon extends WorldGenerator {
 		world.setBlock(j1 - 4, k1 - 10, l1, Block.mobSpawner.blockID);
 		TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 - 4, k1 - 10, l1);
 		if (spawner != null) {
-			spawner.getSpawnerLogic().setMobID("Zombie");
+			spawner.getSpawnerLogic().setMobID(Config.getRandomDungeonMob(random));
 		}
 		world.setBlock(j1 - 8, k1 - 10, l1, Block.stoneSingleSlab.blockID);
 		world.setBlock(j1 - 8, k1 - 10, l1 + 1, Block.stoneSingleSlab.blockID);

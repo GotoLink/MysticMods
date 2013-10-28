@@ -1,13 +1,17 @@
 package mysticruins;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
+import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
+import net.minecraftforge.common.DungeonHooks.DungeonMob;
 import net.minecraftforge.common.Configuration;
 
 public class Config {
@@ -17,10 +21,40 @@ public class Config {
 	public static Set<Integer>[] allowId = new HashSet[4];
 	public static final String[] allows = { "Ruin allowed dimension id", "Dungeon allowed dimension id", "Ruin allowed biome id", "Dungeon allowed biome id" };
 	public static Set<Type>[] allowType = new HashSet[2];
+	public static ArrayList<DungeonMob> dungeonMobs = new ArrayList<DungeonMob>();
+
+	public static void addDungeonMob(String name, int rarity) {
+		for (DungeonMob mob : dungeonMobs) {
+			if (name.equals(mob.type)) {
+				mob.itemWeight += rarity;
+				return;
+			}
+		}
+		dungeonMobs.add(new DungeonMob(rarity, name));
+	}
+
+	public static String getRandomDungeonMob(Random rand) {
+		DungeonMob mob = (DungeonMob) WeightedRandom.getRandomItem(rand, dungeonMobs);
+		if (mob == null) {
+			return "";
+		}
+		return mob.type;
+	}
 
 	public static void initialize(File file) {
 		config = new Configuration(file);
 		config.load();
+		String[] mobs = config.get("DungeonMobs", "Spawner Type & Relative Chance", "Skeleton-50,Spider-50,Zombie-20,Cavepider-10,Blaze-1").getString().split(",");
+		String[] mob;
+		for (String txt : mobs) {
+			mob = txt.split("-");
+			if (mob.length == 2) {
+				try {
+					addDungeonMob(mob[0].trim(), Integer.parseInt(mob[1].trim()));
+				} catch (NumberFormatException e) {
+				}
+			}
+		}
 		StringBuilder build = new StringBuilder("Available biome tags are: ");
 		for (Type t : Type.values()) {
 			build.append(t);
