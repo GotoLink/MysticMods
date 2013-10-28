@@ -3,7 +3,6 @@ package mysticores;
 import mysticores.blocks.BlockHandler;
 import mysticores.items.Items;
 import mysticores.util.ConfigurationManager;
-import mysticores.util.Localizations;
 import mysticores.util.OreDictManager;
 import mysticores.util.RecipeManager;
 import mysticores.util.TabMysticOres;
@@ -18,10 +17,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "MysticOres", name = "Mystic Ores", version = "0.1")
+@Mod(modid = "mysticores", name = "Mystic Ores", version = "0.1")
 @NetworkMod(clientSideRequired = true)
 public class MysticOres implements IFuelHandler {
-	@Instance("MysticOres")
+	@Instance("mysticores")
 	public static MysticOres instance;
 	public static final CreativeTabs MysticOresTab = new TabMysticOres("MysticOresTab");
 
@@ -41,7 +40,6 @@ public class MysticOres implements IFuelHandler {
 		OreDictManager.initialize();
 		RecipeManager.initialize();
 		GeneratorManager.initialize();
-		Localizations.initialize();
 		GameRegistry.registerFuelHandler(this);
 	}
 }

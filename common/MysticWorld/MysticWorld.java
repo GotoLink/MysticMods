@@ -8,7 +8,6 @@ import mysticworld.lib.Booleans;
 import mysticworld.tiles.TileEntityHandler;
 import mysticworld.util.CommonProxy;
 import mysticworld.util.Config;
-import mysticworld.util.Localizations;
 import mysticworld.util.RecipeHandler;
 import mysticworld.util.Reference;
 import mysticworld.util.TabMysticWorld;
@@ -47,7 +46,6 @@ public class MysticWorld {
 		GameRegistry.registerWorldGenerator(new WorldGenStones());
 		EntityHandler.init();
 		RecipeHandler.init();
-		Localizations.Initialize();
 		proxy.registerRenders();
 	}
 

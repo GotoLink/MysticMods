@@ -9,7 +9,6 @@ import mysticstones.blocks.ItemReinforced;
 import mysticstones.blocks.ItemStoneBricks;
 import mysticstones.blocks.ItemStones;
 import mysticstones.util.Config;
-import mysticstones.util.Localizations;
 import mysticstones.util.RecipeHandler;
 import mysticstones.util.TabMysticStones;
 import mysticstones.worldgen.WorldGeneratorStones;
@@ -41,7 +40,6 @@ public class MysticStones {
 		GameRegistry.registerBlock(stones, ItemStones.class, "Stones");
 		GameRegistry.registerBlock(stoneBricks, ItemStoneBricks.class, "StoneBricks");
 		GameRegistry.registerBlock(reinforcedBricks, ItemReinforced.class, "Reinforcedbricks");
-		Localizations.Initialize();
 		RecipeHandler.craftPlanks();
 		RecipeHandler.craftStoneBricks();
 		RecipeHandler.craftReinforced();

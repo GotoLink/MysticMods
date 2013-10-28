@@ -1,0 +1,179 @@
+﻿item.VerditeSword.name=Verdite Sword 
+item.VerditePickaxe.name=Verdite Pickaxe 
+item.VerditeShovel.name=Verdite Shovel 
+item.VerditeAxe.name=Verdite Axe 
+item.VerditeHoe.name=Verdite Hoe
+
+item.MithrilSword.name=Mithril Sword 
+item.MithrilPickaxe.name=Mithril Pickaxe 
+item.MithrilShovel.name=Mithril Shovel 
+item.MithrilAxe.name=Mithril Axe 
+item.MithrilHoe.name=Mithril Hoe
+
+item.AdamantineSword.name=Adamantine Sword 
+item.AdamantinePickaxe.name=Adamantine Pickaxe 
+item.AdamantineShovel.name=Adamantine Shovel 
+item.AdamantineAxe.name=Adamantine Axe 
+item.AdamantineHoe.name=Adamantine Hoe 
+
+item.IridiumSword.name=Iridium Sword 
+item.IridiumPickaxe.name=Iridium Pickaxe 
+item.IridiumShovel.name=Iridium Shovel 
+item.IridiumAxe.name=Iridium Axe 
+item.IridiumHoe.name=Iridium Hoe
+
+item.ObsidianSword.name=Obsidian Sword 
+item.ObsidianPickaxe.name=Obsidian Pickaxe 
+item.ObsidianShovel.name=Obsidian Shovel 
+item.ObsidianAxe.name=Obsidian Axe 
+item.ObsidianHoe.name=Obsidian Hoe
+
+item.BloodstoneSword.name=Bloodstone Sword 
+item.BloodstonePickaxe.name=Bloodstone Pickaxe 
+item.BloodstoneShovel.name=Bloodstone Shovel 
+item.BloodstoneAxe.name=Bloodstone Axe 
+item.BloodstoneHoe.name=Bloodstone Hoe
+
+Verdite Ingot.name=Verdite Ingot 
+Mithril Ingot.name=Mithril Ingot 
+Adamantine Ingot.name=Adamantine Ingot 
+Iridium Ingot.name=Iridium Ingot 
+Iridium Nugget.name=Iridium Nugget 
+Tourmaline Gem.name=Tourmaline Gemstone 
+Agate Gem.name=Agate Gemstone 
+Topaz Gem.name=Topaz Gemstone 
+Amethyst Gem.name=Amethyst Gemstone 
+Mystic Powder.name=Mystic Powder 
+Bloodstone Shard.name=Bloodstone Shard 
+Glass Shard.name=Glass Shard 
+Obsidian Shard.name=Obsidian Shard 
+Obsidian Rod.name=Obsidian Rod 
+item.Satchel.name=Magical Bag
+   
+Adamantine Ore.name=Adamantine Ore 
+Amethyst Ore.name=Amethyst Ore 
+Iridium Ore.name=Iridium Ore 
+Mithril Ore.name=Mithril Ore 
+Tourmaline Ore.name=Tourmaline Ore 
+Topaz Ore.name=Topaz Ore 
+Verdite Ore.name=Verdite Ore 
+Bloodstone.name=Bloodstone 
+Black Soulstone.name=Black Soulstone 
+Blue Soulstone.name=Blue Soulstone 
+Red Soulstone.name=Red Soulstone 
+Agate Ore.name=Agate Ore
+Tempered Glass.name=Tempered Glass 
+
+itemGroup.MysticOresTab=Mystic Ores 
+
+Purple Planks.name=Purple Planks 
+Green Planks.name=Green Planks 
+Black Planks.name=Black Planks 
+Orange Planks.name=Orange Planks 
+Red Planks.name=Red Planks
+Blue Planks.name=Blue Planks 
+Yellow Planks.name=Yellow Planks 
+
+Smooth Anorthosite.name=Smooth Anorthosite 
+Smooth Limestone.name=Smooth Limestone 
+Smooth Slate.name=Smooth Slate
+Smooth Migmatite.name=Smooth Migmatite 
+Smooth Orthogneiss.name=Smooth Orthogneiss 
+Smooth Marble.name=Smooth Marble
+Smooth Travertine.name=Smooth Travertine
+
+Anorthosite.name=Anorthosite 
+Limestone.name=Limestone 
+Slate.name=Slate
+Migmatite.name=Migmatite 
+Orthogneiss.name=Orthogneiss 
+Marble.name=Marble
+Travertine.name=Travertine    
+
+Anorthosite Bricks.name=Anorthosite Bricks 
+Limestone Bricks.name=Limestone Bricks 
+Slate Bricks.name=Slate Bricks 
+Migmatite Bricks.name=Migmatite Bricks 
+Orthogneiss Bricks.name=Orthogneiss Bricks 
+Marble Bricks.name=Marble Bricks 
+Travertine Bricks.name=Travertine Bricks 
+
+Verdite Bricks.name=Verdite Reinforced Bricks 
+Mithril Bricks.name=Mithril Reinforced Bricks 
+Adamantine Bricks.name=Adamantine Reinforced Bricks 
+Iridium Bricks.name=Iridium Reinfroced Bricks 
+Topaz Bricks.name=Topaz Reinforced Bricks 
+Tourmaline Bricks.name=Tourmaline Reinforced Bricks 
+Amethyst Bricks.name=Amethyst Reinforced Bricks 
+Agate Bricks.name=Agate Reinforced Bricks
+
+itemGroup.MysticStonesTab=Mystic Stones 
+
+tile.imbuedStoneFire.name=Magmatic Stone Chunk 
+tile.imbuedStoneWater.name=Aquatic Stone Chunk 
+tile.imbuedStoneEarth.name=Fertile Stone Chunk 
+tile.imbuedStoneAir.name=Aerated Stone Chunk 
+tile.imbuedStoneEnergy.name=Kinetic Stone Chunk   
+  
+Bush.name=Mundane Bush 
+Poisonous Bush.name=Poisonous Bush 
+Weakness Bush.name=Weakening Bush 
+Slowness Bush.name=Slowness Bush 
+Harming Bush.name=Harming Bush 
+Wither Bush.name=Withering Bush 
+Health Bush.name=Healing Bush 
+Speed Bush.name=Speed Bush 
+Fire Resistance Bush.name=Extinguishing Bush 
+Regen Bush.name=Regeneration Bush
+Night Vision Bush.name=Night Vision Bush 
+Invisibility Bush.name=Invisibility Bush
+
+tile.platform.name=Pillar Platform 
+tile.pillar.name=Pillar Tower 
+tile.pillarInsert.name=Pillarinsert 
+    
+Staff.name=Staff 
+Hilt.name=Staff Hilt 
+Handle.name=Staff Handle 
+Head.name=Staff Topper 
+
+item.imbuedShardFire.name=Magmatic Shard 
+item.imbuedShardWater.name=Aquatic Shard 
+item.imbuedShardEarth.name=Fertile Shard 
+item.imbuedShardAir.name=Aerated Shard 
+item.imbuedShardEnergy.name=Kinetic Shard 
+item.fireStaff.name=Magma Staff 
+item.waterStaff.name=Aqua Staff 
+item.earthStaff.name=Fertile Staff 
+item.airStaff.name=Aeration Staff 
+item.energyStaff.name=Kinesis Staff 
+item.bushFruit.name=Mysterious Fruit
+
+item.verditeHelmet.name=Verdite Helmet 
+item.verditeChestplate.name=Verdite Chestplate 
+item.verditeLeggings.name=Verdite Leggings 
+item.verditeBoots.name=Verdite Boots 
+
+item.mithrilHelmet.name=Mithril Helmet 
+item.mithrilChestplate.name=Mithril Chestplate 
+item.mithrilLeggings.name=Mithril Leggings 
+item.mithrilBoots.name=Mithril Boots
+
+item.adamantineHelmet.name=Adamantine Helmet 
+item.adamantineChestplate.name=Adamantine Chestplate 
+item.adamantineLeggings.name=Adamantine Leggings 
+item.adamantineBoots.name=Adamantine Boots
+
+item.iridiumHelmet.name=Iridium Helmet 
+item.iridiumChestplate.name=Iridium Chestplate 
+item.iridiumLeggings.name=Iridium Leggings 
+item.iridiumBoots.name=Iridium Boots
+
+item.fireOrb.name=Magmatic Orb
+item.waterOrb.name=Aquatic Orb
+item.earthOrb.name=Orb of Fertility 
+item.airOrb.name=Aerating Orb
+item.energyOrb.name=Kinesis Orb
+item.voidShard.name=Void Shard
+
+itemGroup.MysticWorldTab=Mystic World
