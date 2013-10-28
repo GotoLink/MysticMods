@@ -5,7 +5,6 @@ import mysticores.items.Items;
 import mysticores.util.ConfigurationManager;
 import mysticores.util.OreDictManager;
 import mysticores.util.RecipeManager;
-import mysticores.util.TabMysticOres;
 import mysticores.worldgen.GeneratorManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -22,7 +21,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class MysticOres implements IFuelHandler {
 	@Instance("mysticores")
 	public static MysticOres instance;
-	public static final CreativeTabs MysticOresTab = new TabMysticOres("MysticOresTab");
+	public static final CreativeTabs MysticOresTab = new CreativeTabs("MysticOresTab") {
+		@Override
+		public ItemStack getIconItemStack() {
+			return new ItemStack(BlockHandler.BlockBase, 1, 7);
+		}
+	};
 
 	@Override
 	public int getBurnTime(ItemStack fuel) {

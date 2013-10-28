@@ -10,11 +10,11 @@ import mysticworld.util.CommonProxy;
 import mysticworld.util.Config;
 import mysticworld.util.RecipeHandler;
 import mysticworld.util.Reference;
-import mysticworld.util.TabMysticWorld;
 import mysticworld.util.TickHandler;
 import mysticworld.worldgen.WorldGenBushes;
 import mysticworld.worldgen.WorldGenStones;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -33,7 +33,12 @@ public class MysticWorld {
 	public static MysticWorld instance;
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
-	public static final CreativeTabs MysticWorldTab = new TabMysticWorld("MysticWorldTab");
+	public static final CreativeTabs MysticWorldTab = new CreativeTabs("MysticWorldTab") {
+		@Override
+		public ItemStack getIconItemStack() {
+			return new ItemStack(ItemHandler.earthStaff, 1);
+		}
+	};
 
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
