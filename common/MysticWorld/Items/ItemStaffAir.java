@@ -19,7 +19,7 @@ public class ItemStaffAir extends ItemStaff {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (itemStack.stackTagCompound == null)
 			itemStack.setTagCompound(new NBTTagCompound());
-		if (itemStack.stackTagCompound.getBoolean("charging") == false) {
+		if (!itemStack.stackTagCompound.getBoolean("charging")) {
 			itemStack.stackTagCompound.setBoolean("charging", true);
 		}
 		return itemStack;

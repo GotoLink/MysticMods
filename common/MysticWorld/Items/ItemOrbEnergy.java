@@ -51,13 +51,9 @@ public class ItemOrbEnergy extends ItemOrb {
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		EntityPlayer player = (EntityPlayer) entity;
 		ItemStack currentItem = player.inventory.getCurrentItem();
-		if (!world.isRemote) {
-			if (currentItem != null) {
-				if (currentItem.itemID == itemStack.itemID) {
-					player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
-					MysticWorld.proxy.energyFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-				}
-			}
+		if (!world.isRemote && par5) {
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
+			MysticWorld.proxy.energyFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 	}
 }

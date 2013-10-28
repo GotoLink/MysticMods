@@ -83,14 +83,9 @@ public class ItemStaffFire extends ItemStaff {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		EntityPlayer player = (EntityPlayer) entity;
-		ItemStack currentItem = player.inventory.getCurrentItem();
-		if (!world.isRemote) {
-			if (currentItem != null) {
-				if (currentItem.itemID == itemStack.itemID) {
-					player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-					MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-				}
-			}
+		if (!world.isRemote && par5) {
+			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 	}
 }

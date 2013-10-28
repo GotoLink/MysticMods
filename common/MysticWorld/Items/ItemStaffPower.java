@@ -37,7 +37,7 @@ public class ItemStaffPower extends Item {
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[CHARGE_NAMES.length];
 		for (int i = 0; i < CHARGE_NAMES.length; ++i) {
-			icons[i] = iconRegister.registerIcon("MysticMods:Charge" + CHARGE_NAMES[i]);
+			icons[i] = iconRegister.registerIcon("mysticmods:Charge" + CHARGE_NAMES[i]);
 		}
 	}
 }

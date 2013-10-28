@@ -68,13 +68,8 @@ public class ItemStaffEarth extends ItemStaff {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		EntityPlayer player = (EntityPlayer) entity;
-		ItemStack currentItem = player.inventory.getCurrentItem();
-		if (!world.isRemote) {
-			if (currentItem != null) {
-				if (currentItem.itemID == itemStack.itemID) {
-					MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-				}
-			}
+		if (!world.isRemote && par5) {
+			MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 	}
 

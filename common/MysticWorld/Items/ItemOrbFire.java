@@ -3,7 +3,6 @@ package mysticworld.items;
 import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -14,13 +13,6 @@ import net.minecraft.world.World;
 public class ItemOrbFire extends ItemOrb {
 	public ItemOrbFire(int id) {
 		super(id);
-	}
-
-	public boolean itemInteractionForEntity(ItemStack itemStack, EntityLiving entityLiving) {
-		entityLiving.setFire(5);
-		entityLiving.attackEntityFrom(DamageSource.magic, 7);
-		itemStack.damageItem(1, entityLiving);
-		return true;
 	}
 
 	@Override
@@ -66,14 +58,9 @@ public class ItemOrbFire extends ItemOrb {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		EntityPlayer player = (EntityPlayer) entity;
-		ItemStack currentItem = player.inventory.getCurrentItem();
-		if (!world.isRemote) {
-			if (currentItem != null) {
-				if (currentItem.itemID == itemStack.itemID) {
-					player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-					MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
-				}
-			}
+		if (!world.isRemote && par5) {
+			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 	}
 }

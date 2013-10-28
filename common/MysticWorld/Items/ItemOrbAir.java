@@ -19,7 +19,7 @@ public class ItemOrbAir extends ItemOrb {
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
 		if (itemStack.stackTagCompound == null)
 			itemStack.setTagCompound(new NBTTagCompound());
-		if (itemStack.stackTagCompound.getBoolean("charging") == false) {
+		if (!itemStack.stackTagCompound.getBoolean("charging")) {
 			itemStack.stackTagCompound.setBoolean("charging", true);
 		}
 		return itemStack;
@@ -33,7 +33,7 @@ public class ItemOrbAir extends ItemOrb {
 		ItemStack currentItem = player.inventory.getCurrentItem();
 		itemStack.stackTagCompound.setInteger("maxChargeTime", 5 * 20);
 		if (currentItem != null) {
-			if (currentItem.itemID == itemStack.itemID) {
+			if (par5) {
 				player.fallDistance = 0.0F;
 				chargeEffect(itemStack, world, player);
 				if (!Mouse.isButtonDown(1)) {
@@ -46,7 +46,7 @@ public class ItemOrbAir extends ItemOrb {
 					}
 					resetData(itemStack);
 				} else {
-					if (itemStack.stackTagCompound.getBoolean("charging") == true) {
+					if (itemStack.stackTagCompound.getBoolean("charging")) {
 						incrementData(itemStack);
 					}
 					spiralEffect(itemStack, world, player);
