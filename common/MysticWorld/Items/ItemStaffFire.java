@@ -3,7 +3,7 @@ package mysticworld.items;
 import mysticworld.MysticWorld;
 import mysticworld.entity.EntityChargeFire;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -22,7 +22,8 @@ public class ItemStaffFire extends ItemStaff {
 		super(id);
 	}
 
-	public boolean itemInteractionForEntity(ItemStack itemStack, EntityLiving entityLiving) {
+	@Override
+	public boolean itemInteractionForEntity(ItemStack itemStack, EntityPlayer entityPlayer, EntityLivingBase entityLiving) {
 		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
 			entityLiving.setFire(5);
 			entityLiving.attackEntityFrom(DamageSource.magic, 7);

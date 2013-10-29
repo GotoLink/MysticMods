@@ -3,6 +3,7 @@ package mysticworld.items;
 import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -13,6 +14,14 @@ import net.minecraft.world.World;
 public class ItemOrbFire extends ItemOrb {
 	public ItemOrbFire(int id) {
 		super(id);
+	}
+
+	@Override
+	public boolean itemInteractionForEntity(ItemStack itemStack, EntityPlayer entityPlayer, EntityLivingBase entity) {
+		entity.setFire(5);
+		entity.attackEntityFrom(DamageSource.magic, 7);
+		itemStack.damageItem(1, entityPlayer);
+		return true;
 	}
 
 	@Override
