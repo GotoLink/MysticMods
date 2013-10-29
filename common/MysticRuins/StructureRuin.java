@@ -40,21 +40,19 @@ public class StructureRuin extends WorldGenerator {
 			} else {
 				j5 = random.nextInt(4) + 5;
 			}
-			world.setBlock(j1, k1 - j5, l1, Block.cobblestone.blockID);
-			world.setBlock(j1, (k1 - j5) + 1, l1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - j5) + 2, l1, Block.cobblestone.blockID);
-			world.setBlock(j1, (k1 - j5) + 2, l1 + 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - j5) + 3, l1 + 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - j5) + 4, l1 + 1, Block.cobblestone.blockID);
-			world.setBlock(j1, (k1 - j5) + 5, l1 + 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - j5) + 2, l1 + 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - j5) + 3, l1 + 2, Block.cobblestone.blockID);
-			world.setBlock(j1, (k1 - j5) + 4, l1 + 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, k1 - j5, l1 + 3, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - j5) + 1, l1 + 3, Block.cobblestone.blockID);
-			world.setBlock(j1, (k1 - j5) + 2, l1 + 3, Block.cobblestone.blockID);
-			world.setBlock(j1, k1 - j5 - k4 - 1, l1 + 2, Block.dirt.blockID);
-			world.setBlock(j1, k1 - j5 - k4, l1 + 2, Block.chest.blockID);
+			for (int y = k1 - j5; y < k1 - j5 + 5; y++) {
+				if (y < k1 - j5 + 3) {
+					setBlock(world,j1, y, l1, pickBlock(random));
+					setBlock(world,j1, y, l1 + 3, pickBlock(random));
+				}
+				if (y > k1 - j5 + 1) {
+					setBlock(world,j1, y, l1 + 1, pickBlock(random));
+					setBlock(world,j1, y, l1 + 2, pickBlock(random));
+				}
+			}
+			setBlock(world,j1, (k1 - j5) + 5, l1 + 1, pickBlock(random));
+			setBlock(world,j1, k1 - j5 - k4 - 1, l1 + 2, Block.dirt.blockID);
+			setBlock(world,j1, k1 - j5 - k4, l1 + 2, Block.chest.blockID);
 			ChestFiller.fillWithValuables(world.getBlockTileEntity(j1, k1 - j5 - k4, l1 + 2));
 			l6 = 1;
 			i6 = 0;
@@ -68,29 +66,29 @@ public class StructureRuin extends WorldGenerator {
 					flag = true;
 				}
 			} while (!flag && l6++ < 12);
-			world.setBlock(j1 + l3, k1 - j5 - i6, l1 + l3 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + l3, ((k1 - j5) + 1) - i6, l1 + l3 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3 + 1, k1 - j5 - i6, l1 + l3 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3 + 1, ((k1 - j5) + 1) - i6, l1 + l3 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3 + 2, k1 - j5 - i6, l1 + l3 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + l3 + 3, k1 - j5 - i6, l1 + l3 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3 + 4, k1 - j5 - i6, l1 + l3 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3 + 5, k1 - j5 - i6, l1 + l3 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + l3, k1 - j5 - i6, l1 + l3 + 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3, ((k1 - j5) + 1) - i6, l1 + l3 + 5, Block.cobblestone.blockID);
-			world.setBlock(j1 + l3, ((k1 - j5) + 2) - i6, l1 + l3 + 6, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3, ((k1 - j5) + 3) - i6, l1 + l3 + 6, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3, k1 - j5 - i6, l1 + l3 + 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + l3, ((k1 - j5) + 1) - i6, l1 + l3 + 7, Block.cobblestone.blockID);
-			world.setBlock(j1 + l3, ((k1 - j5) + 2) - i6, l1 + l3 + 7, Block.cobblestoneMossy.blockID);
+			setBlock(world,j1 + l3, k1 - j5 - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3, ((k1 - j5) + 1) - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3 + 1, k1 - j5 - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3 + 1, ((k1 - j5) + 1) - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3 + 2, k1 - j5 - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3 + 3, k1 - j5 - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3 + 4, k1 - j5 - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3 + 5, k1 - j5 - i6, l1 + l3 + 4, pickBlock(random));
+			setBlock(world,j1 + l3, k1 - j5 - i6, l1 + l3 + 5, pickBlock(random));
+			setBlock(world,j1 + l3, ((k1 - j5) + 1) - i6, l1 + l3 + 5, pickBlock(random));
+			setBlock(world,j1 + l3, ((k1 - j5) + 2) - i6, l1 + l3 + 6, pickBlock(random));
+			setBlock(world,j1 + l3, ((k1 - j5) + 3) - i6, l1 + l3 + 6, pickBlock(random));
+			setBlock(world,j1 + l3, k1 - j5 - i6, l1 + l3 + 7, pickBlock(random));
+			setBlock(world,j1 + l3, ((k1 - j5) + 1) - i6, l1 + l3 + 7, pickBlock(random));
+			setBlock(world,j1 + l3, ((k1 - j5) + 2) - i6, l1 + l3 + 7, pickBlock(random));
 			k7 = random.nextInt(100);
 			if (k7 <= 30) {
-				world.setBlock(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5, Block.mobSpawner.blockID);
+				setBlock(world,j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5, Block.mobSpawner.blockID);
 				TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getBlockTileEntity(j1 + l3, k1 - j5 - i6 - k4, l1 + l3 + 5);
 				if (spawner != null) {
 					spawner.getSpawnerLogic().setMobID(DungeonHooks.getRandomDungeonMob(random));
 				}
-				world.setBlock(j1 + l3, k1 - j5 - i6 - k4 - 1, l1 + l3 + 5, Block.dirt.blockID);
+				setBlock(world,j1 + l3, k1 - j5 - i6 - k4 - 1, l1 + l3 + 5, Block.dirt.blockID);
 			}
 			l6 = 1;
 			i6 = 0;
@@ -104,17 +102,17 @@ public class StructureRuin extends WorldGenerator {
 					flag = true;
 				}
 			} while (!flag && l6++ < 12);
-			world.setBlock(j1 - i3, k1 - j5 - i6, l1 - 4, Block.cobblestone.blockID);
-			world.setBlock(j1 - i3, ((k1 - j5) + 1) - i6, l1 - 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - i3, k1 - j5 - i6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - i3 - 1, k1 - j5 - i6, l1 - 5, Block.cobblestone.blockID);
-			world.setBlock(j1 - i3 - 1, ((k1 - j5) + 1) - i6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - i3 - 1, ((k1 - j5) + 2) - i6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - i3 - 2, k1 - j5 - i6, l1 - 5, Block.cobblestone.blockID);
+			setBlock(world,j1 - i3, k1 - j5 - i6, l1 - 4, pickBlock(random));
+			setBlock(world,j1 - i3, ((k1 - j5) + 1) - i6, l1 - 4, pickBlock(random));
+			setBlock(world,j1 - i3, k1 - j5 - i6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - i3 - 1, k1 - j5 - i6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - i3 - 1, ((k1 - j5) + 1) - i6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - i3 - 1, ((k1 - j5) + 2) - i6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - i3 - 2, k1 - j5 - i6, l1 - 5, pickBlock(random));
 			k7 = random.nextInt(100);
 			if (k7 <= 60) {
-				world.setBlock(j1 - i3 - 1, k1 - j5 - i6 - k4, l1 - 5, Block.dirt.blockID);
-				world.setBlock(j1 - i3 - 1, k1 - j5 - i6 - k4 - 1, l1 - 5, Block.dirt.blockID);
+				setBlock(world,j1 - i3 - 1, k1 - j5 - i6 - k4, l1 - 5, Block.dirt.blockID);
+				setBlock(world,j1 - i3 - 1, k1 - j5 - i6 - k4 - 1, l1 - 5, Block.dirt.blockID);
 			}
 		} else if (i2 == 2) {
 			int k2 = random.nextInt(8) + 5;
@@ -132,19 +130,19 @@ public class StructureRuin extends WorldGenerator {
 			} else {
 				k5 = random.nextInt(4) + 5;
 			}
-			world.setBlock(j1, k1 - k5, l1, Block.cobblestone.blockID);
-			world.setBlock(j1, k1 - k5, l1 + 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, k1 - k5, l1 + 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, k1 - k5, l1 + 3, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, k1 - k5, l1 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - k5) + 1, l1 + 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - k5) + 2, l1 + 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - k5) + 3, l1 + 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, (k1 - k5) + 1, l1 + 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + 1, k1 - k5, l1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + 2, k1 - k5, l1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1, k1 - k5 - l4, l1 + 2, Block.dirt.blockID);
-			world.setBlock(j1, k1 - k5 - l4 - 1, l1 + 2, Block.dirt.blockID);
+			setBlock(world,j1, k1 - k5, l1, pickBlock(random));
+			setBlock(world,j1, k1 - k5, l1 + 1, pickBlock(random));
+			setBlock(world,j1, k1 - k5, l1 + 2, pickBlock(random));
+			setBlock(world,j1, k1 - k5, l1 + 3, pickBlock(random));
+			setBlock(world,j1, k1 - k5, l1 + 4, pickBlock(random));
+			setBlock(world,j1, (k1 - k5) + 1, l1 + 2, pickBlock(random));
+			setBlock(world,j1, (k1 - k5) + 2, l1 + 2, pickBlock(random));
+			setBlock(world,j1, (k1 - k5) + 3, l1 + 2, pickBlock(random));
+			setBlock(world,j1, (k1 - k5) + 1, l1 + 1, pickBlock(random));
+			setBlock(world,j1 + 1, k1 - k5, l1, pickBlock(random));
+			setBlock(world,j1 + 2, k1 - k5, l1, pickBlock(random));
+			setBlock(world,j1, k1 - k5 - l4, l1 + 2, Block.dirt.blockID);
+			setBlock(world,j1, k1 - k5 - l4 - 1, l1 + 2, Block.dirt.blockID);
 			i7 = 1;
 			j6 = 0;
 			flag1 = false;
@@ -157,23 +155,23 @@ public class StructureRuin extends WorldGenerator {
 					flag1 = true;
 				}
 			} while (!flag1 && i7++ < 12);
-			world.setBlock(j1 - k2, k1 - k5 - j6, l1 - 3, Block.cobblestone.blockID);
-			world.setBlock(j1 - k2, k1 - k5 - j6, l1 - 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, ((k1 - k5) + 1) - j6, l1 - 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, ((k1 - k5) + 2) - j6, l1 - 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, k1 - k5 - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, ((k1 - k5) + 1) - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, ((k1 - k5) + 2) - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, ((k1 - k5) + 3) - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2, ((k1 - k5) + 4) - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2 - 1, k1 - k5 - j6, l1 - 5, Block.cobblestone.blockID);
-			world.setBlock(j1 - k2 - 1, ((k1 - k5) + 1) - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2 - 1, ((k1 - k5) + 2) - j6, l1 - 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - k2 - 2, k1 - k5 - j6, l1 - 5, Block.cobblestone.blockID);
+			setBlock(world,j1 - k2, k1 - k5 - j6, l1 - 3, pickBlock(random));
+			setBlock(world,j1 - k2, k1 - k5 - j6, l1 - 4, pickBlock(random));
+			setBlock(world,j1 - k2, ((k1 - k5) + 1) - j6, l1 - 4, pickBlock(random));
+			setBlock(world,j1 - k2, ((k1 - k5) + 2) - j6, l1 - 4, pickBlock(random));
+			setBlock(world,j1 - k2, k1 - k5 - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2, ((k1 - k5) + 1) - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2, ((k1 - k5) + 2) - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2, ((k1 - k5) + 3) - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2, ((k1 - k5) + 4) - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2 - 1, k1 - k5 - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2 - 1, ((k1 - k5) + 1) - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2 - 1, ((k1 - k5) + 2) - j6, l1 - 5, pickBlock(random));
+			setBlock(world,j1 - k2 - 2, k1 - k5 - j6, l1 - 5, pickBlock(random));
 			l7 = random.nextInt(100);
 			if (l7 <= 30) {
-				world.setBlock(j1 - k2 - 1, k1 - k5 - j6 - l4, l1 - 5, Block.dirt.blockID);
-				world.setBlock(j1 - k2 - 1, k1 - k5 - j6 - l4 - 1, l1 - 5, Block.dirt.blockID);
+				setBlock(world,j1 - k2 - 1, k1 - k5 - j6 - l4, l1 - 5, Block.dirt.blockID);
+				setBlock(world,j1 - k2 - 1, k1 - k5 - j6 - l4 - 1, l1 - 5, Block.dirt.blockID);
 			}
 			i7 = 1;
 			j6 = 0;
@@ -187,28 +185,28 @@ public class StructureRuin extends WorldGenerator {
 					flag1 = true;
 				}
 			} while (!flag1 && i7++ < 12);
-			world.setBlock(j1 + i4, k1 - k5 - j6, l1 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4, ((k1 - k5) + 1) - j6, l1 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4 + 1, k1 - k5 - j6, l1 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4 + 1, ((k1 - k5) + 1) - j6, l1 + 4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4 + 2, k1 - k5 - j6, l1 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4 + 3, k1 - k5 - j6, l1 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4 + 3, ((k1 - k5) + 1) - j6, l1 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4 + 4, k1 - k5 - j6, l1 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4 + 5, k1 - k5 - j6, l1 + 4, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4, k1 - k5 - j6, l1 + 5, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4, ((k1 - k5) + 1) - j6, l1 + 5, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4, ((k1 - k5) + 2) - j6, l1 + 6, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4, k1 - k5 - j6, l1 + 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4, ((k1 - k5) + 1) - j6, l1 + 7, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4, ((k1 - k5) + 2) - j6, l1 + 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4, k1 - k5 - j6, l1 + 8, Block.cobblestone.blockID);
-			world.setBlock(j1 + i4, ((k1 - k5) + 1) - j6, l1 + 8, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + i4, k1 - k5 - j6, l1 + 9, Block.cobblestoneMossy.blockID);
+			setBlock(world,j1 + i4, k1 - k5 - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4, ((k1 - k5) + 1) - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 1, k1 - k5 - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 1, ((k1 - k5) + 1) - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 2, k1 - k5 - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 3, k1 - k5 - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 3, ((k1 - k5) + 1) - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 4, k1 - k5 - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4 + 5, k1 - k5 - j6, l1 + 4, pickBlock(random));
+			setBlock(world,j1 + i4, k1 - k5 - j6, l1 + 5, pickBlock(random));
+			setBlock(world,j1 + i4, ((k1 - k5) + 1) - j6, l1 + 5, pickBlock(random));
+			setBlock(world,j1 + i4, ((k1 - k5) + 2) - j6, l1 + 6, pickBlock(random));
+			setBlock(world,j1 + i4, k1 - k5 - j6, l1 + 7, pickBlock(random));
+			setBlock(world,j1 + i4, ((k1 - k5) + 1) - j6, l1 + 7, pickBlock(random));
+			setBlock(world,j1 + i4, ((k1 - k5) + 2) - j6, l1 + 7, pickBlock(random));
+			setBlock(world,j1 + i4, k1 - k5 - j6, l1 + 8, pickBlock(random));
+			setBlock(world,j1 + i4, ((k1 - k5) + 1) - j6, l1 + 8, pickBlock(random));
+			setBlock(world,j1 + i4, k1 - k5 - j6, l1 + 9, pickBlock(random));
 			l7 = random.nextInt(100);
 			if (l7 <= 60) {
-				world.setBlock(j1 + i4, k1 - k5 - j6 - l4, l1 + 7, Block.dirt.blockID);
-				world.setBlock(j1 + i4, k1 - k5 - j6 - l4 - 1, l1 + 7, Block.dirt.blockID);
+				setBlock(world,j1 + i4, k1 - k5 - j6 - l4, l1 + 7, Block.dirt.blockID);
+				setBlock(world,j1 + i4, k1 - k5 - j6 - l4 - 1, l1 + 7, Block.dirt.blockID);
 			}
 			i7 = 1;
 			j6 = 0;
@@ -222,27 +220,27 @@ public class StructureRuin extends WorldGenerator {
 					flag1 = true;
 				}
 			} while (!flag1 && i7++ < 12);
-			world.setBlock((j1 - j3) + 1, k1 - k5 - j6, l1 + i4, Block.cobblestone.blockID);
-			world.setBlock((j1 - j3) + 1, ((k1 - k5) + 1) - j6, l1 + i4, Block.cobblestoneMossy.blockID);
-			world.setBlock((j1 - j3) + 1, ((k1 - k5) + 2) - j6, l1 + i4, Block.cobblestoneMossy.blockID);
-			world.setBlock((j1 - j3) + 2, k1 - k5 - j6, l1 + i4, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, k1 - k5 - j6, (l1 + i4) - 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 1) - j6, (l1 + i4) - 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 2) - j6, (l1 + i4) - 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 3) - j6, (l1 + i4) - 1, Block.cobblestone.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 4) - j6, (l1 + i4) - 1, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 2) - j6, (l1 + i4) - 2, Block.cobblestone.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 3) - j6, (l1 + i4) - 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 4) - j6, (l1 + i4) - 2, Block.cobblestone.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 5) - j6, (l1 + i4) - 2, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 - j3, k1 - k5 - j6, (l1 + i4) - 3, Block.cobblestone.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 1) - j6, (l1 + i4) - 3, Block.cobblestone.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 2) - j6, (l1 + i4) - 3, Block.cobblestone.blockID);
-			world.setBlock(j1 - j3, ((k1 - k5) + 3) - j6, (l1 + i4) - 3, Block.cobblestoneMossy.blockID);
+			setBlock(world,(j1 - j3) + 1, k1 - k5 - j6, l1 + i4, pickBlock(random));
+			setBlock(world,(j1 - j3) + 1, ((k1 - k5) + 1) - j6, l1 + i4, pickBlock(random));
+			setBlock(world,(j1 - j3) + 1, ((k1 - k5) + 2) - j6, l1 + i4, pickBlock(random));
+			setBlock(world,(j1 - j3) + 2, k1 - k5 - j6, l1 + i4, pickBlock(random));
+			setBlock(world,j1 - j3, k1 - k5 - j6, (l1 + i4) - 1, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 1) - j6, (l1 + i4) - 1, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 2) - j6, (l1 + i4) - 1, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 3) - j6, (l1 + i4) - 1, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 4) - j6, (l1 + i4) - 1, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 2) - j6, (l1 + i4) - 2, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 3) - j6, (l1 + i4) - 2, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 4) - j6, (l1 + i4) - 2, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 5) - j6, (l1 + i4) - 2, pickBlock(random));
+			setBlock(world,j1 - j3, k1 - k5 - j6, (l1 + i4) - 3, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 1) - j6, (l1 + i4) - 3, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 2) - j6, (l1 + i4) - 3, pickBlock(random));
+			setBlock(world,j1 - j3, ((k1 - k5) + 3) - j6, (l1 + i4) - 3, pickBlock(random));
 			l7 = random.nextInt(100);
 			if (l7 <= 30) {
-				world.setBlock(j1 - j3, k1 - k5 - j6 - l4, (l1 + i4) - 2, Block.dirt.blockID);
-				world.setBlock(j1 - j3, k1 - k5 - j6 - l4 - 1, (l1 + i4) - 2, Block.dirt.blockID);
+				setBlock(world,j1 - j3, k1 - k5 - j6 - l4, (l1 + i4) - 2, Block.dirt.blockID);
+				setBlock(world,j1 - j3, k1 - k5 - j6 - l4 - 1, (l1 + i4) - 2, Block.dirt.blockID);
 			}
 			i7 = 1;
 			j6 = 0;
@@ -256,19 +254,19 @@ public class StructureRuin extends WorldGenerator {
 					flag1 = true;
 				}
 			} while (!flag1 && i7++ < 12);
-			world.setBlock(j1 + j3 + 4, k1 - k5 - j6, l1 - 6, Block.cobblestone.blockID);
-			world.setBlock(j1 + j3 + 4, ((k1 - k5) + 1) - j6, l1 - 6, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + j3 + 4, ((k1 - k5) + 2) - j6, l1 - 6, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + j3 + 4, k1 - k5 - j6, l1 - 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + j3 + 4, ((k1 - k5) + 1) - j6, l1 - 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + j3 + 5, k1 - k5 - j6, l1 - 7, Block.cobblestone.blockID);
-			world.setBlock(j1 + j3 + 5, ((k1 - k5) + 1) - j6, l1 - 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + j3 + 5, ((k1 - k5) + 2) - j6, l1 - 7, Block.cobblestoneMossy.blockID);
-			world.setBlock(j1 + j3 + 6, k1 - k5 - j6, l1 - 7, Block.cobblestone.blockID);
+			setBlock(world,j1 + j3 + 4, k1 - k5 - j6, l1 - 6, pickBlock(random));
+			setBlock(world,j1 + j3 + 4, ((k1 - k5) + 1) - j6, l1 - 6, pickBlock(random));
+			setBlock(world,j1 + j3 + 4, ((k1 - k5) + 2) - j6, l1 - 6, pickBlock(random));
+			setBlock(world,j1 + j3 + 4, k1 - k5 - j6, l1 - 7, pickBlock(random));
+			setBlock(world,j1 + j3 + 4, ((k1 - k5) + 1) - j6, l1 - 7, pickBlock(random));
+			setBlock(world,j1 + j3 + 5, k1 - k5 - j6, l1 - 7, pickBlock(random));
+			setBlock(world,j1 + j3 + 5, ((k1 - k5) + 1) - j6, l1 - 7, pickBlock(random));
+			setBlock(world,j1 + j3 + 5, ((k1 - k5) + 2) - j6, l1 - 7, pickBlock(random));
+			setBlock(world,j1 + j3 + 6, k1 - k5 - j6, l1 - 7, pickBlock(random));
 			l7 = random.nextInt(100);
 			if (l7 <= 30) {
-				world.setBlock(j1 + j3 + 4, k1 - k5 - j6 - l4, l1 - 7, Block.dirt.blockID);
-				world.setBlock(j1 + j3 + 4, k1 - k5 - j6 - l4 - 1, l1 - 7, Block.dirt.blockID);
+				setBlock(world,j1 + j3 + 4, k1 - k5 - j6 - l4, l1 - 7, Block.dirt.blockID);
+				setBlock(world,j1 + j3 + 4, k1 - k5 - j6 - l4 - 1, l1 - 7, Block.dirt.blockID);
 			}
 		}
 		if (i2 != 3) {
@@ -289,22 +287,22 @@ public class StructureRuin extends WorldGenerator {
 		} else {
 			l5 = random.nextInt(4) + 5;
 		}
-		world.setBlock(j1, k1 - l5, l1, Block.cobblestone.blockID);
-		world.setBlock(j1 - 1, k1 - l5, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 1, (k1 - l5) + 1, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 1, (k1 - l5) + 2, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 1, (k1 - l5) + 3, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, (k1 - l5) + 1, l1, Block.cobblestone.blockID);
-		world.setBlock(j1, (k1 - l5) + 2, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, (k1 - l5) + 3, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, (k1 - l5) + 4, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, (k1 - l5) + 5, l1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, k1 - l5, l1 + 1, Block.cobblestone.blockID);
-		world.setBlock(j1, (k1 - l5) + 2, l1 + 1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, k1 - l5, l1 + 2, Block.cobblestone.blockID);
-		world.setBlock(j1, (k1 - l5) + 1, l1 + 2, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1, k1 - l5 - i5, l1 + 1, Block.dirt.blockID);
-		world.setBlock(j1, k1 - l5 - i5 - 1, l1 + 1, Block.dirt.blockID);
+		setBlock(world,j1, k1 - l5, l1, pickBlock(random));
+		setBlock(world,j1 - 1, k1 - l5, l1, pickBlock(random));
+		setBlock(world,j1 - 1, (k1 - l5) + 1, l1, pickBlock(random));
+		setBlock(world,j1 - 1, (k1 - l5) + 2, l1, pickBlock(random));
+		setBlock(world,j1 - 1, (k1 - l5) + 3, l1, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 1, l1, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 2, l1, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 3, l1, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 4, l1, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 5, l1, pickBlock(random));
+		setBlock(world,j1, k1 - l5, l1 + 1, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 2, l1 + 1, pickBlock(random));
+		setBlock(world,j1, k1 - l5, l1 + 2, pickBlock(random));
+		setBlock(world,j1, (k1 - l5) + 1, l1 + 2, pickBlock(random));
+		setBlock(world,j1, k1 - l5 - i5, l1 + 1, Block.dirt.blockID);
+		setBlock(world,j1, k1 - l5 - i5 - 1, l1 + 1, Block.dirt.blockID);
 		j7 = 1;
 		k6 = 0;
 		flag2 = false;
@@ -317,26 +315,26 @@ public class StructureRuin extends WorldGenerator {
 				flag2 = true;
 			}
 		} while (!flag2 && j7++ < 12);
-		world.setBlock(j1 + k3 + l2, k1 - l5 - k6, l1 + j4, Block.cobblestone.blockID);
-		world.setBlock(j1 + k3 + l2, ((k1 - l5) + 1) - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2 + 1, k1 - l5 - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2 + 1, ((k1 - l5) + 1) - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2 + 2, k1 - l5 - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2 + 3, k1 - l5 - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 1, Block.cobblestone.blockID);
-		world.setBlock(j1 + k3 + l2, ((k1 - l5) + 1) - k6, l1 + j4 + 1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2, ((k1 - l5) + 2) - k6, l1 + j4 + 1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2, ((k1 - l5) + 3) - k6, l1 + j4 + 1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 2, Block.cobblestone.blockID);
-		world.setBlock(j1 + k3 + l2, ((k1 - l5) + 2) - k6, l1 + j4 + 2, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 3, Block.cobblestone.blockID);
-		world.setBlock(j1 + k3 + l2, ((k1 - l5) + 1) - k6, l1 + j4 + 3, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 4, Block.cobblestone.blockID);
-		world.setBlock(j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 6, Block.cobblestone.blockID);
+		setBlock(world,j1 + k3 + l2, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, ((k1 - l5) + 1) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2 + 1, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2 + 1, ((k1 - l5) + 1) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2 + 2, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2 + 3, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 1, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, ((k1 - l5) + 1) - k6, l1 + j4 + 1, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, ((k1 - l5) + 2) - k6, l1 + j4 + 1, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, ((k1 - l5) + 3) - k6, l1 + j4 + 1, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 2, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, ((k1 - l5) + 2) - k6, l1 + j4 + 2, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 3, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, ((k1 - l5) + 1) - k6, l1 + j4 + 3, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 4, pickBlock(random));
+		setBlock(world,j1 + k3 + l2, k1 - l5 - k6, l1 + j4 + 6, pickBlock(random));
 		i8 = random.nextInt(100);
 		if (i8 <= 30) {
-			world.setBlock(j1 + k3 + l2, k1 - l5 - k6 - i5, l1 + j4 + 1, Block.dirt.blockID);
-			world.setBlock(j1 + k3 + l2, k1 - l5 - k6 - i5 - 1, l1 + j4 + 1, Block.dirt.blockID);
+			setBlock(world,j1 + k3 + l2, k1 - l5 - k6 - i5, l1 + j4 + 1, Block.dirt.blockID);
+			setBlock(world,j1 + k3 + l2, k1 - l5 - k6 - i5 - 1, l1 + j4 + 1, Block.dirt.blockID);
 		}
 		j7 = 1;
 		k6 = 0;
@@ -350,22 +348,22 @@ public class StructureRuin extends WorldGenerator {
 				flag2 = true;
 			}
 		} while (!flag2 && j7++ < 12);
-		world.setBlock(j1 - k3, k1 - l5 - k6, l1 - l2 - 1, Block.cobblestone.blockID);
-		world.setBlock(j1 - k3, (k1 - l5 - k6) + 1, l1 - l2 - 1, Block.cobblestone.blockID);
-		world.setBlock(j1 - k3, (k1 - l5 - k6) + 2, l1 - l2 - 1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - k3, k1 - l5 - k6, l1 - l2 - 2, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - k3, ((k1 - l5) + 1) - k6, l1 - l2 - 2, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - k3, k1 - l5 - k6, l1 - l2 - 3, Block.cobblestone.blockID);
-		world.setBlock(j1 - k3, ((k1 - l5) + 1) - k6, l1 - l2 - 3, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - k3, k1 - l5 - k6, l1 - l2 - 4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - k3 - 1, k1 - l5 - k6, l1 - l2 - 6, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - k3 - 2, k1 - l5 - k6, l1 - l2 - 6, Block.cobblestone.blockID);
-		world.setBlock(j1 - k3 - 2, ((k1 - l5) + 1) - k6, l1 - l2 - 6, Block.cobblestone.blockID);
-		world.setBlock(j1 - k3 - 3, k1 - l5 - k6, l1 - l2 - 6, Block.cobblestone.blockID);
+		setBlock(world,j1 - k3, k1 - l5 - k6, l1 - l2 - 1, pickBlock(random));
+		setBlock(world,j1 - k3, (k1 - l5 - k6) + 1, l1 - l2 - 1, pickBlock(random));
+		setBlock(world,j1 - k3, (k1 - l5 - k6) + 2, l1 - l2 - 1, pickBlock(random));
+		setBlock(world,j1 - k3, k1 - l5 - k6, l1 - l2 - 2, pickBlock(random));
+		setBlock(world,j1 - k3, ((k1 - l5) + 1) - k6, l1 - l2 - 2, pickBlock(random));
+		setBlock(world,j1 - k3, k1 - l5 - k6, l1 - l2 - 3, pickBlock(random));
+		setBlock(world,j1 - k3, ((k1 - l5) + 1) - k6, l1 - l2 - 3, pickBlock(random));
+		setBlock(world,j1 - k3, k1 - l5 - k6, l1 - l2 - 4, pickBlock(random));
+		setBlock(world,j1 - k3 - 1, k1 - l5 - k6, l1 - l2 - 6, pickBlock(random));
+		setBlock(world,j1 - k3 - 2, k1 - l5 - k6, l1 - l2 - 6, pickBlock(random));
+		setBlock(world,j1 - k3 - 2, ((k1 - l5) + 1) - k6, l1 - l2 - 6, pickBlock(random));
+		setBlock(world,j1 - k3 - 3, k1 - l5 - k6, l1 - l2 - 6, pickBlock(random));
 		i8 = random.nextInt(100);
 		if (i8 <= 60) {
-			world.setBlock(j1 - k3 - 1, k1 - l5 - k6 - i5, l1 - l2 - 6, Block.dirt.blockID);
-			world.setBlock(j1 - k3 - 1, k1 - l5 - k6 - i5 - 1, l1 - l2 - 6, Block.dirt.blockID);
+			setBlock(world,j1 - k3 - 1, k1 - l5 - k6 - i5, l1 - l2 - 6, Block.dirt.blockID);
+			setBlock(world,j1 - k3 - 1, k1 - l5 - k6 - i5 - 1, l1 - l2 - 6, Block.dirt.blockID);
 		}
 		j7 = 1;
 		k6 = 0;
@@ -379,22 +377,22 @@ public class StructureRuin extends WorldGenerator {
 				flag2 = true;
 			}
 		} while (!flag2 && j7++ < 12);
-		world.setBlock(j1 + l2, k1 - l5 - k6, l1 + j4, Block.cobblestone.blockID);
-		world.setBlock(j1 + l2 + 1, k1 - l5 - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + l2 + 1, ((k1 - l5) + 1) - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + l2 + 1, ((k1 - l5) + 2) - k6, l1 + j4, Block.cobblestone.blockID);
-		world.setBlock(j1 + l2 + 1, ((k1 - l5) + 3) - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + l2 + 2, k1 - l5 - k6, l1 + j4, Block.cobblestone.blockID);
-		world.setBlock(j1 + l2 + 2, ((k1 - l5) + 1) - k6, l1 + j4, Block.cobblestone.blockID);
-		world.setBlock(j1 + l2 + 2, ((k1 - l5) + 2) - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + l2 + 3, ((k1 - l5) + 2) - k6, l1 + j4, Block.cobblestone.blockID);
-		world.setBlock(j1 + l2 + 4, k1 - l5 - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + l2 + 4, ((k1 - l5) + 1) - k6, l1 + j4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 + l2 + 5, k1 - l5 - k6, l1 + j4, Block.cobblestoneMossy.blockID);
+		setBlock(world,j1 + l2, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 1, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 1, ((k1 - l5) + 1) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 1, ((k1 - l5) + 2) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 1, ((k1 - l5) + 3) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 2, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 2, ((k1 - l5) + 1) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 2, ((k1 - l5) + 2) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 3, ((k1 - l5) + 2) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 4, k1 - l5 - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 4, ((k1 - l5) + 1) - k6, l1 + j4, pickBlock(random));
+		setBlock(world,j1 + l2 + 5, k1 - l5 - k6, l1 + j4, pickBlock(random));
 		i8 = random.nextInt(100);
 		if (i8 <= 30) {
-			world.setBlock(j1 + l2 + 2, k1 - l5 - k6 - i5, l1 + j4, Block.dirt.blockID);
-			world.setBlock(j1 + l2 + 2, k1 - l5 - k6 - i5 - 1, l1 + j4, Block.dirt.blockID);
+			setBlock(world,j1 + l2 + 2, k1 - l5 - k6 - i5, l1 + j4, Block.dirt.blockID);
+			setBlock(world,j1 + l2 + 2, k1 - l5 - k6 - i5 - 1, l1 + j4, Block.dirt.blockID);
 		}
 		j7 = 1;
 		k6 = 0;
@@ -408,23 +406,27 @@ public class StructureRuin extends WorldGenerator {
 				flag2 = true;
 			}
 		} while (!flag2 && j7++ < 12);
-		world.setBlock(j1 - 3, k1 - l5 - k6, l1 + k3, Block.cobblestone.blockID);
-		world.setBlock(j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 3, ((k1 - l5) + 2) - k6, l1 + k3 + 1, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 3, k1 - l5 - k6, l1 + k3 + 2, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3 + 2, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 3, ((k1 - l5) + 2) - k6, l1 + k3 + 2, Block.cobblestone.blockID);
-		world.setBlock(j1 - 3, k1 - l5 - k6, l1 + k3 + 3, Block.cobblestone.blockID);
-		world.setBlock(j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3 + 3, Block.cobblestone.blockID);
-		world.setBlock(j1 - 3, k1 - l5 - k6, l1 + k3 + 4, Block.cobblestone.blockID);
-		world.setBlock(j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3 + 4, Block.cobblestoneMossy.blockID);
-		world.setBlock(j1 - 3, k1 - l5 - k6, l1 + k3 + 5, Block.cobblestoneMossy.blockID);
+		setBlock(world,j1 - 3, k1 - l5 - k6, l1 + k3, pickBlock(random));
+		setBlock(world,j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3, pickBlock(random));
+		setBlock(world,j1 - 3, ((k1 - l5) + 2) - k6, l1 + k3 + 1, pickBlock(random));
+		setBlock(world,j1 - 3, k1 - l5 - k6, l1 + k3 + 2, pickBlock(random));
+		setBlock(world,j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3 + 2, pickBlock(random));
+		setBlock(world,j1 - 3, ((k1 - l5) + 2) - k6, l1 + k3 + 2, pickBlock(random));
+		setBlock(world,j1 - 3, k1 - l5 - k6, l1 + k3 + 3, pickBlock(random));
+		setBlock(world,j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3 + 3, pickBlock(random));
+		setBlock(world,j1 - 3, k1 - l5 - k6, l1 + k3 + 4, pickBlock(random));
+		setBlock(world,j1 - 3, ((k1 - l5) + 1) - k6, l1 + k3 + 4, pickBlock(random));
+		setBlock(world,j1 - 3, k1 - l5 - k6, l1 + k3 + 5, pickBlock(random));
 		i8 = random.nextInt(100);
 		if (i8 <= 30) {
-			world.setBlock(j1 - 3, k1 - l5 - k6 - i5 - 1, l1 + k3 + 3, Block.dirt.blockID);
-			world.setBlock(j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3, Block.chest.blockID);
+			setBlock(world,j1 - 3, k1 - l5 - k6 - i5 - 1, l1 + k3 + 3, Block.dirt.blockID);
+			setBlock(world,j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3, Block.chest.blockID);
 			ChestFiller.fillWithRares(world.getBlockTileEntity(j1 - 3, k1 - l5 - k6 - i5, l1 + k3 + 3));
 		}
 		return true;
+	}
+
+	private static int pickBlock(Random random) {
+		return random.nextBoolean() ? Block.cobblestone.blockID : Block.cobblestoneMossy.blockID;
 	}
 }
