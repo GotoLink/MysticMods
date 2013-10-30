@@ -74,14 +74,16 @@ public class Config {
 		DunRarity = config.get("General", "Mystic Dungeon Rarity", 1, "Tries per chunk : lower to make rarer").getInt();
 		String[] ID;
 		for (int i = 0; i < allows.length; i++) {
-			ID = config.get("General", allows[i], i < 2 ? "0," : "ALL,-WATER", i < 2 ? "" : "Use ALL or * for all biomes, select with biome id or biome tags, prefix with - to exclude").getString()
-					.split(",");
+			ID = config
+					.get("General", allows[i], i < 2 ? "0,[2;10]" : "ALL,-WATER",
+							i < 2 ? "Use [id1;id2] to add a range of id, prefix with - to exclude" : "Use ALL or * for all biomes, select with biome id or biome tags, prefix with - to exclude")
+					.getString().split(",");
 			allowId[i] = new HashSet();
 			if (i > 1) {
 				allowType[i - 2] = new HashSet();
 			}
 			for (String txt : ID) {
-				if (txt.startsWith("-") && i > 1) {
+				if (i > 1 && txt.startsWith("-")) {
 					txt = txt.substring(1).trim();
 					try {
 						allowId[i].remove(Integer.parseInt(txt));
@@ -89,6 +91,29 @@ public class Config {
 						try {
 							allowType[i - 2].remove(Type.valueOf(txt.toUpperCase()));
 						} catch (IllegalArgumentException l) {
+						}
+					}
+				} else if (i < 1 && txt.contains("[") && txt.contains("]")) {
+					boolean remove = txt.startsWith("-");
+					txt = txt.substring(txt.indexOf("["), txt.indexOf("]"));
+					if (txt.split(";").length == 2) {
+						try {
+							int a = Integer.parseInt(txt.split(";")[0]);
+							int b = Integer.parseInt(txt.split(";")[1]);
+							int c;
+							if (a > b) {
+								c = a;
+								a = b;
+								b = c;
+							}
+							for (int x = a; x <= b; x++) {
+								if (remove) {
+									allowId[i].remove(x);
+								} else {
+									allowId[i].add(x);
+								}
+							}
+						} catch (NumberFormatException n) {
 						}
 					}
 				} else {
