@@ -20,11 +20,11 @@ public class ItemArmorMithril extends ItemArmor {
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
 		int suffix = this.armorType == 2 ? 2 : 1;
-		return "mysticmods:textures" + "/models/armor/Mithril_layer_" + suffix + ".png";
+		return "mysticworld:textures/models/armor/Mithril_layer_" + suffix + ".png";
 	}
 
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("mysticmods:MithrilArmor_" + ArmorType);
+		itemIcon = iconRegister.registerIcon("mysticworld:MithrilArmor_" + ArmorType);
 	}
 }

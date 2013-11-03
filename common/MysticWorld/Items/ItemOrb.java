@@ -2,7 +2,11 @@ package mysticworld.items;
 
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import mysticworld.MysticWorld;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
 public class ItemOrb extends Item {
@@ -13,5 +17,10 @@ public class ItemOrb extends Item {
 		this.setMaxStackSize(1);
 		this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
 	}
 }

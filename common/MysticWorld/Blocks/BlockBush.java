@@ -103,7 +103,7 @@ public class BlockBush extends BlockFlower {
 	public void registerIcons(IconRegister iconRegister) {
 		textures = new Icon[16];
 		for (int i = 0; i < 12; i++) {
-			textures[i] = iconRegister.registerIcon("mysticmods:" + ItemBush.BUSH_TYPES[i]);
+			textures[i] = iconRegister.registerIcon("mysticworld:" + ItemBush.BUSH_TYPES[i]);
 		}
 	}
 

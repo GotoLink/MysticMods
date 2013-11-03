@@ -3,6 +3,7 @@ package mysticworld.items;
 import java.util.Random;
 
 import mysticworld.MysticWorld;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,5 +22,10 @@ public class ItemStaff extends Item {
 	@SideOnly(Side.CLIENT)
 	public boolean isFull3D() {
 		return true;
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
 	}
 }

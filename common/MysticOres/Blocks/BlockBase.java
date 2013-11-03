@@ -167,7 +167,7 @@ public class BlockBase extends Block {
 	public void registerIcons(IconRegister register) {
 		textures = new Icon[16];
 		for (int i = 0; i < ItemBase.BLOCK_NAMES.length; i++) {
-			textures[i] = register.registerIcon("mysticmods:" + ItemBase.BLOCK_NAMES[i]);
+			textures[i] = register.registerIcon("mysticores:" + ItemBase.BLOCK_NAMES[i]);
 		}
 	}
 

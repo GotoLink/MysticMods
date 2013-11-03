@@ -3,7 +3,6 @@ package mysticworld.items;
 import java.util.List;
 
 import mysticworld.MysticWorld;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -62,11 +61,5 @@ public class ItemVoidShard extends Item {
 			itemStack.damageItem(2, entityPlayer);
 		}
 		return itemStack;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("mysticmods:ShardVoid");
 	}
 }

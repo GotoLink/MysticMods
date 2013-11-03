@@ -87,7 +87,7 @@ public class BlockImbuedStone extends Block {
 	public void registerIcons(IconRegister iconRegister) {
 		textures = new Icon[16];
 		for (int i = 0; i < 5; i++) {
-			textures[i] = iconRegister.registerIcon("mysticmods" + ":" + ItemImbuedStone.IMBUED_STONE_TYPE[i] + " Imbued Stone");
+			textures[i] = iconRegister.registerIcon("mysticworld:" + ItemImbuedStone.IMBUED_STONE_TYPE[i] + " Imbued Stone");
 		}
 	}
 

@@ -1,23 +1,22 @@
 package mysticworld.client.fx;
 
+import org.lwjgl.opengl.GL11;
+
+import cpw.mods.fml.client.FMLClientHandler;
 import mysticworld.client.ClientProxy;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import org.lwjgl.opengl.GL11;
+public class PowerFX extends EntityFX {
+	private ResourceLocation textureFX;
 
-import cpw.mods.fml.client.FMLClientHandler;
-
-public class PowerEarthFX extends EntityFX {
-	public static final ResourceLocation earthFX = new ResourceLocation("mysticmods", "textures/misc/earthFX.png");
-
-	public PowerEarthFX(World world, double x, double y, double z) {
+	public PowerFX(World world, double x, double y, double z) {
 		super(world, x, y, z);
 	}
 
-	public PowerEarthFX(World world, double x, double y, double z, float scale) {
+	public PowerFX(World world, double x, double y, double z, float scale) {
 		super(world, x, y, z);
 		this.motionX *= 0.019999999552965164D;
 		this.motionY *= 0.019999999552965164D;
@@ -63,7 +62,7 @@ public class PowerEarthFX extends EntityFX {
 		GL11.glDepthMask(false);
 		GL11.glEnable(3042);
 		GL11.glBlendFunc(770, 1);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(earthFX);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(textureFX);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.75F);
 		float scale = 0.1F * this.particleScale;
 		float xPos = (float) (this.prevPosX + (this.posX - this.prevPosX) * par2 - interpPosX);
@@ -82,5 +81,10 @@ public class PowerEarthFX extends EntityFX {
 		GL11.glPopMatrix();
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(ClientProxy.particle);
 		tessellator.startDrawingQuads();
+	}
+
+	public PowerFX setTexture(String loc) {
+		textureFX = new ResourceLocation("mysticworld", "textures/misc/" + loc + "FX.png");
+		return this;
 	}
 }

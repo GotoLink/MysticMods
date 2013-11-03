@@ -16,9 +16,9 @@ public class BlockHandler {
 	public static void init() {
 		oreImbuedStone = new BlockImbuedStone(BlockIds.ORE_STONE_1).setUnlocalizedName(Strings.IMBUED_STONE_NAME);
 		bush = new BlockBush(BlockIds.BUSH).setUnlocalizedName(Strings.BUSH_NAME);
-		lightCube = new BlockLightCube(BlockIds.LIGHT_CUBE).setUnlocalizedName(Strings.LIGHT_CUBE_NAME);
-		pillarPlatform = new BlockPlatform(BlockIds.PLATFORM).setUnlocalizedName(Strings.PLATFORM_NAME);
-		pillar = new BlockPillar(BlockIds.PILLAR).setUnlocalizedName(Strings.PILLAR_NAME);
+		lightCube = new BlockLightCube(BlockIds.LIGHT_CUBE).setUnlocalizedName(Strings.LIGHT_CUBE_NAME).setTextureName("mysticworld:lightCube");
+		pillarPlatform = new BlockPlatform(BlockIds.PLATFORM).setUnlocalizedName(Strings.PLATFORM_NAME).setTextureName("mysticworld:Platform");
+		pillar = new BlockPillar(BlockIds.PILLAR).setUnlocalizedName(Strings.PILLAR_NAME).setTextureName("mysticworld:Pillar");
 		pillarInsert = new BlockPillarInsert(BlockIds.PILLAR_INSERT).setUnlocalizedName(Strings.PILLAR_INSERT_NAME);
 		registerBlocks();
 		setBlockHarvestLevels();

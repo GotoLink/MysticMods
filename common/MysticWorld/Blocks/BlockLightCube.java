@@ -5,10 +5,7 @@ import java.util.Random;
 import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockLightCube extends Block {
 	public BlockLightCube(int id) {
@@ -32,12 +29,6 @@ public class BlockLightCube extends Block {
 	public void randomDisplayTick(World world, int x, int y, int z, Random random) {
 		MysticWorld.proxy.lightCubeFX(world, x + random.nextDouble(), y + 0.75D, z + random.nextDouble(), 0.0D, 0.0D, 0.0D, 1.0F);
 		MysticWorld.proxy.lightCubeFX(world, x + random.nextDouble(), y + 0.75D, z + random.nextDouble(), 0.0D, 0.0D, 0.0D, 1.0F);
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("mysticmods:" + "lightCube");
 	}
 
 	@Override

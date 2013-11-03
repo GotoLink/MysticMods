@@ -81,6 +81,6 @@ public class ItemHandler {
 				.setUnlocalizedName(Strings.IRIDIUM_CHESTPLATE_NAME);
 		iridiumLeggings = new ItemArmorIridium(ItemIds.IRIDIUM_LEGGINGS, EnumArmor.Iridium, MysticWorld.proxy.addArmor(EnumArmor.Iridium.name()), 2).setUnlocalizedName(Strings.IRIDIUM_LEGGINGS_NAME);
 		iridiumBoots = new ItemArmorIridium(ItemIds.IRIDIUM_BOOTS, EnumArmor.Iridium, MysticWorld.proxy.addArmor(EnumArmor.Iridium.name()), 3).setUnlocalizedName(Strings.IRIDIUM_BOOTS_NAME);
-		voidShard = new ItemVoidShard(ItemIds.VOID_SHARD).setUnlocalizedName(Strings.VOID_SHARD_NAME);
+		voidShard = new ItemVoidShard(ItemIds.VOID_SHARD).setUnlocalizedName(Strings.VOID_SHARD_NAME).setTextureName("mysticworld:ShardVoid");
 	}
 }

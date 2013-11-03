@@ -20,11 +20,11 @@ public class ItemArmorVerdite extends ItemArmor {
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
 		int suffix = this.armorType == 2 ? 2 : 1;
-		return "mysticmods:textures" + "/models/armor/Verdite_layer_" + suffix + ".png";
+		return "mysticworld:textures/models/armor/Verdite_layer_" + suffix + ".png";
 	}
 
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("mysticmods:VerditeArmor_" + ArmorType);
+		itemIcon = iconRegister.registerIcon("mysticworld:VerditeArmor_" + ArmorType);
 	}
 }

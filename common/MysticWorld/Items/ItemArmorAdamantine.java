@@ -20,11 +20,11 @@ public class ItemArmorAdamantine extends ItemArmor {
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
 		int suffix = this.armorType == 2 ? 2 : 1;
-		return "mysticmods:textures" + "/models/armor/Adamantine_layer_" + suffix + ".png";
+		return "mysticworld:textures/models/armor/Adamantine_layer_" + suffix + ".png";
 	}
 
 	@Override
 	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("mysticmods:AdamantineArmor_" + ArmorType);
+		itemIcon = iconRegister.registerIcon("mysticworld:AdamantineArmor_" + ArmorType);
 	}
 }

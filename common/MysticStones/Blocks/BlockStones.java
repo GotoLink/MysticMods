@@ -51,7 +51,7 @@ public class BlockStones extends BlockMulti {
 	public void registerIcons(IconRegister iconRegister) {
 		textures = new Icon[ItemStones.STONE_TYPES.length];
 		for (int i = 0; i < textures.length; i++) {
-			textures[i] = iconRegister.registerIcon("mysticmods:" + ItemStones.STONE_TYPES[i]);
+			textures[i] = iconRegister.registerIcon("mysticstones:" + ItemStones.STONE_TYPES[i]);
 		}
 	}
 

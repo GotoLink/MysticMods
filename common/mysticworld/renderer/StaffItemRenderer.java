@@ -1,35 +1,16 @@
 package mysticworld.renderer;
 
-import mysticworld.model.ModelStaff;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.IItemRenderer;
-
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.FMLClientHandler;
+import mysticworld.model.ModelStaff;
+import net.minecraft.item.ItemStack;
 
-public class ItemStaffEarthRenderer implements IItemRenderer {
-	private final ModelStaff model;
+public class StaffItemRenderer extends BaseItemRenderer {
+	private final ModelStaff model = new ModelStaff();
 
-	public ItemStaffEarthRenderer() {
-		this.model = new ModelStaff();
-	}
-
-	@Override
-	public boolean handleRenderType(ItemStack item, ItemRenderType type) {
-		switch (type) {
-		case ENTITY:
-			return true;
-		case EQUIPPED:
-			return true;
-		case EQUIPPED_FIRST_PERSON:
-			return true;
-		case INVENTORY:
-			return true;
-		default:
-			return false;
-		}
+	public StaffItemRenderer(String loc) {
+		super("Staff" + loc);
 	}
 
 	@Override
@@ -56,13 +37,8 @@ public class ItemStaffEarthRenderer implements IItemRenderer {
 	public boolean shouldUseRenderHelper(ItemRenderType type, ItemStack item, ItemRendererHelper helper) {
 		switch (type) {
 		case ENTITY:
-			return true;
-		case EQUIPPED:
-			return false;
 		case INVENTORY:
 			return true;
-		case EQUIPPED_FIRST_PERSON:
-			return false;
 		default:
 			return false;
 		}
@@ -74,7 +50,7 @@ public class ItemStaffEarthRenderer implements IItemRenderer {
 		GL11.glScalef(scale, scale, scale);
 		GL11.glTranslatef(x, y, z);
 		GL11.glRotatef(180.0F, 0.0F, 0.0F, 0.0F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(new ResourceLocation("mysticmods:textures" + "/models/StaffEarth.png"));
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(texture);
 		model.renderModel(0.0625f);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glPopMatrix();
@@ -87,7 +63,7 @@ public class ItemStaffEarthRenderer implements IItemRenderer {
 		GL11.glTranslatef(x, y, z);
 		GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
 		GL11.glRotatef(-45.0F, 0.0F, 0.0F, 1.0F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(new ResourceLocation("mysticmods:textures" + "/models/StaffEarth.png"));
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(texture);
 		model.renderModel(0.0625f);
 		GL11.glEnable(GL11.GL_LIGHTING);
 		GL11.glPopMatrix();

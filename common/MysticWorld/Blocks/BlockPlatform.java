@@ -5,10 +5,7 @@ import java.util.Random;
 import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPlatform extends Block {
 	public BlockPlatform(int id) {
@@ -40,12 +37,6 @@ public class BlockPlatform extends Block {
 				world.spawnParticle("enchantmenttable", x + 0.5D, y + 1.0D, z + 0.5D, x + 2 - x + rand.nextFloat() - 0.5D, y + 2 - y - rand.nextFloat() - 1.0F, z - 2 - z + rand.nextFloat() - 0.5D);
 			}
 		}
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("mysticmods:" + "Platform");
 	}
 
 	@Override

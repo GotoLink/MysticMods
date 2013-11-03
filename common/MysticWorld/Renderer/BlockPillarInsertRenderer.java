@@ -10,7 +10,7 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class BlockPillarInsertRenderer implements IItemRenderer {
-	private static final ResourceLocation texture = new ResourceLocation("mysticmods:textures" + "/models/PillarInsert.png");
+	private static final ResourceLocation texture = new ResourceLocation("mysticworld", "textures/models/PillarInsert.png");
 	private final ModelPillarInsert model;
 
 	public BlockPillarInsertRenderer() {

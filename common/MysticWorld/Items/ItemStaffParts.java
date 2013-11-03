@@ -54,7 +54,7 @@ public class ItemStaffParts extends Item {
 	public void registerIcons(IconRegister iconRegister) {
 		icons = new Icon[STAFF_PARTS.length];
 		for (int i = 0; i < STAFF_PARTS.length; ++i) {
-			icons[i] = iconRegister.registerIcon("mysticmods:StaffPart_" + STAFF_PARTS[i]);
+			icons[i] = iconRegister.registerIcon("mysticworld:StaffPart_" + STAFF_PARTS[i]);
 		}
 	}
 }

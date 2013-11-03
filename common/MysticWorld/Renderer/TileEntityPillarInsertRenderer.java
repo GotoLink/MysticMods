@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class TileEntityPillarInsertRenderer extends TileEntitySpecialRenderer {
-	private static final ResourceLocation texture = new ResourceLocation("mysticmods:textures" + "/models/PillarInsert.png");
+	private static final ResourceLocation texture = new ResourceLocation("mysticworld", "textures/models/PillarInsert.png");
 	private ModelPillarInsert model;
 
 	public TileEntityPillarInsertRenderer() {

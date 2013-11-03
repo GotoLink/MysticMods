@@ -1,7 +1,6 @@
 package mysticores.items;
 
 import mysticores.MysticOres;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,7 +31,7 @@ public class ItemSatchel extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-    protected String getIconString(){
-		return "mysticmods:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1);
+	protected String getIconString() {
+		return "mysticores:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1);
 	}
 }
