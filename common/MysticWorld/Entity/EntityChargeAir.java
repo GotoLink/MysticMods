@@ -1,7 +1,6 @@
 package mysticworld.entity;
 
 import java.util.List;
-import java.util.Random;
 
 import mysticworld.MysticWorld;
 import net.minecraft.entity.Entity;
@@ -17,12 +16,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityChargeAir extends Entity {
 	public EntityPlayer shootingEntity;
-	private boolean inGround = false;
-	private int xTile = -1;
-	private int yTile = -1;
-	private int zTile = -1;
-	private int inTile = 0;
-	private int ticksAlive;
 	private int ticksInAir = 0;
 	private float particleScale = 1.0f;
 	private double powerHeight = 0.75D;
@@ -135,7 +128,6 @@ public class EntityChargeAir extends Entity {
 	}
 
 	protected void onImpact(MovingObjectPosition par1MovingObjectPosition) {
-		Random rand = new Random();
 		if (!this.worldObj.isRemote) {
 			this.worldObj.playSoundEffect(this.posX, this.posY, this.posZ, "random.explode", 4.0F, (1.0F + (this.worldObj.rand.nextFloat() - this.worldObj.rand.nextFloat()) * 0.2F) * 0.7F);
 			if (par1MovingObjectPosition.entityHit != null) {

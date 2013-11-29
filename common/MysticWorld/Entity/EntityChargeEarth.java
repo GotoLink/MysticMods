@@ -27,12 +27,6 @@ public class EntityChargeEarth extends Entity {
 	public EntityPlayer entityPlayer;
 	public EntityDragon entityDragon;
 	public EntityWither entityWither;
-	private boolean inGround = false;
-	private int xTile = -1;
-	private int yTile = -1;
-	private int zTile = -1;
-	private int inTile = 0;
-	private int ticksAlive;
 	private int ticksInAir = 0;
 
 	public EntityChargeEarth(World par1World) {

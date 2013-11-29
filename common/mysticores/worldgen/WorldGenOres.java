@@ -22,8 +22,7 @@ public class WorldGenOres implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		switch (world.provider.dimensionId) {
-		case 0:
+		if (!world.provider.isHellWorld) {
 			generateSurface(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
@@ -31,67 +30,51 @@ public class WorldGenOres implements IWorldGenerator {
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
 		for (int i = 0; i < Rarity.ADAMANTINE; i++) {
 			int Xcoord = blockX + random.nextInt(8);
-			int Ycoord = random.nextInt(16);
+			int Ycoord = random.nextInt(13) + 3;
 			int Zcoord = blockZ + random.nextInt(8);
-			if (Ycoord > 2) {
-				adamantine.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			adamantine.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.AGATE; i++) {
 			int Xcoord = blockX + random.nextInt(32);
-			int Ycoord = random.nextInt(60);
+			int Ycoord = random.nextInt(57) + 3;
 			int Zcoord = blockZ + random.nextInt(32);
-			if (Ycoord > 2) {
-				agate.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			agate.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.AMETHYST; i++) {
 			int Xcoord = blockX + random.nextInt(24);
-			int Ycoord = random.nextInt(60);
+			int Ycoord = random.nextInt(57) + 3;
 			int Zcoord = blockZ + random.nextInt(24);
-			if (Ycoord > 2) {
-				amethyst.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			amethyst.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.IRIDIUM; i++) {
 			int Xcoord = blockX + random.nextInt(16);
-			int Ycoord = random.nextInt(12);
+			int Ycoord = random.nextInt(9) + 3;
 			int Zcoord = blockZ + random.nextInt(16);
-			if (Ycoord > 2) {
-				iridium.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			iridium.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.MITHRIL; i++) {
 			int Xcoord = blockX + random.nextInt(16);
-			int Ycoord = random.nextInt(64);
+			int Ycoord = random.nextInt(61) + 3;
 			int Zcoord = blockZ + random.nextInt(16);
-			if (Ycoord > 2) {
-				mithril.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			mithril.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.TOPAZ; i++) {
 			int Xcoord = blockX + random.nextInt(16);
-			int Ycoord = random.nextInt(60);
+			int Ycoord = random.nextInt(57) + 3;
 			int Zcoord = blockZ + random.nextInt(16);
-			if (Ycoord > 2) {
-				topaz.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			topaz.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.TOURMALINE; i++) {
 			int Xcoord = blockX + random.nextInt(32);
-			int Ycoord = random.nextInt(60);
+			int Ycoord = random.nextInt(57) + 3;
 			int Zcoord = blockZ + random.nextInt(32);
-			if (Ycoord > 2) {
-				tourmaline.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			tourmaline.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.VERDITE; i++) {
 			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(20) + 80;
 			int Zcoord = blockZ + random.nextInt(16);
-			if (Ycoord > 2) {
-				verdite.generate(world, random, Xcoord, Ycoord, Zcoord);
-			}
+			verdite.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
 }

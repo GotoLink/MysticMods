@@ -16,12 +16,7 @@ import cpw.mods.fml.common.IScheduledTickHandler;
 import cpw.mods.fml.common.TickType;
 
 public class TickHandler implements IScheduledTickHandler {
-	private EnumSet ticks;
 	public static final Enchantment[] enchantmentsPick = { Enchantment.efficiency, Enchantment.fortune, Enchantment.silkTouch, Enchantment.unbreaking };
-
-	public TickHandler() {
-		this.ticks = EnumSet.of(TickType.PLAYER);
-	}
 
 	@Override
 	public String getLabel() {
@@ -35,14 +30,11 @@ public class TickHandler implements IScheduledTickHandler {
 
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
-		EntityPlayer player = (EntityPlayer) tickData[0];
-		World world = player.worldObj;
-		InventoryPlayer inventory = player.inventory;
 	}
 
 	@Override
-	public EnumSet ticks() {
-		return this.ticks;
+	public EnumSet<TickType> ticks() {
+		return EnumSet.of(TickType.PLAYER);
 	}
 
 	@Override

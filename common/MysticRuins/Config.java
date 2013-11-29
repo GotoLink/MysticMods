@@ -94,7 +94,7 @@ public class Config {
 						}
 					}
 				} else if (i < 1 && txt.contains("[") && txt.contains("]")) {
-					boolean remove = txt.startsWith("-");
+					boolean remove = txt.trim().startsWith("-");
 					txt = txt.substring(txt.indexOf("["), txt.indexOf("]"));
 					if (txt.split(";").length == 2) {
 						try {

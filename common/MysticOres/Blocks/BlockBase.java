@@ -113,11 +113,11 @@ public class BlockBase extends Block {
 		case 12:
 			return Items.Resource.itemID;
 		case 8:
-			return this.BlackSoulstoneDrops(par1, random, par3);
+			return BlackSoulstoneDrops(par1, random, par3);
 		case 9:
-			return this.BlueSoulstoneDrops(par1, random, par3);
+			return BlueSoulstoneDrops(par1, random, par3);
 		case 10:
-			return this.RedSoulstoneDrops(par1, random, par3);
+			return RedSoulstoneDrops(par1, random, par3);
 		default:
 			return blockID;
 		}

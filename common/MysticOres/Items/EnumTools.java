@@ -3,7 +3,6 @@ package mysticores.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
 
 public class EnumTools

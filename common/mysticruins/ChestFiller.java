@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
 public class ChestFiller {
-	public static List<ItemStack> rares = new ArrayList();
-	public static List<ItemStack> valuables = new ArrayList();
+	public static List<ItemStack> rares = new ArrayList<ItemStack>();
+	public static List<ItemStack> valuables = new ArrayList<ItemStack>();
 
 	public static void fillWithRares(TileEntity tile) {
 		fill(tile, rares, 2.5D);

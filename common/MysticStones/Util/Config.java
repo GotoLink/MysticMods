@@ -13,7 +13,7 @@ public class Config {
 	public static int stoneBricksID;
 	public static int reinforcedBricksID;
 	public static int[] rare = new int[keys.length];
-	public static List<Integer> allowed = new ArrayList();
+	public static List<Integer> allowed = new ArrayList<Integer>();
 
 	public static void initialize(File file) {
 		Configuration config = new Configuration(file);

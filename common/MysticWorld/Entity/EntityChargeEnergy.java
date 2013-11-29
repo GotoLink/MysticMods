@@ -17,12 +17,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityChargeEnergy extends Entity {
 	public EntityPlayer shootingEntity;
-	private boolean inGround = false;
-	private int xTile = -1;
-	private int yTile = -1;
-	private int zTile = -1;
-	private int inTile = 0;
-	private int ticksAlive;
 	private int ticksInAir = 0;
 
 	public EntityChargeEnergy(World par1World) {

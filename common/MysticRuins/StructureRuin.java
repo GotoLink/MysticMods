@@ -25,7 +25,6 @@ public class StructureRuin extends WorldGenerator {
 		}
 		int i2 = random.nextInt(3) + 1;
 		if (i2 == 1) {
-			int j2 = random.nextInt(8) + 5;
 			int i3 = random.nextInt(8) + 5;
 			int l3 = random.nextInt(8) + 5;
 			int k4 = random.nextInt(4) + 3;
