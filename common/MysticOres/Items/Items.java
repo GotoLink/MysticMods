@@ -1,5 +1,8 @@
 package mysticores.items;
 
+import java.lang.reflect.Field;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticores.MysticOres;
 import mysticores.lib.ItemID;
 import net.minecraft.item.Item;
@@ -76,5 +79,15 @@ public class Items {
 		ObsidianHoe = new ItemHoe(ItemID.OBSIDIANHOE, EnumTools.obsidianToolMaterial).setUnlocalizedName("ObsidianHoe").setTextureName("mysticores:ObsidianHoe")
 				.setCreativeTab(MysticOres.MysticOresTab);
 		Satchel = new ItemSatchel(ItemID.SATCHEL).setUnlocalizedName("Satchel");
+		try {
+			for(Field f:Items.class.getFields()){
+				Item it = (Item) f.get(null);
+				GameRegistry.registerItem(it,it.getUnlocalizedName());
+			}
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 }
