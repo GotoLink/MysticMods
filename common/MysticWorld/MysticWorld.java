@@ -6,7 +6,6 @@ import mysticworld.entity.EntityHandler;
 import mysticworld.items.ItemHandler;
 import mysticworld.lib.Booleans;
 import mysticworld.tiles.TileEntityHandler;
-import mysticworld.util.CommonProxy;
 import mysticworld.util.Config;
 import mysticworld.util.RecipeHandler;
 import mysticworld.util.Reference;

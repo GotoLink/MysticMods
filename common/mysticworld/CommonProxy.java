@@ -1,4 +1,4 @@
-package mysticworld.util;
+package mysticworld;
 
 import net.minecraft.world.World;
 

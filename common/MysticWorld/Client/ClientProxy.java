@@ -1,5 +1,6 @@
 package mysticworld.client;
 
+import mysticworld.CommonProxy;
 import mysticworld.blocks.BlockHandler;
 import mysticworld.blocks.BlockPillarInsert;
 import mysticworld.client.fx.LightCubeFX;
@@ -13,7 +14,6 @@ import mysticworld.entity.EntityChargeWater;
 import mysticworld.items.ItemHandler;
 import mysticworld.renderer.*;
 import mysticworld.tiles.TileEntityPillarInsert;
-import mysticworld.util.CommonProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
