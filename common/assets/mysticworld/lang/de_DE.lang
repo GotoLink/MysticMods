@@ -1,9 +1,9 @@
 ﻿    
-tile.imbuedStoneFire.name=Magmatischer Felsbrocken
-tile.imbuedStoneWater.name=Aquatischer Felsbrocken
-tile.imbuedStoneEarth.name=Fruchtbarer Felsbrocken
-tile.imbuedStoneAir.name=Durchlüfteter Felsbrocken
-tile.imbuedStoneEnergy.name=Kinetischer Felsbrocken
+imbuedStoneFire.name=Magmatischer Felsbrocken
+imbuedStoneWater.name=Aquatischer Felsbrocken
+imbuedStoneEarth.name=Fruchtbarer Felsbrocken
+imbuedStoneAir.name=Durchlüfteter Felsbrocken
+imbuedStoneEnergy.name=Kinetischer Felsbrocken
     
 Bush.name=Gewöhnlicher Busch
 Poisonous Bush.name=Giftiger Busch

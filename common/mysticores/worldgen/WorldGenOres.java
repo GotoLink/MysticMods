@@ -4,21 +4,21 @@ import java.util.Random;
 
 import mysticores.blocks.BlockHandler;
 import mysticores.lib.Rarity;
-import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenOres implements IWorldGenerator {
-	public static final WorldGenMinable adamantine = new WorldGenMinable(BlockHandler.BlockBase.blockID, 0, 3);
-	public static final WorldGenMinable amethyst = new WorldGenMinable(BlockHandler.BlockBase.blockID, 1, 4, Block.stone.blockID);
-	public static final WorldGenMinable iridium = new WorldGenMinable(BlockHandler.BlockBase.blockID, 2, 6, Block.stone.blockID);
-	public static final WorldGenMinable mithril = new WorldGenMinable(BlockHandler.BlockBase.blockID, 3, 6, Block.stone.blockID);
-	public static final WorldGenMinable tourmaline = new WorldGenMinable(BlockHandler.BlockBase.blockID, 4, 4, Block.stone.blockID);
-	public static final WorldGenMinable topaz = new WorldGenMinable(BlockHandler.BlockBase.blockID, 5, 4, Block.stone.blockID);
-	public static final WorldGenMinable verdite = new WorldGenMinable(BlockHandler.BlockBase.blockID, 6, 9, Block.stone.blockID);
-	public static final WorldGenMinable agate = new WorldGenMinable(BlockHandler.BlockBase.blockID, 11, 4, Block.stone.blockID);
+	public static final WorldGenMinable adamantine = new WorldGenMinable(BlockHandler.BlockBase, 0, 3, Blocks.stone);
+	public static final WorldGenMinable amethyst = new WorldGenMinable(BlockHandler.BlockBase, 1, 4, Blocks.stone);
+	public static final WorldGenMinable iridium = new WorldGenMinable(BlockHandler.BlockBase, 2, 6, Blocks.stone);
+	public static final WorldGenMinable mithril = new WorldGenMinable(BlockHandler.BlockBase, 3, 6, Blocks.stone);
+	public static final WorldGenMinable tourmaline = new WorldGenMinable(BlockHandler.BlockBase, 4, 4, Blocks.stone);
+	public static final WorldGenMinable topaz = new WorldGenMinable(BlockHandler.BlockBase, 5, 4, Blocks.stone);
+	public static final WorldGenMinable verdite = new WorldGenMinable(BlockHandler.BlockBase, 6, 9, Blocks.stone);
+	public static final WorldGenMinable agate = new WorldGenMinable(BlockHandler.BlockBase, 11, 4, Blocks.stone);
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {

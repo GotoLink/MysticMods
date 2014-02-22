@@ -2,6 +2,7 @@ package mysticores.worldgen;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -10,11 +11,11 @@ import cpw.mods.fml.common.IWorldGenerator;
 public class NetherGenMineable implements IWorldGenerator {
 	private WorldGenerator helper;
 
-	public NetherGenMineable(int blockId, int numBlocks) {
+	public NetherGenMineable(Block blockId, int numBlocks) {
 		helper = new NetherGenHelper(blockId, numBlocks);
 	}
 
-	public NetherGenMineable(int blockId, int meta, int numBlocks) {
+	public NetherGenMineable(Block blockId, int meta, int numBlocks) {
 		helper = new NetherGenHelper(blockId, meta, numBlocks);
 	}
 

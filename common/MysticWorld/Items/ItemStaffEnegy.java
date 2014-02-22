@@ -8,25 +8,22 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import org.lwjgl.input.Keyboard;
-
 public class ItemStaffEnegy extends ItemStaff {
-	public ItemStaffEnegy(int id) {
-		super(id);
+	public ItemStaffEnegy() {
+		super();
 	}
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
-		if (Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+		if (entityPlayer.isSneaking()) {
 			MovingObjectPosition movingobjectposition = this.getMovingObjectPositionFromPlayer(world, entityPlayer, true);
 			if (movingobjectposition == null) {
 				return itemStack;
 			} else {
-				if (movingobjectposition.typeOfHit == EnumMovingObjectType.TILE) {
+				if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK) {
 					int i = movingobjectposition.blockX;
 					int j = movingobjectposition.blockY;
 					int k = movingobjectposition.blockZ;
@@ -59,7 +56,7 @@ public class ItemStaffEnegy extends ItemStaff {
 						} else {
 							if (world.isAirBlock(i, j, k)) {
 								world.playSoundEffect(i + 0.5D, j + 0.5D, k + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-								world.setBlock(i, j, k, BlockHandler.lightCube.blockID);
+								world.setBlock(i, j, k, BlockHandler.lightCube);
 							}
 							itemStack.damageItem(1, entityPlayer);
 							return itemStack;
@@ -68,7 +65,7 @@ public class ItemStaffEnegy extends ItemStaff {
 				}
 			}
 		} else {
-			world.playAuxSFXAtEntity((EntityPlayer) null, 1009, (int) entityPlayer.posX, (int) entityPlayer.posY, (int) entityPlayer.posZ, 0);
+			world.playAuxSFXAtEntity(null, 1009, (int) entityPlayer.posX, (int) entityPlayer.posY, (int) entityPlayer.posZ, 0);
 			if (!world.isRemote) {
 				world.spawnEntityInWorld(new EntityChargeEnergy(world, entityPlayer));
 				itemStack.damageItem(1, entityPlayer);

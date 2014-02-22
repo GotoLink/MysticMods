@@ -17,7 +17,7 @@ public class RecipeHandler {
 	public static void craftElse() {
 		//smelting
 		for (int i = 1; i < 14; i += 2) {
-			FurnaceRecipes.smelting().addSmelting(MysticStones.stones.blockID, i, new ItemStack(MysticStones.stones, 1, i - 1), 0.1F);
+			FurnaceRecipes.smelting().func_151394_a(new ItemStack(MysticStones.stones, 1, i), new ItemStack(MysticStones.stones, 1, i - 1), 0.1F);
 		}
 	}
 

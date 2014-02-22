@@ -2,16 +2,18 @@ package mysticworld.items;
 
 import mysticworld.MysticWorld;
 import mysticworld.blocks.BlockHandler;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 public class ItemOrbEnergy extends ItemOrb {
-	public ItemOrbEnergy(int id) {
-		super(id);
+	public ItemOrbEnergy() {
+		super();
 	}
 
 	@Override
@@ -37,10 +39,10 @@ public class ItemOrbEnergy extends ItemOrb {
 		if (!entityPlayer.canPlayerEdit(par4, par5, par6, par7, itemStack)) {
 			return false;
 		} else {
-			int i1 = world.getBlockId(par4, par5, par6);
-			if (i1 == 0) {
+			Block i1 = world.getBlock(par4, par5, par6);
+			if (i1 == Blocks.air) {
 				world.playSoundEffect(par4 + 0.5D, par5 + 0.5D, par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-				world.setBlock(par4, par5, par6, BlockHandler.lightCube.blockID);
+				world.setBlock(par4, par5, par6, BlockHandler.lightCube);
 			}
 			itemStack.damageItem(1, entityPlayer);
 			return true;

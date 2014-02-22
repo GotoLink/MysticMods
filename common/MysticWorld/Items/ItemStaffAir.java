@@ -11,8 +11,8 @@ import net.minecraft.world.World;
 import org.lwjgl.input.Mouse;
 
 public class ItemStaffAir extends ItemStaff {
-	public ItemStaffAir(int id) {
-		super(id);
+	public ItemStaffAir() {
+		super();
 	}
 
 	@Override
@@ -33,13 +33,13 @@ public class ItemStaffAir extends ItemStaff {
 		ItemStack currentItem = player.inventory.getCurrentItem();
 		itemStack.stackTagCompound.setInteger("maxChargeTime", 3 * 20);
 		if (currentItem != null) {
-			if (currentItem.itemID == itemStack.itemID) {
+			if (currentItem.getItem() == itemStack.getItem()) {
 				player.fallDistance = 0.0F;
 				chargeEffect(itemStack, world, player);
 				if (!Mouse.isButtonDown(1)) {
 					if (itemStack.stackTagCompound.getInteger("chargeTime") > 0) {
 						if (!world.isRemote) {
-							world.playAuxSFXAtEntity((EntityPlayer) null, 1009, (int) player.posX, (int) player.posY, (int) player.posZ, 0);
+							world.playAuxSFXAtEntity(null, 1009, (int) player.posX, (int) player.posY, (int) player.posZ, 0);
 							world.spawnEntityInWorld(new EntityChargeAir(world, player, 1.0f + ((itemStack.stackTagCompound.getInteger("chargeTime")) * (5.0f * (1 / (float) itemStack.stackTagCompound
 									.getInteger("maxChargeTime")))), (itemStack.stackTagCompound.getInteger("chargeTime")) * (2.5D * (1.0D / itemStack.stackTagCompound.getInteger("maxChargeTime")))));
 							itemStack.damageItem(1, player);

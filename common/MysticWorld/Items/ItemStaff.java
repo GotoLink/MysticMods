@@ -3,7 +3,7 @@ package mysticworld.items;
 import java.util.Random;
 
 import mysticworld.MysticWorld;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -11,8 +11,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemStaff extends Item {
 	Random rand = new Random();
 
-	public ItemStaff(int id) {
-		super(id);
+	public ItemStaff() {
+		super();
 		this.setMaxStackSize(1);
 		this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
@@ -26,6 +26,6 @@ public class ItemStaff extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister) {
+	public void registerIcons(IIconRegister par1IconRegister) {
 	}
 }

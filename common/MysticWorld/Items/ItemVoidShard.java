@@ -12,8 +12,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemVoidShard extends Item {
-	public ItemVoidShard(int id) {
-		super(id);
+	public ItemVoidShard() {
+		super();
 		this.setMaxStackSize(1);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 		this.setMaxDamage(1);
@@ -28,7 +28,7 @@ public class ItemVoidShard extends Item {
 	}
 
 	@Override
-	public boolean hasEffect(ItemStack itemStack) {
+	public boolean hasEffect(ItemStack itemStack, int i) {
 		if (itemStack.stackTagCompound == null)
 			itemStack.setTagCompound(new NBTTagCompound());
 		if (itemStack.stackTagCompound.hasKey("filled")) {
@@ -44,7 +44,7 @@ public class ItemVoidShard extends Item {
 			itemStack.setTagCompound(new NBTTagCompound());
 		int experience = entityPlayer.experienceLevel;
 		int experienceSubtract = entityPlayer.experienceLevel - 30;
-		if (itemStack.stackTagCompound.getBoolean("filled") == false) {
+		if (!itemStack.stackTagCompound.getBoolean("filled")) {
 			if (experience > 0 && experience <= 30) {
 				entityPlayer.experienceLevel = 0;
 				itemStack.stackTagCompound.setInteger("xpStored", experience);

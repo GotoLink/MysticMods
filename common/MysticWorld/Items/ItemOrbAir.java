@@ -11,8 +11,8 @@ import net.minecraft.world.World;
 import org.lwjgl.input.Mouse;
 
 public class ItemOrbAir extends ItemOrb {
-	public ItemOrbAir(int id) {
-		super(id);
+	public ItemOrbAir() {
+		super();
 	}
 
 	@Override

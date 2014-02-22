@@ -1,9 +1,9 @@
 ﻿
-tile.imbuedStoneFire.name=Magmatic Stone Chunk 
-tile.imbuedStoneWater.name=Aquatic Stone Chunk 
-tile.imbuedStoneEarth.name=Fertile Stone Chunk 
-tile.imbuedStoneAir.name=Aerated Stone Chunk 
-tile.imbuedStoneEnergy.name=Kinetic Stone Chunk   
+imbuedStoneFire.name=Magmatic Stone Chunk
+imbuedStoneWater.name=Aquatic Stone Chunk
+imbuedStoneEarth.name=Fertile Stone Chunk
+imbuedStoneAir.name=Aerated Stone Chunk
+imbuedStoneEnergy.name=Kinetic Stone Chunk
   
 Bush.name=Mundane Bush 
 Poisonous Bush.name=Poisonous Bush 

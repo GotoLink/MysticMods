@@ -1,12 +1,13 @@
 package mysticworld.biome;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeGenBasic extends BiomeGenBase {
-	public BiomeGenBasic(int id, int blockTop, int blockFiller) {
+	public BiomeGenBasic(int id, Block blockTop, Block blockFiller) {
 		super(id);
-		this.topBlock = (byte) blockTop;
-		this.fillerBlock = (byte) blockFiller;
+		this.topBlock = blockTop;
+		this.fillerBlock = blockFiller;
 	}
 
 	public BiomeGenBasic(int id, int treesChunk, int grassChunk, int flowerChunk, int reedsChunk) {
@@ -17,9 +18,9 @@ public class BiomeGenBasic extends BiomeGenBase {
 		this.theBiomeDecorator.reedsPerChunk = reedsChunk;
 	}
 
-	public BiomeGenBasic(int id, int treesChunk, int grassChunk, int flowerChunk, int reedsChunk, int blockTop, int blockFiller) {
+	public BiomeGenBasic(int id, int treesChunk, int grassChunk, int flowerChunk, int reedsChunk, Block blockTop, Block blockFiller) {
 		this(id, treesChunk, grassChunk, flowerChunk, reedsChunk);
-		this.topBlock = (byte) blockTop;
-		this.fillerBlock = (byte) blockFiller;
+		this.topBlock = blockTop;
+		this.fillerBlock = blockFiller;
 	}
 }

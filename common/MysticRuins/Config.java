@@ -8,13 +8,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import cpw.mods.fml.common.registry.GameData;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
-import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.DungeonHooks.DungeonMob;
 
 public class Config {
@@ -25,10 +26,8 @@ public class Config {
 	public static final String[] allows = { "Ruin allowed dimension id", "Dungeon allowed dimension id", "Ruin allowed biome id", "Dungeon allowed biome id" };
 	public static Set<Type>[] allowType = new HashSet[2];
 	public static List<DungeonMob> dungeonMobs = new ArrayList<DungeonMob>();
-	public static final String commonItems = Item.pickaxeIron.itemID + "," + Item.axeIron.itemID + "," + Item.swordIron.itemID + "," + Item.shovelIron.itemID + "," + Item.ingotGold.itemID + ","
-			+ Item.ingotIron.itemID;
-	public static final String rareItems = Item.enderPearl.itemID + ":4," + Item.diamond.itemID + "," + Item.emerald.itemID + "," + Item.appleGold.itemID + "," + Item.ingotGold.itemID + ","
-			+ Item.ingotIron.itemID;
+	public static final String commonItems = "iron_pickaxe,iron_axe,iron_sword,iron_shovel,gold_ingot,iron_ingot";
+	public static final String rareItems = "ender_pearl:4,diamond,emerald,golden_apple,gold_ingot,iron_ingot";
 
 	public static void addDungeonMob(String name, int rarity) {
 		for (DungeonMob mob : dungeonMobs) {
@@ -50,7 +49,7 @@ public class Config {
 
 	public static void initialize(File file) {
 		config = new Configuration(file);
-		config.load();
+        MysticRuins.ENABLE = config.get("General", "Enable", true).getBoolean(true);
 		String[] mobs = config.get("DungeonMobs", "Spawner Type & Relative Chance", "Skeleton-50,Spider-50,Zombie-20,Cavepider-10,Blaze-1", "MobName-RelativeWeight").getString().split(",");
 		String[] mob;
 		for (String txt : mobs) {
@@ -121,12 +120,12 @@ public class Config {
 						int j = Integer.parseInt(txt.trim());
 						allowId[i].add(j);
 						if (i > 1) {
-							allowType[i - 2].addAll(Arrays.asList(BiomeDictionary.getTypesForBiome(BiomeGenBase.biomeList[j])));
+							allowType[i - 2].addAll(Arrays.asList(BiomeDictionary.getTypesForBiome(BiomeGenBase.getBiomeGenArray()[j])));
 						}
 					} catch (NumberFormatException e) {
 						if (i > 1) {
 							if (txt.equals("*") || txt.equalsIgnoreCase("ALL")) {
-								for (int j = 0; j < BiomeGenBase.biomeList.length; j++) {
+								for (int j = 0; j < BiomeGenBase.getBiomeGenArray().length; j++) {
 									allowId[i].add(j);
 								}
 								for (Type t : Type.values()) {
@@ -151,11 +150,12 @@ public class Config {
 	}
 
 	private static void setChest(String type, String list, List<ItemStack> valuables) {
-		String[] items = config.get("Chests", type, list, "itemid:stacksize:damage").getString().split(",");
+		String[] items = config.get("Chests", type, list, "itemname:stacksize:damage").getString().split(",");
 		String[] item;
 		for (String txt : items) {
 			item = txt.split(":");
-			int id = -1, amount = 1, data = 0;
+			Item id = null;
+            int amount = 1, data = 0;
 			try {
 				switch (item.length) {
 				case 3:
@@ -163,7 +163,7 @@ public class Config {
 				case 2:
 					amount = Integer.parseInt(item[1]);
 				case 1:
-					id = Integer.parseInt(item[0]);
+					id = GameData.itemRegistry.get(item[0]);
 					break;
 				default:
 					continue;
@@ -171,7 +171,7 @@ public class Config {
 			} catch (NumberFormatException n) {
 				continue;
 			}
-			if (id > 0 && amount > 0 && data >= 0) {
+			if (id != null && amount > 0 && data >= 0) {
 				valuables.add(new ItemStack(id, amount, data));
 			}
 		}

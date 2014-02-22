@@ -1,9 +1,9 @@
 package mysticworld.biome;
 
-import net.minecraft.world.biome.SpawnListEntry;
+import net.minecraft.block.Block;
 
 public class BiomeGenTundra extends BiomeGenBasic {
-	public BiomeGenTundra(int id, int treesChunk, int grassChunk, int flowerChunk, int reedsChunk, int blockTop, int blockFiller) {
+	public BiomeGenTundra(int id, int treesChunk, int grassChunk, int flowerChunk, int reedsChunk, Block blockTop, Block blockFiller) {
 		super(id, treesChunk, grassChunk, flowerChunk, reedsChunk, blockTop, blockFiller);
 		this.spawnableCreatureList.clear();
 		this.spawnableMonsterList.clear();

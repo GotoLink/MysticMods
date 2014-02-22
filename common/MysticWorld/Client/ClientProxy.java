@@ -15,6 +15,7 @@ import mysticworld.items.ItemHandler;
 import mysticworld.renderer.*;
 import mysticworld.tiles.TileEntityPillarInsert;
 import net.minecraft.client.Minecraft;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -24,11 +25,6 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 public class ClientProxy extends CommonProxy {
 	public final Minecraft mc = Minecraft.getMinecraft();
 	public static final ResourceLocation particle = new ResourceLocation("textures/particle/particles.png");
-
-	@Override
-	public int addArmor(String armor) {
-		return RenderingRegistry.addNewArmourRendererPrefix(armor);
-	}
 
 	//particles
 	@Override
@@ -64,17 +60,17 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerRenders() {
 		BlockPillarInsert.RENDER_PILLAR_INSERT = RenderingRegistry.getNextAvailableRenderId();
-		MinecraftForgeClient.registerItemRenderer(BlockHandler.pillarInsert.blockID, new BlockPillarInsertRenderer());
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireStaff.itemID, new StaffItemRenderer("Fire"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthStaff.itemID, new StaffItemRenderer("Earth"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.airStaff.itemID, new StaffItemRenderer("Air"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyStaff.itemID, new StaffItemRenderer("Energy"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterStaff.itemID, new StaffItemRenderer("Water"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireOrb.itemID, new OrbItemRenderer("Fire"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthOrb.itemID, new OrbItemRenderer("Earth"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.airOrb.itemID, new OrbItemRenderer("Air"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyOrb.itemID, new OrbItemRenderer("Energy"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterOrb.itemID, new OrbItemRenderer("Water"));
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHandler.pillarInsert), new BlockPillarInsertRenderer());
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireStaff, new StaffItemRenderer("Fire"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthStaff, new StaffItemRenderer("Earth"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.airStaff, new StaffItemRenderer("Air"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyStaff, new StaffItemRenderer("Energy"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterStaff, new StaffItemRenderer("Water"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireOrb, new OrbItemRenderer("Fire"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthOrb, new OrbItemRenderer("Earth"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.airOrb, new OrbItemRenderer("Air"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyOrb, new OrbItemRenderer("Energy"));
+		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterOrb, new OrbItemRenderer("Water"));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeFire.class, new RenderStaffPower(0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeWater.class, new RenderStaffPower(1));
 		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower(2));

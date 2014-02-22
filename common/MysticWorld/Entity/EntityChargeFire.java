@@ -6,6 +6,7 @@ import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
@@ -70,7 +71,7 @@ public class EntityChargeFire extends Entity {
 			super.onUpdate();
 			Vec3 vec3 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ);
 			Vec3 vec31 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
-			MovingObjectPosition movingobjectposition = this.worldObj.rayTraceBlocks_do_do(vec3, vec31, true, true);
+			MovingObjectPosition movingobjectposition = this.worldObj.func_147447_a(vec3, vec31, true, true, false);
 			vec3 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ);
 			vec31 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
 			if (movingobjectposition != null) {
@@ -160,7 +161,7 @@ public class EntityChargeFire extends Entity {
 					++i;
 				}
 				if (this.worldObj.isAirBlock(i, j, k)) {
-					this.worldObj.setBlock(i, j, k, Block.fire.blockID);
+					this.worldObj.setBlock(i, j, k, Blocks.fire);
 				}
 			}
 			this.setDead();

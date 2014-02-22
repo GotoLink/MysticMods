@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.Icon;
+import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -28,7 +28,7 @@ public class RenderStaffPower extends Render {
 		this.bindEntityTexture(entity);
 		GL11.glTranslatef((float) par2, (float) par4, (float) par6);
 		GL11.glEnable(GL12.GL_RESCALE_NORMAL);
-		Icon icon = ItemHandler.staffPower.getIconFromDamage(this.meta);
+		IIcon icon = ItemHandler.staffPower.getIconFromDamage(this.meta);
 		Tessellator tessellator = Tessellator.instance;
 		float f3 = icon.getMinU();
 		float f4 = icon.getMaxU();

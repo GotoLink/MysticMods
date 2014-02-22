@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -12,8 +13,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class ItemOrbFire extends ItemOrb {
-	public ItemOrbFire(int id) {
-		super(id);
+	public ItemOrbFire() {
+		super();
 	}
 
 	@Override
@@ -49,7 +50,7 @@ public class ItemOrbFire extends ItemOrb {
 		} else {
 			if (par3World.isAirBlock(par4, par5, par6)) {
 				par3World.playSoundEffect(par4 + 0.5D, par5 + 0.5D, par6 + 0.5D, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-				par3World.setBlock(par4, par5, par6, Block.fire.blockID);
+				par3World.setBlock(par4, par5, par6, Blocks.fire);
 			}
 			par1ItemStack.damageItem(1, par2EntityPlayer);
 			return true;

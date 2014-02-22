@@ -80,7 +80,4 @@ public class Strings {
 	//Tile Entity Names
 	public static final String PILLAR_INSERT_TE_NAME = "pillarInsert";
 	
-	//Config Category Names
-	public static final String ENTITY_CATEGORY = "entity";
-	
 }

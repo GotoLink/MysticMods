@@ -10,6 +10,8 @@ import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -79,7 +81,7 @@ public class EntityChargeEarth extends Entity {
 			super.onUpdate();
 			Vec3 vec3 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ);
 			Vec3 vec31 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
-			MovingObjectPosition movingobjectposition = this.worldObj.rayTraceBlocks_do_do(vec3, vec31, true, true);
+			MovingObjectPosition movingobjectposition = this.worldObj.func_147447_a(vec3, vec31, true, true, false);
 			vec3 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ);
 			vec31 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
 			if (movingobjectposition != null) {
@@ -143,15 +145,15 @@ public class EntityChargeEarth extends Entity {
 					par1MovingObjectPosition.entityHit.addVelocity(this.motionX * 1 * 0.6000000238418579D / f3, 0.1D, this.motionZ * 1 * 0.6000000238418579D / f3);
 				}
 				par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.magic, 20);
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.seeds, rand.nextInt(4))));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Block.mushroomBrown, rand.nextInt(2))));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.appleRed, rand.nextInt(2))));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Block.sapling, rand.nextInt(2), 0)));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.pumpkinSeeds, rand.nextInt(2))));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Block.sapling, rand.nextInt(2), 1)));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Block.sapling, rand.nextInt(2), 2)));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Block.sapling, rand.nextInt(2), 3)));
-				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Item.melonSeeds, rand.nextInt(3))));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Items.wheat_seeds, rand.nextInt(4))));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Blocks.brown_mushroom, rand.nextInt(2))));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Items.apple, rand.nextInt(2))));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Blocks.sapling, rand.nextInt(2), 0)));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Items.pumpkin_seeds, rand.nextInt(2))));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Blocks.sapling, rand.nextInt(2), 1)));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Blocks.sapling, rand.nextInt(2), 2)));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Blocks.sapling, rand.nextInt(2), 3)));
+				this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, this.posX, this.posY, this.posZ, new ItemStack(Items.melon_seeds, rand.nextInt(3))));
 			} else {
 				int i = par1MovingObjectPosition.blockX;
 				int j = par1MovingObjectPosition.blockY;

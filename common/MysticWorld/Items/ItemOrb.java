@@ -6,14 +6,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mysticworld.MysticWorld;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
 public class ItemOrb extends Item {
 	Random rand = new Random();
 
-	public ItemOrb(int id) {
-		super(id);
+	public ItemOrb() {
+		super();
 		this.setMaxStackSize(1);
 		this.setMaxDamage(200);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
@@ -21,6 +21,6 @@ public class ItemOrb extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister) {
+	public void registerIcons(IIconRegister par1IconRegister) {
 	}
 }

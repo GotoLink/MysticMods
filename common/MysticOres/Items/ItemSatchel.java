@@ -9,15 +9,15 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSatchel extends Item {
-	public ItemSatchel(int par1) {
-		super(par1);
+	public ItemSatchel() {
+		super();
 		setCreativeTab(MysticOres.MysticOresTab);
 		setMaxStackSize(1);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public boolean hasEffect(ItemStack par1ItemStack) {
+	public boolean hasEffect(ItemStack par1ItemStack, int i) {
 		return true;
 	}
 

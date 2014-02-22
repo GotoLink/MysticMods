@@ -4,20 +4,20 @@ import java.util.Random;
 
 import mysticstones.MysticStones;
 import mysticstones.util.Config;
-import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGeneratorStones implements IWorldGenerator {
-	public static final WorldGenMinable anorthosite = new WorldGenMinable(MysticStones.stones.blockID, 0, 24, Block.stone.blockID);
-	public static final WorldGenMinable limestone = new WorldGenMinable(MysticStones.stones.blockID, 2, 48, Block.stone.blockID);
-	public static final WorldGenMinable marble = new WorldGenMinable(MysticStones.stones.blockID, 4, 24, Block.stone.blockID);
-	public static final WorldGenMinable migmatite = new WorldGenMinable(MysticStones.stones.blockID, 6, 48, Block.stone.blockID);
-	public static final WorldGenMinable orthogneiss = new WorldGenMinable(MysticStones.stones.blockID, 8, 48, Block.stone.blockID);
-	public static final WorldGenMinable slate = new WorldGenMinable(MysticStones.stones.blockID, 10, 24, Block.stone.blockID);
-	public static final WorldGenMinable travertine = new WorldGenMinable(MysticStones.stones.blockID, 12, 24, Block.stone.blockID);
+	public static final WorldGenMinable anorthosite = new WorldGenMinable(MysticStones.stones, 0, 24, Blocks.stone);
+	public static final WorldGenMinable limestone = new WorldGenMinable(MysticStones.stones, 2, 48, Blocks.stone);
+	public static final WorldGenMinable marble = new WorldGenMinable(MysticStones.stones, 4, 24, Blocks.stone);
+	public static final WorldGenMinable migmatite = new WorldGenMinable(MysticStones.stones, 6, 48, Blocks.stone);
+	public static final WorldGenMinable orthogneiss = new WorldGenMinable(MysticStones.stones, 8, 48, Blocks.stone);
+	public static final WorldGenMinable slate = new WorldGenMinable(MysticStones.stones, 10, 24, Blocks.stone);
+	public static final WorldGenMinable travertine = new WorldGenMinable(MysticStones.stones, 12, 24, Blocks.stone);
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
