@@ -20,7 +20,6 @@ public class ItemImbuedShard extends Item {
 	public ItemImbuedShard() {
 		super();
 		this.setHasSubtypes(true);
-		this.setUnlocalizedName(Strings.IMBUED_SHARD_NAME);
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 	}
 

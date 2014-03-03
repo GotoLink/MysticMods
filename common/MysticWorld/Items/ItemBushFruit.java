@@ -28,7 +28,6 @@ public class ItemBushFruit extends ItemFood {
 		this.setCreativeTab(MysticWorld.MysticWorldTab);
 		maxStackSize = 64;
 		setAlwaysEdible();
-		setUnlocalizedName("bushFruit");
 	}
 
 	@Override

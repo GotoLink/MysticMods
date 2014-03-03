@@ -62,20 +62,20 @@ public class ClientProxy extends CommonProxy {
 		BlockPillarInsert.RENDER_PILLAR_INSERT = RenderingRegistry.getNextAvailableRenderId();
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHandler.pillarInsert), new BlockPillarInsertRenderer());
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireStaff, new StaffItemRenderer("Fire"));
+        MinecraftForgeClient.registerItemRenderer(ItemHandler.waterStaff, new StaffItemRenderer("Water"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthStaff, new StaffItemRenderer("Earth"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.airStaff, new StaffItemRenderer("Air"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyStaff, new StaffItemRenderer("Energy"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterStaff, new StaffItemRenderer("Water"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.fireOrb, new OrbItemRenderer("Fire"));
+        MinecraftForgeClient.registerItemRenderer(ItemHandler.waterOrb, new OrbItemRenderer("Water"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.earthOrb, new OrbItemRenderer("Earth"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.airOrb, new OrbItemRenderer("Air"));
 		MinecraftForgeClient.registerItemRenderer(ItemHandler.energyOrb, new OrbItemRenderer("Energy"));
-		MinecraftForgeClient.registerItemRenderer(ItemHandler.waterOrb, new OrbItemRenderer("Water"));
-		RenderingRegistry.registerEntityRenderingHandler(EntityChargeFire.class, new RenderStaffPower(0));
-		RenderingRegistry.registerEntityRenderingHandler(EntityChargeWater.class, new RenderStaffPower(1));
-		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower(2));
-		RenderingRegistry.registerEntityRenderingHandler(EntityChargeAir.class, new RenderStaffPower(3));
-		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEnergy.class, new RenderStaffPower(4));
+		RenderingRegistry.registerEntityRenderingHandler(EntityChargeFire.class, new RenderStaffPower("Fire"));
+		RenderingRegistry.registerEntityRenderingHandler(EntityChargeWater.class, new RenderStaffPower("Water"));
+		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEarth.class, new RenderStaffPower("Earth"));
+		RenderingRegistry.registerEntityRenderingHandler(EntityChargeAir.class, new RenderStaffPower("Air"));
+		RenderingRegistry.registerEntityRenderingHandler(EntityChargeEnergy.class, new RenderStaffPower("Energy"));
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPillarInsert.class, new TileEntityPillarInsertRenderer());
 	}
 

@@ -3,9 +3,6 @@ package mysticworld;
 import net.minecraft.world.World;
 
 public class CommonProxy {
-	public int addArmor(String armor) {
-		return 0;
-	}
 
 	public void airFeetFX(World worldObj, double x, double y, double z, float scale, int age) {
 	}
