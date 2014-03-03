@@ -38,11 +38,11 @@ public class RecipeManager {
 	private static void recipes() {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.glass, 1), "##", "##", '#', OreDictManager.INGOTS[11]));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.obsidian, 1), "##", "##", '#', OreDictManager.INGOTS[12]));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 8, 7), "XXX", "XOX", "XXX", Character.valueOf('X'), Blocks.dirt, Character.valueOf('O'),
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 8, 7), "XXX", "XOX", "XXX", 'X', Blocks.dirt, 'O',
 				OreDictManager.INGOTS[6]));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 16, 7), "XXX", "XOX", "XXX", Character.valueOf('X'), OreDictManager.ORES[3], Character.valueOf('O'),
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 16, 7), "XXX", "XOX", "XXX", 'X', OreDictManager.ORES[3], 'O',
 				OreDictManager.INGOTS[6]));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 8, 3), "XXX", "XOX", "XXX", Character.valueOf('X'), Blocks.dirt, Character.valueOf('O'),
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 8, 3), "XXX", "XOX", "XXX", 'X', Blocks.dirt, 'O',
 				OreDictManager.INGOTS[8]));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 8, 12), "###", "#D#", "###", '#', OreDictManager.INGOTS[11], 'D', OreDictManager.INGOTS[12]));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(BlockHandler.BlockBase, 1, 7), "##", "##", '#', OreDictManager.INGOTS[10]));

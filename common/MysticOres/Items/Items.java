@@ -20,7 +20,7 @@ public class Items {
 	public static Item Satchel;
 
 	public static void initialize() {
-		Resource = new ItemResource();
+		Resource = new ItemResource().setUnlocalizedName("mysticores:resources");
 		VerditeSword = new ItemSword(EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeSword").setTextureName("mysticores:VerditeSword")
 				.setCreativeTab(MysticOres.MysticOresTab);
 		VerditePickaxe = new ItemPick(EnumTools.verditeToolMaterial).setUnlocalizedName("VerditePickaxe").setTextureName("mysticores:VerditePickaxe")
@@ -81,10 +81,7 @@ public class Items {
 				Item it = (Item) f.get(null);
 				GameRegistry.registerItem(it,it.getUnlocalizedName());
 			}
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
 		}
 	}
 }
