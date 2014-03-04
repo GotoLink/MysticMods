@@ -69,17 +69,17 @@ public class Config {
 			build.append(",");
 		}
 		config.addCustomCategoryComment("General", build.toString());
-		RuinRarity = config.get("General", "Ruin Rarity", 2, "Tries per chunk : lower to make rarer").getInt();
-		DunRarity = config.get("General", "Mystic Dungeon Rarity", 1, "Tries per chunk : lower to make rarer").getInt();
+		RuinRarity = config.get("General", "Ruin Rarity", 200, "Chance per chunk : lower to make rarer").getInt();
+		DunRarity = config.get("General", "Mystic Dungeon Rarity", 100, "Chance per chunk : lower to make rarer").getInt();
 		String[] ID;
 		for (int i = 0; i < allows.length; i++) {
 			ID = config
 					.get("General", allows[i], i < 2 ? "0,[2;10]" : "ALL,-WATER",
 							i < 2 ? "Use [id1;id2] to add a range of id, prefix with - to exclude" : "Use ALL or * for all biomes, select with biome id or biome tags, prefix with - to exclude")
 					.getString().split(",");
-			allowId[i] = new HashSet();
+			allowId[i] = new HashSet<Integer>();
 			if (i > 1) {
-				allowType[i - 2] = new HashSet();
+				allowType[i - 2] = new HashSet<Type>();
 			}
 			for (String txt : ID) {
 				if (i > 1 && txt.startsWith("-")) {
