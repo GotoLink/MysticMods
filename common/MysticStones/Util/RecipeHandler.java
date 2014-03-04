@@ -6,7 +6,6 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeHandler {
@@ -33,11 +32,9 @@ public class RecipeHandler {
 	}
 
 	public static void craftReinforced() {
-		if (Loader.isModLoaded("MysticOres")) {
-			for (int i = 0; i < MATERIALS.length; i++) {
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MysticStones.reinforcedBricks, 1, i), true, "#$#", "$$$", "#$#", '$', MATERIALS[i], '#', "stone"));
-			}
-		}
+        for (int i = 0; i < MATERIALS.length; i++) {
+            GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MysticStones.reinforcedBricks, 1, i), true, "#$#", "$$$", "#$#", '$', MATERIALS[i], '#', "stone"));
+        }
 	}
 
 	public static void craftStoneBricks() {

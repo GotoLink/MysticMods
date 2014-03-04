@@ -9,7 +9,82 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RecipeManager {
+    private static HashMap<Object,ItemStack> agateConverted = new HashMap<Object, ItemStack>();
+    static{
+        agateConverted.put("stone",new ItemStack(net.minecraft.init.Items.slime_ball,8));
+        agateConverted.put(new ItemStack(Blocks.sand),new ItemStack(Blocks.grass,8));
+        agateConverted.put(new ItemStack(net.minecraft.init.Items.reeds),new ItemStack(net.minecraft.init.Items.wheat,16));
+        agateConverted.put(new ItemStack(net.minecraft.init.Items.slime_ball),new ItemStack(Blocks.cactus,32));
+        agateConverted.put("shardGlass",new ItemStack(net.minecraft.init.Items.flint,8));
+        agateConverted.put("plankWood",new ItemStack(Blocks.bookshelf,8));
+        agateConverted.put("stickWood",new ItemStack(net.minecraft.init.Items.leather,8));
+        agateConverted.put(new ItemStack(Blocks.dirt),new ItemStack(BlockHandler.BlockBase, 8, 7));
+        agateConverted.put(new ItemStack(net.minecraft.init.Items.egg),new ItemStack(net.minecraft.init.Items.wheat_seeds, 32));
+        agateConverted.put(new ItemStack(Blocks.gravel),new ItemStack(Blocks.coal_ore,8));
+        agateConverted.put(new ItemStack(net.minecraft.init.Items.wheat_seeds),new ItemStack(Blocks.deadbush, 8));
+        agateConverted.put(new ItemStack(Blocks.glass),new ItemStack(Blocks.wool,8,0));
+        agateConverted.put(new ItemStack(net.minecraft.init.Items.iron_ingot),new ItemStack(Items.Resource, 16, 0));
+        agateConverted.put("oreGold",new ItemStack(BlockHandler.BlockBase, 16, 7));
+        agateConverted.put("cobblestone",new ItemStack(Blocks.mossy_cobblestone, 8, 0));
+        agateConverted.put("treeSapling",new ItemStack(net.minecraft.init.Items.wheat_seeds,16,0));
+    }
+    private static HashMap<Object,ItemStack> amethystConverted = new HashMap<Object, ItemStack>();
+    static{
+        amethystConverted.put(new ItemStack(net.minecraft.init.Items.egg), new ItemStack(net.minecraft.init.Items.cookie, 8));
+        amethystConverted.put("plankWood", new ItemStack(Blocks.noteblock, 8));
+        amethystConverted.put("shardObsidian", new ItemStack(Items.Resource, 8, 4));
+        amethystConverted.put("stickWood", new ItemStack(Items.Resource, 8, 13));
+        amethystConverted.put(new ItemStack(Blocks.dirt), new ItemStack(Blocks.iron_ore, 8));
+        amethystConverted.put(new ItemStack(Blocks.brick_block), new ItemStack(Blocks.tnt, 8));
+        amethystConverted.put("treeSapling", new ItemStack(Blocks.leaves, 16));
+        amethystConverted.put("oreRedstone", new ItemStack(Blocks.diamond_ore, 4));
+        amethystConverted.put(new ItemStack(net.minecraft.init.Items.slime_ball), new ItemStack(net.minecraft.init.Items.cake));
+        amethystConverted.put(new ItemStack(Blocks.glass), new ItemStack(Blocks.lit_pumpkin, 8));
+        amethystConverted.put("shardGlass", new ItemStack(Items.Resource, 8, 12));
+        amethystConverted.put("stone", new ItemStack(Blocks.monster_egg, 8));
+        amethystConverted.put(new ItemStack(Blocks.lapis_block), new ItemStack(net.minecraft.init.Items.diamond, 8));
+        amethystConverted.put(new ItemStack(Blocks.sand), new ItemStack(Blocks.gold_ore, 16));
+        amethystConverted.put(new ItemStack(net.minecraft.init.Items.reeds), new ItemStack(net.minecraft.init.Items.book, 8));
+    }
+    private static HashMap<Object, ItemStack> tourmalineConverted = new HashMap<Object, ItemStack>();
+    static{
+        tourmalineConverted.put(new ItemStack(Blocks.sand), new ItemStack(Blocks.glass, 16));
+        tourmalineConverted.put("oreCoal", new ItemStack(Blocks.lapis_ore, 8));
+        tourmalineConverted.put(new ItemStack(net.minecraft.init.Items.egg), new ItemStack(net.minecraft.init.Items.sugar, 16));
+        tourmalineConverted.put(new ItemStack(net.minecraft.init.Items.wheat_seeds), new ItemStack(Blocks.brown_mushroom, 8));
+        tourmalineConverted.put(new ItemStack(Blocks.glass), new ItemStack(Blocks.snow_layer, 8));
+        tourmalineConverted.put("stone", new ItemStack(Blocks.glass, 8));
+        tourmalineConverted.put(new ItemStack(Blocks.iron_block), new ItemStack(Blocks.lapis_block, 8));
+        tourmalineConverted.put("plankWood", new ItemStack(Blocks.sandstone, 16));
+        tourmalineConverted.put("stickWood", new ItemStack(net.minecraft.init.Items.string, 8));
+        tourmalineConverted.put(new ItemStack(Blocks.snow), new ItemStack(Blocks.ice, 8));
+        tourmalineConverted.put("treeSapling", new ItemStack(net.minecraft.init.Items.reeds, 8));
+        tourmalineConverted.put(new ItemStack(Blocks.dirt), new ItemStack(Blocks.snow, 8));
+        tourmalineConverted.put(new ItemStack(net.minecraft.init.Items.reeds), new ItemStack(net.minecraft.init.Items.snowball, 16));
+        tourmalineConverted.put(new ItemStack(net.minecraft.init.Items.slime_ball), new ItemStack(net.minecraft.init.Items.clay_ball, 16));
+    }
+    private static HashMap<Object, ItemStack> topazeConverted = new HashMap<Object, ItemStack>();
+    static{
+        topazeConverted.put("stone", new ItemStack(Blocks.sandstone, 16));
+        topazeConverted.put(new ItemStack(Blocks.iron_block), new ItemStack(Blocks.gold_block, 8));
+        topazeConverted.put(new ItemStack(Blocks.sand), new ItemStack(Blocks.sponge, 8));
+        topazeConverted.put("oreLapis", new ItemStack(Blocks.redstone_ore, 8));
+        topazeConverted.put(new ItemStack(net.minecraft.init.Items.egg), new ItemStack(net.minecraft.init.Items.feather, 32));
+        topazeConverted.put(new ItemStack(net.minecraft.init.Items.wheat), new ItemStack(Blocks.red_mushroom, 8));
+        topazeConverted.put(new ItemStack(Blocks.glass), new ItemStack(Blocks.glowstone, 8));
+        topazeConverted.put("shardObsidian", new ItemStack(Items.Resource, 16, 11));
+        topazeConverted.put("cobblestone", new ItemStack(Blocks.netherrack, 16));
+        topazeConverted.put("treeSapling", new ItemStack(Blocks.log, 16));
+        topazeConverted.put(new ItemStack(Blocks.dirt), new ItemStack(Blocks.iron_ore, 8));
+        topazeConverted.put(new ItemStack(net.minecraft.init.Items.reeds), new ItemStack(net.minecraft.init.Items.apple, 1));
+        topazeConverted.put("shardGlass", new ItemStack(net.minecraft.init.Items.arrow, 32));
+        topazeConverted.put("plankWood", new ItemStack(Blocks.wooden_door, 8));
+        topazeConverted.put("stickWood", new ItemStack(net.minecraft.init.Items.bone, 8));
+    }
 	public static void initialize() {
 		recipes();
 		toolRecipes();
@@ -23,7 +98,7 @@ public class RecipeManager {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.Resource, 2, 10), OreDictManager.INGOTS[9], OreDictManager.INGOTS[10]));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(net.minecraft.init.Items.gunpowder, 2), OreDictManager.INGOTS[9], net.minecraft.init.Items.gunpowder));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.Resource, 2, 4), OreDictManager.INGOTS[9], OreDictManager.INGOTS[4]));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Blocks.coal_ore, 2), OreDictManager.INGOTS[9], Blocks.coal_ore));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Blocks.coal_ore, 2), OreDictManager.INGOTS[9], "oreCoal"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Blocks.iron_ore, 3), OreDictManager.INGOTS[9], "oreIron"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Blocks.gold_ore, 3), OreDictManager.INGOTS[9], "oreGold"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Blocks.redstone_ore, 2), OreDictManager.INGOTS[9], "oreRedstone"));
@@ -54,6 +129,18 @@ public class RecipeManager {
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.Resource, 4, 11), Blocks.glass);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.Resource, 4, 12), Blocks.obsidian);
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.Resource, 8, 9), OreDictManager.INGOTS[5], OreDictManager.INGOTS[7], OreDictManager.INGOTS[8], OreDictManager.INGOTS[6]));
+        for(Map.Entry<Object,ItemStack> entry:agateConverted.entrySet()){
+            GameRegistry.addRecipe(new ShapedOreRecipe(entry.getValue(), "###", "#o#", "###", 'o', "gemAgate", '#', entry.getKey()));
+        }
+        for(Map.Entry<Object,ItemStack> entry:amethystConverted.entrySet()){
+            GameRegistry.addRecipe(new ShapedOreRecipe(entry.getValue(), "###", "#o#", "###", 'o', "gemAmethyst", '#', entry.getKey()));
+        }
+        for(Map.Entry<Object,ItemStack> entry:tourmalineConverted.entrySet()){
+            GameRegistry.addRecipe(new ShapedOreRecipe(entry.getValue(), "###", "#o#", "###", 'o', "gemTourmaline", '#', entry.getKey()));
+        }
+        for(Map.Entry<Object,ItemStack> entry:topazeConverted.entrySet()){
+            GameRegistry.addRecipe(new ShapedOreRecipe(entry.getValue(), "###", "#o#", "###", 'o', "gemTopaz", '#', entry.getKey()));
+        }
 	}
 
 	private static void smelting() {
