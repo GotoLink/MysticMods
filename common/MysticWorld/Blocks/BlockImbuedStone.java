@@ -45,11 +45,13 @@ public class BlockImbuedStone extends Block {
 	}
 
 	@Override
+    @SideOnly(Side.CLIENT)
 	public IIcon getIcon(int side, int meta) {
 		return textures[meta];
 	}
 
 	@Override
+    @SideOnly(Side.CLIENT)
 	public void getSubBlocks(Item i, CreativeTabs tab, List list) {
 		for (int j = 0; j < 5; j++) {
 			list.add(new ItemStack(i, 1, j));

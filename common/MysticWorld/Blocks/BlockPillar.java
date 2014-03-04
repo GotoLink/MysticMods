@@ -3,7 +3,6 @@ package mysticworld.blocks;
 import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.world.IBlockAccess;
 
 public class BlockPillar extends Block {
 	public BlockPillar() {

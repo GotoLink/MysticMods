@@ -35,6 +35,7 @@ public class BlockPillarInsert extends Block {
 	}
 
 	@Override
+    @SideOnly(Side.CLIENT)
 	public int getRenderBlockPass() {
 		return 1;
 	}

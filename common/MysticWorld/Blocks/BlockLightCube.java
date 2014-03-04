@@ -2,6 +2,8 @@ package mysticworld.blocks;
 
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mysticworld.MysticWorld;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -22,6 +24,7 @@ public class BlockLightCube extends Block {
 	}
 
 	@Override
+    @SideOnly(Side.CLIENT)
 	public void randomDisplayTick(World world, int x, int y, int z, Random random) {
 		MysticWorld.proxy.lightCubeFX(world, x + random.nextDouble(), y + 0.75D, z + random.nextDouble(), 0.0D, 0.0D, 0.0D, 1.0F);
 		MysticWorld.proxy.lightCubeFX(world, x + random.nextDouble(), y + 0.75D, z + random.nextDouble(), 0.0D, 0.0D, 0.0D, 1.0F);
