@@ -167,4 +167,10 @@ public class EntityChargeEnergy extends Entity {
 	@Override
 	protected void writeEntityToNBT(NBTTagCompound nbttagcompound) {
 	}
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean isInRangeToRenderDist(double par1){
+        return par1 > 1.0D && super.isInRangeToRenderDist(par1);
+    }
 }
