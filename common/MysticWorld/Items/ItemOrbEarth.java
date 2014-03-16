@@ -30,7 +30,7 @@ public class ItemOrbEarth extends ItemOrb {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		EntityPlayer player = (EntityPlayer) entity;
-		if (!world.isRemote && par5) {
+		if (par5) {
 			MysticWorld.proxy.earthFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 	}

@@ -8,8 +8,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import org.lwjgl.input.Mouse;
-
 public class ItemOrbAir extends ItemOrb {
 	public ItemOrbAir() {
 		super();
@@ -25,6 +23,18 @@ public class ItemOrbAir extends ItemOrb {
 		return itemStack;
 	}
 
+    @Override
+    public void onPlayerStoppedUsing(ItemStack itemStack, World world, EntityPlayer player, int par4) {
+        if (itemStack.stackTagCompound.getInteger("chargeTime") > 0) {
+            if (player.onGround) {
+                world.playSoundEffect(player.posX, player.posY, player.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                player.setVelocity(0.0D, 1.0D + (itemStack.stackTagCompound.getInteger("chargeTime")) * (2.5D * (1.0D / itemStack.stackTagCompound.getInteger("maxChargeTime"))), 0.0D);
+                itemStack.damageItem(1, player);
+            }
+        }
+        resetData(itemStack);
+    }
+
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		if (itemStack.stackTagCompound == null)
@@ -36,16 +46,7 @@ public class ItemOrbAir extends ItemOrb {
 			if (par5) {
 				player.fallDistance = 0.0F;
 				chargeEffect(itemStack, world, player);
-				if (!Mouse.isButtonDown(1)) {
-					if (itemStack.stackTagCompound.getInteger("chargeTime") > 0) {
-						if (player.onGround) {
-							world.playSoundEffect(player.posX, player.posY, player.posZ, "fire.ignite", 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-							player.setVelocity(0.0D, 1.0D + (itemStack.stackTagCompound.getInteger("chargeTime")) * (2.5D * (1.0D / itemStack.stackTagCompound.getInteger("maxChargeTime"))), 0.0D);
-							itemStack.damageItem(1, player);
-						}
-					}
-					resetData(itemStack);
-				} else {
+				if (player.isUsingItem()) {
 					if (itemStack.stackTagCompound.getBoolean("charging")) {
 						incrementData(itemStack);
 					}
@@ -71,8 +72,7 @@ public class ItemOrbAir extends ItemOrb {
 	private void chargeEffect(ItemStack itemStack, World world, EntityPlayer player) {
 		double particleX = (player.posX - 0.5D) + rand.nextDouble();
 		double particleZ = (player.posZ - 0.5D) + rand.nextDouble();
-		if (!world.isRemote)
-			MysticWorld.proxy.airFeetFX(world, particleX, player.posY, particleZ, 1.0f, 15);
+        MysticWorld.proxy.airFeetFX(world, particleX, player.posY, particleZ, 1.0f, 15);
 	}
 
 	private void incrementData(ItemStack itemStack) {
@@ -93,7 +93,6 @@ public class ItemOrbAir extends ItemOrb {
 		double particleY = player.posY;
 		double particleZ = player.posZ + (MathHelper.sin(itemStack.stackTagCompound.getFloat("angle"))) * itemStack.stackTagCompound.getDouble("radius");
 		float particleScale = ((itemStack.stackTagCompound.getInteger("chargeTime")) * (5.0f * (1 / (float) itemStack.stackTagCompound.getInteger("maxChargeTime"))));
-		if (!world.isRemote)
-			MysticWorld.proxy.airFeetFX(world, particleX, particleY, particleZ, 1.0f + particleScale, 15);
+        MysticWorld.proxy.airFeetFX(world, particleX, particleY, particleZ, 1.0f + particleScale, 15);
 	}
 }

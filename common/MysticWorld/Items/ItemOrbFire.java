@@ -1,7 +1,6 @@
 package mysticworld.items;
 
 import mysticworld.MysticWorld;
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -67,10 +66,9 @@ public class ItemOrbFire extends ItemOrb {
 
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
-		EntityPlayer player = (EntityPlayer) entity;
-		if (!world.isRemote && par5) {
-			player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-			MysticWorld.proxy.fireFX(world, (player.posX - 0.5D) + rand.nextDouble(), player.posY, (player.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+		if (entity instanceof EntityPlayer && par5) {
+            ((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
+			MysticWorld.proxy.fireFX(world, (entity.posX - 0.5D) + rand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + rand.nextDouble(), 1.0F);
 		}
 	}
 }
