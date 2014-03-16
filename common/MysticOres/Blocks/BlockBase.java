@@ -13,6 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Facing;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.IBlockAccess;
@@ -178,12 +179,11 @@ public class BlockBase extends Block {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int par) {
+	public boolean shouldSideBeRendered(IBlockAccess world, int x, int y, int z, int side) {
 		int meta = world.getBlockMetadata(x, y, z);
-		Block blockID = world.getBlock(x, y, z);
-		if (meta == 12 && blockID == this)
-			return false;
-		else
+		if (meta == 12 && world.getBlock(x, y, z) == this){
+            return !(world.getBlock(x-Facing.offsetsXForSide[side], y-Facing.offsetsYForSide[side], z-Facing.offsetsZForSide[side])==this&&world.getBlockMetadata(x-Facing.offsetsXForSide[side], y-Facing.offsetsYForSide[side], z-Facing.offsetsZForSide[side])==meta);
+        }else
 			return true;
 	}
 
