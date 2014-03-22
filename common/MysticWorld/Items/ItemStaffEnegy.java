@@ -79,7 +79,7 @@ public class ItemStaffEnegy extends ItemStaff {
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof EntityPlayer && par5) {
             ((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 20, 2));
-			MysticWorld.proxy.energyFX(world, (entity.posX - 0.5D) + rand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+			MysticWorld.proxy.energyFX(world, (entity.posX - 0.5D) + itemRand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + itemRand.nextDouble(), 1.0F);
 		}
 	}
 }

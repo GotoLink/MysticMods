@@ -68,7 +68,7 @@ public class ItemOrbFire extends ItemOrb {
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		if (entity instanceof EntityPlayer && par5) {
             ((EntityPlayer)entity).addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 20, 0));
-			MysticWorld.proxy.fireFX(world, (entity.posX - 0.5D) + rand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+			MysticWorld.proxy.fireFX(world, (entity.posX - 0.5D) + itemRand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + itemRand.nextDouble(), 1.0F);
 		}
 	}
 }

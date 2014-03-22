@@ -88,7 +88,7 @@ public class ItemStaffWater extends ItemStaff {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		if (par5) {
-			MysticWorld.proxy.waterFX(world, (entity.posX - 0.5D) + rand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+			MysticWorld.proxy.waterFX(world, (entity.posX - 0.5D) + itemRand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + itemRand.nextDouble(), 1.0F);
 		}
 	}
 }

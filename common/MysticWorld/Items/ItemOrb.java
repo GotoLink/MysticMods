@@ -1,7 +1,5 @@
 package mysticworld.items;
 
-import java.util.Random;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -10,8 +8,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
 public class ItemOrb extends Item {
-	Random rand = new Random();
-
 	public ItemOrb() {
 		super();
 		this.setMaxStackSize(1);
