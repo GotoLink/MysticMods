@@ -4,7 +4,6 @@ import mysticworld.MysticWorld;
 import mysticworld.entity.EntityChargeEarth;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -54,11 +53,11 @@ public class ItemStaffEarth extends ItemStaff {
 	@Override
 	public void onUpdate(ItemStack itemStack, World world, Entity entity, int par4, boolean par5) {
 		if (par5) {
-			MysticWorld.proxy.earthFX(world, (entity.posX - 0.5D) + rand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + rand.nextDouble(), 1.0F);
+			MysticWorld.proxy.earthFX(world, (entity.posX - 0.5D) + itemRand.nextDouble(), entity.posY, (entity.posZ - 0.5D) + itemRand.nextDouble(), 1.0F);
 		}
 	}
 
 	public static boolean applyBonemeal(ItemStack itemStack, World par1World, int par2, int par3, int par4, EntityPlayer player) {
-		return ItemDye.applyBonemeal(itemStack, par1World, par2, par3, par4, player);
+		return ItemOrbEarth.applyBonemeal(itemStack, par1World, par2, par3, par4, player);
 	}
 }
