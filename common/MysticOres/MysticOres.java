@@ -5,9 +5,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 import mysticores.blocks.BlockHandler;
 import mysticores.items.Items;
 import mysticores.util.ConfigurationManager;
-import mysticores.util.OreDictManager;
 import mysticores.util.RecipeManager;
-import mysticores.worldgen.GeneratorManager;
+import mysticores.worldgen.WorldGenOres;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +16,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = "mysticores", name = "Mystic Ores", version = "0.1")
 public class MysticOres implements IFuelHandler {
@@ -37,6 +37,10 @@ public class MysticOres implements IFuelHandler {
             return 7;
         }
     };
+    public static final String[] INGOTS = { "ingotVerdite", "ingotMithril", "ingotAdamantine", "ingotIridium", "fuelIridium", "gemTourmaline", "gemAgate", "gemTopaz", "gemAmethyst", "dustMystic",
+            " shardBloodstone", "shardGlass", "shardObsidian", "rodObsidian" };
+    public static final String[] ORES = { "oreAdamantine", "oreAmethyst", "oreIridium", "oreMithril", "oreSapphire", "oreTopaz", "oreVerdite", "oreBloodstone", "oreBlackSoulstone",
+            "oreBlueSoulstone", "oreRedSoulstone", "oreAgate" };
 
 	@Override
 	public int getBurnTime(ItemStack fuel) {
@@ -52,9 +56,14 @@ public class MysticOres implements IFuelHandler {
         if(ENABLE){
             BlockHandler.initialize();
             Items.initialize();
-            OreDictManager.initialize();
+            for (int i = 0; i < INGOTS.length; i++) {
+                OreDictionary.registerOre(INGOTS[i], new ItemStack(Items.Resource, 1, i));
+            }
+            for (int i = 0; i < ORES.length; i++) {
+                OreDictionary.registerOre(ORES[i], new ItemStack(BlockHandler.BlockBase, 1, i));
+            }
             RecipeManager.initialize();
-            GeneratorManager.initialize();
+            GameRegistry.registerWorldGenerator(new WorldGenOres(), 100);
             GameRegistry.registerFuelHandler(this);
         }
 	}

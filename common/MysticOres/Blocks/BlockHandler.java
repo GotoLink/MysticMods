@@ -12,7 +12,6 @@ public class BlockHandler {
 	public static Block BlockBase;
 
 	public static void initialize() {
-		BlockBase = new BlockBase().setStepSound(Block.soundTypeStone);
-		GameRegistry.registerBlock(BlockBase, ItemBase.class, "Base Blocks", "mysticores", BLOCK_NAMES);
+		BlockBase = GameRegistry.registerBlock(new BlockBase().setStepSound(Block.soundTypeStone), ItemBase.class, "Base Blocks", "mysticores", BLOCK_NAMES);
 	}
 }

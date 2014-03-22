@@ -19,12 +19,18 @@ public class WorldGenOres implements IWorldGenerator {
 	public static final WorldGenMinable topaz = new WorldGenMinable(BlockHandler.BlockBase, 5, 4, Blocks.stone);
 	public static final WorldGenMinable verdite = new WorldGenMinable(BlockHandler.BlockBase, 6, 9, Blocks.stone);
 	public static final WorldGenMinable agate = new WorldGenMinable(BlockHandler.BlockBase, 11, 4, Blocks.stone);
+    public static final NetherGenHelper bloodstone = new NetherGenHelper(BlockHandler.BlockBase, 7, Rarity.BLOODSTONE + 1);
+    public static final NetherGenHelper blackSoulstone = new NetherGenHelper(BlockHandler.BlockBase, 8, Rarity.BLACKSOULSTONE + 1);
+    public static final NetherGenHelper blueSoulstone = new NetherGenHelper(BlockHandler.BlockBase, 9, Rarity.BLUESOULSTONE + 1);
+    public static final NetherGenHelper redSoulstone = new NetherGenHelper(BlockHandler.BlockBase, 10, Rarity.REDSOULSTONE);
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		if (!world.provider.isHellWorld) {
 			generateSurface(world, random, chunkX * 16, chunkZ * 16);
-		}
+		}else{
+            generateNether(world, random, chunkX * 16, chunkZ * 16);
+        }
 	}
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
@@ -77,4 +83,31 @@ public class WorldGenOres implements IWorldGenerator {
 			verdite.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 	}
+
+    private void generateNether(World world, Random random, int i, int j) {
+        for (int j1 = 0; j1 < 50; j1++) {
+            int Xcoordinate = i + random.nextInt(16);
+            int Zcoordinate = j + random.nextInt(16);
+            int Ycoordinate = random.nextInt(256);
+            bloodstone.generate(world, random, Xcoordinate, Ycoordinate, Zcoordinate);
+        }
+        for (int j1 = 0; j1 < 50; j1++) {
+            int Xcoordinate = i + random.nextInt(16);
+            int Zcoordinate = j + random.nextInt(16);
+            int Ycoordinate = random.nextInt(256);
+            blackSoulstone.generate(world, random, Xcoordinate, Ycoordinate, Zcoordinate);
+        }
+        for (int j1 = 0; j1 < 50; j1++) {
+            int Xcoordinate = i + random.nextInt(16);
+            int Zcoordinate = j + random.nextInt(16);
+            int Ycoordinate = random.nextInt(256);
+            blueSoulstone.generate(world, random, Xcoordinate, Ycoordinate, Zcoordinate);
+        }
+        for (int j1 = 0; j1 < 50; j1++) {
+            int Xcoordinate = i + random.nextInt(16);
+            int Zcoordinate = j + random.nextInt(16);
+            int Ycoordinate = random.nextInt(256);
+            redSoulstone.generate(world, random, Xcoordinate, Ycoordinate, Zcoordinate);
+        }
+    }
 }
