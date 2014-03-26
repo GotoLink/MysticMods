@@ -35,21 +35,21 @@ public class WorldGenOres implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int blockX, int blockZ) {
 		for (int i = 0; i < Rarity.ADAMANTINE; i++) {
-			int Xcoord = blockX + random.nextInt(8);
+			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(13) + 3;
-			int Zcoord = blockZ + random.nextInt(8);
+			int Zcoord = blockZ + random.nextInt(16);
 			adamantine.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.AGATE; i++) {
-			int Xcoord = blockX + random.nextInt(32);
+			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(57) + 3;
-			int Zcoord = blockZ + random.nextInt(32);
+			int Zcoord = blockZ + random.nextInt(16);
 			agate.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.AMETHYST; i++) {
-			int Xcoord = blockX + random.nextInt(24);
+			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(57) + 3;
-			int Zcoord = blockZ + random.nextInt(24);
+			int Zcoord = blockZ + random.nextInt(16);
 			amethyst.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.IRIDIUM; i++) {
@@ -71,9 +71,9 @@ public class WorldGenOres implements IWorldGenerator {
 			topaz.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.TOURMALINE; i++) {
-			int Xcoord = blockX + random.nextInt(32);
+			int Xcoord = blockX + random.nextInt(16);
 			int Ycoord = random.nextInt(57) + 3;
-			int Zcoord = blockZ + random.nextInt(32);
+			int Zcoord = blockZ + random.nextInt(16);
 			tourmaline.generate(world, random, Xcoord, Ycoord, Zcoord);
 		}
 		for (int i = 0; i < Rarity.VERDITE; i++) {
