@@ -23,20 +23,7 @@ public class MysticOres implements IFuelHandler {
 	@Instance("mysticores")
 	public static MysticOres instance;
     public boolean ENABLE = true;
-	public static final CreativeTabs MysticOresTab = new CreativeTabs("MysticOresTab") {
-
-        @Override
-        public Item getTabIconItem() {
-            return Item.getItemFromBlock(BlockHandler.BlockBase);
-        }
-
-        @Override
-        @SideOnly(Side.CLIENT)
-        public int func_151243_f()
-        {
-            return 7;
-        }
-    };
+	public static CreativeTabs MysticOresTab;
     public static final String[] INGOTS = { "ingotVerdite", "ingotMithril", "ingotAdamantine", "ingotIridium", "fuelIridium", "gemTourmaline", "gemAgate", "gemTopaz", "gemAmethyst", "dustMystic",
             " shardBloodstone", "shardGlass", "shardObsidian", "rodObsidian" };
     public static final String[] ORES = { "oreAdamantine", "oreAmethyst", "oreIridium", "oreMithril", "oreSapphire", "oreTopaz", "oreVerdite", "oreBloodstone", "oreBlackSoulstone",
@@ -54,6 +41,20 @@ public class MysticOres implements IFuelHandler {
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationManager.initialize(event.getSuggestedConfigurationFile());
         if(ENABLE){
+            MysticOresTab = new CreativeTabs("MysticOresTab") {
+
+                @Override
+                public Item getTabIconItem() {
+                    return Item.getItemFromBlock(BlockHandler.BlockBase);
+                }
+
+                @Override
+                @SideOnly(Side.CLIENT)
+                public int func_151243_f()
+                {
+                    return 7;
+                }
+            };
             BlockHandler.initialize();
             Items.initialize();
             for (int i = 0; i < INGOTS.length; i++) {

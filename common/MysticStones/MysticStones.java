@@ -24,18 +24,7 @@ public class MysticStones {
 	public static MysticStones instance;
     public static boolean ENABLE = true;
 	public static Block planks, stones, stoneBricks, reinforcedBricks;
-	public static final CreativeTabs MysticStonesTab = new CreativeTabs("MysticStonesTab") {
-		@Override
-        @SideOnly(Side.CLIENT)
-        public int func_151243_f()
-        {
-            return 4;
-        }
-        @Override
-        public Item getTabIconItem() {
-            return Item.getItemFromBlock(MysticStones.reinforcedBricks);
-        }
-    };
+	public static CreativeTabs MysticStonesTab;
     public static final ArrayList<String> PLANK_TYPE = new ArrayList<String>(Arrays.asList("Purple Planks", "Green Planks", "Black Planks", "Orange Planks", "Red Planks", "Blue Planks", "Yellow Planks"));
     public static final ArrayList<String> STONEBRICK_TYPES = new ArrayList<String>(Arrays.asList("Anorthosite Bricks", "Limestone Bricks", "Marble Bricks", "Migmatite Bricks", "Orthogneiss Bricks", "Slate Bricks",
             "Travertine Bricks"));
@@ -47,6 +36,18 @@ public class MysticStones {
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.initialize(event.getSuggestedConfigurationFile());
         if(ENABLE){
+            MysticStonesTab = new CreativeTabs("MysticStonesTab") {
+                @Override
+                @SideOnly(Side.CLIENT)
+                public int func_151243_f()
+                {
+                    return 4;
+                }
+                @Override
+                public Item getTabIconItem() {
+                    return Item.getItemFromBlock(MysticStones.reinforcedBricks);
+                }
+            };
             planks = new BlockPlanks();
             stones = new BlockStones();
             stoneBricks = new BlockStoneBricks();

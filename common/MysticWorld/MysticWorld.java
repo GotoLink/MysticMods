@@ -27,13 +27,7 @@ public class MysticWorld {
 	public static MysticWorld instance;
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
-	public static final CreativeTabs MysticWorldTab = new CreativeTabs("MysticWorldTab") {
-
-        @Override
-        public Item getTabIconItem() {
-            return ItemHandler.earthStaff;
-        }
-    };
+	public static CreativeTabs MysticWorldTab;
     public boolean ENABLE = true;
 
 	@EventHandler
@@ -50,6 +44,12 @@ public class MysticWorld {
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.initialize(event.getSuggestedConfigurationFile());
         if(ENABLE){
+            MysticWorldTab = new CreativeTabs("MysticWorldTab") {
+                @Override
+                public Item getTabIconItem() {
+                    return ItemHandler.earthStaff;
+                }
+            };
             BiomeHandler.init();
             BlockHandler.init();
             ItemHandler.init();
