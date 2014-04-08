@@ -13,6 +13,7 @@ public class Config {
 		config = new Configuration(file);
         MysticWorld.instance.ENABLE = config.get("General", "Enable", true).getBoolean(true);
 		//Boolean Configurations
+        Booleans.ENABLE_IMBUED_STONE_GEN = config.get("World Generation", "Enable Imbued Stones Generation", true).getBoolean(true);
 		Booleans.ENABLE_BUSH_GEN = config.get("World Generation", "Enable Bush Generation", true).getBoolean(true);
 		Booleans.ENABLE_GLACIER_GEN = config.get("World Generation", "Enable Glacier Biome", true).getBoolean(true);
 		Booleans.ENABLE_JUNGLE_REWRITE = config.get("World Generation", "Enable Vanilla Jungle Biome Modification", true).getBoolean(true);
