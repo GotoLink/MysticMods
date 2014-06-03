@@ -6,11 +6,11 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class EntityHandler {
     //Entity IDs
-    public static int ENTITY_AIR_CHARGE = 1;
-    public static int ENTITY_FIREBALL = 2;
-    public static int ENTITY_EARTH_CHARGE = 3;
-    public static int ENTITY_ENERGY_CHARGE = 4;
-    public static int ENTITY_WATER_CHARGE = 5;
+    public static final int ENTITY_AIR_CHARGE = 1;
+    public static final int ENTITY_FIREBALL = 2;
+    public static final int ENTITY_EARTH_CHARGE = 3;
+    public static final int ENTITY_ENERGY_CHARGE = 4;
+    public static final int ENTITY_WATER_CHARGE = 5;
 	public static void init() {
         EntityRegistry.registerModEntity(EntityChargeAir.class, Strings.ENTITY_AIR_CHARGE_NAME, ENTITY_AIR_CHARGE, MysticWorld.instance, 80, 3, false);
         EntityRegistry.registerModEntity(EntityChargeFire.class, Strings.ENTITY_FIREBALL_NAME, ENTITY_FIREBALL, MysticWorld.instance, 80, 3, false);

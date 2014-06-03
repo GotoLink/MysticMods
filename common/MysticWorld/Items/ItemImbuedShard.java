@@ -3,7 +3,6 @@ package mysticworld.items;
 import java.util.List;
 
 import mysticworld.MysticWorld;
-import mysticworld.lib.Strings;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

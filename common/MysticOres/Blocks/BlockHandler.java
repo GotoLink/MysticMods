@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BlockHandler {
-    public static ArrayList<String> BLOCK_NAMES = new ArrayList<String>(Arrays.asList("Adamantine Ore", "Amethyst Ore", "Iridium Ore", "Mithril Ore", "Tourmaline Ore", "Topaz Ore", "Verdite Ore", "Bloodstone", "Black Soulstone",
+    public static final ArrayList<String> BLOCK_NAMES = new ArrayList<String>(Arrays.asList("Adamantine Ore", "Amethyst Ore", "Iridium Ore", "Mithril Ore", "Tourmaline Ore", "Topaz Ore", "Verdite Ore", "Bloodstone", "Black Soulstone",
             "Blue Soulstone", "Red Soulstone", "Agate Ore", "Tempered Glass"));
 	public static Block BlockBase;
 

@@ -154,7 +154,7 @@ public class Config {
 		String[] item;
 		for (String txt : items) {
 			item = txt.split(":");
-			Item id = null;
+			Item id;
             int amount = 1, data = 0;
 			try {
 				switch (item.length) {
