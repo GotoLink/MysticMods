@@ -1,29 +1,15 @@
 package mysticworld.items;
 
-import mysticworld.MysticWorld;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class ItemArmorIridium extends ItemArmor {
-	int ArmorType;
-
+public class ItemArmorIridium extends ItemMaterialArmor {
 	public ItemArmorIridium(ArmorMaterial par2EnumArmorMaterial, int par4) {
-		super(par2EnumArmorMaterial, 0, par4);
-		this.ArmorType = par4;
+		super(par2EnumArmorMaterial, par4);
 		this.setMaxDamage(4000);
-		this.setCreativeTab(MysticWorld.MysticWorldTab);
-	}
-
-	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String layer) {
-		int suffix = this.armorType == 2 ? 2 : 1;
-		return "mysticworld:textures/models/armor/Iridium_layer_" + suffix + ".png";
 	}
 
 	@Override
@@ -55,10 +41,5 @@ public class ItemArmorIridium extends ItemArmor {
 				player.addPotionEffect((new PotionEffect(Potion.jump.getId(), 200, 2)));
 			}
 		}
-	}
-
-	@Override
-	public void registerIcons(IIconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon("mysticworld:IridiumArmor_" + ArmorType);
 	}
 }

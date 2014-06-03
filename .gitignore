@@ -1,9 +1,10 @@
+/*/
 /*
 
-!/common/assets/
-!/common/mysticores/
-!/common/mysticruins/
-!/common/mysticstones/
-!/common/mysticworld/
-!/common/mcmod.info
-!/common/build.gradle
+!common/assets/**
+!common/mysticores/**
+!common/mysticruins/**
+!common/mysticstones/**
+!common/mysticworld/**
+!common/mcmod.info
+!common/build.gradle
