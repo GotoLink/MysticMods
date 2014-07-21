@@ -14,12 +14,6 @@ public class ItemHandler {
 	public static Item earthStaff;
 	public static Item airStaff;
 	public static Item energyStaff;
-	public static Item fireStaffPower;
-	public static Item waterStaffPower;
-	public static Item earthStaffPower;
-	public static Item airStaffPower;
-	public static Item energyStaffPower;
-	public static Item staffPower;
 	public static Item fireOrb;
 	public static Item waterOrb;
 	public static Item earthOrb;

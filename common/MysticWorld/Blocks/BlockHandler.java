@@ -1,7 +1,6 @@
 package mysticworld.blocks;
 
 import mysticworld.lib.Strings;
-import mysticworld.util.Reference;
 import net.minecraft.block.Block;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -16,8 +15,8 @@ public class BlockHandler {
 	public static Block oreImbuedStone, bush, lightCube, pillarPlatform, pillar, pillarInsert;
 
 	public static void init() {
-        oreImbuedStone = GameRegistry.registerBlock(new BlockImbuedStone().setBlockName(Strings.IMBUED_STONE_NAME), ItemBlockMulti.class, Strings.IMBUED_STONE_NAME, Reference.MOD_ID, IMBUED_STONE_TYPE);
-		bush = GameRegistry.registerBlock(new BlockBushes().setBlockName(Strings.BUSH_NAME), ItemBlockMulti.class, Strings.BUSH_NAME, Reference.MOD_ID, BUSH_TYPES);
+        oreImbuedStone = GameRegistry.registerBlock(new BlockImbuedStone().setBlockName(Strings.IMBUED_STONE_NAME), ItemBlockMulti.class, Strings.IMBUED_STONE_NAME, IMBUED_STONE_TYPE);
+		bush = GameRegistry.registerBlock(new BlockBushes().setBlockName(Strings.BUSH_NAME), ItemBlockMulti.class, Strings.BUSH_NAME, BUSH_TYPES);
 		lightCube = GameRegistry.registerBlock(new BlockLightCube().setBlockName(Strings.LIGHT_CUBE_NAME).setBlockTextureName("mysticworld:lightCube"), Strings.LIGHT_CUBE_NAME);
 		pillarPlatform = GameRegistry.registerBlock(new BlockPlatform().setBlockName(Strings.PLATFORM_NAME).setBlockTextureName("mysticworld:Platform"), Strings.PLATFORM_NAME);
 		pillar = GameRegistry.registerBlock(new BlockPillar().setBlockName(Strings.PILLAR_NAME).setBlockTextureName("mysticworld:Pillar"), Strings.PILLAR_NAME);

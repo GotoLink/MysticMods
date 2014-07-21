@@ -57,7 +57,7 @@ public class BlockBushes extends BlockBush {
 
 	@Override
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
-		return AxisAlignedBB.getAABBPool().getAABB(par2 + this.getBlockBoundsMinX(), par3 + this.getBlockBoundsMinY(), par4 + this.getBlockBoundsMinZ(), par2 + this.getBlockBoundsMaxX(), par3 + this.getBlockBoundsMaxY(), par4 + this.getBlockBoundsMaxZ());
+		return AxisAlignedBB.getBoundingBox(par2 + this.getBlockBoundsMinX(), par3 + this.getBlockBoundsMinY(), par4 + this.getBlockBoundsMinZ(), par2 + this.getBlockBoundsMaxX(), par3 + this.getBlockBoundsMaxY(), par4 + this.getBlockBoundsMaxZ());
 	}
 
 	@Override
