@@ -1,10 +1,13 @@
-/*/
-/*
+/common/*
 
-!common/assets/**
-!common/mysticores/**
-!common/mysticruins/**
-!common/mysticstones/**
-!common/mysticworld/**
+!.gitignore
+!*LICENSE.md
+!README.md
+!common/assets/
+!common/mysticores/
+!common/mysticruins/
+!common/mysticstones/
+!common/mysticworld/
 !common/mcmod.info
 !common/build.gradle
+!common/gradle*

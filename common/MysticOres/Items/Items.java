@@ -20,7 +20,7 @@ public class Items {
 	public static Item Satchel;
 
 	public static void initialize() {
-		Resource = new ItemResource().setUnlocalizedName("mysticores:resources");
+		Resource = new ItemResource().setUnlocalizedName("Resources");
 		VerditeSword = new ItemSword(EnumTools.verditeToolMaterial).setUnlocalizedName("VerditeSword").setTextureName("mysticores:VerditeSword")
 				.setCreativeTab(MysticOres.MysticOresTab);
 		VerditePickaxe = new ItemPick(EnumTools.verditeToolMaterial).setUnlocalizedName("VerditePickaxe").setTextureName("mysticores:VerditePickaxe")

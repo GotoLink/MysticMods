@@ -34,7 +34,7 @@ public class Strings {
 	public static final String AIR_STAFF_NAME = "airStaff";
 	public static final String ENERGY_STAFF_NAME = "energyStaff";
 	
-	public static final String STAFF_PART_NAME = "mysticworld:staffparts";
+	public static final String STAFF_PART_NAME = "staffparts";
 	
 	public static final String FIRE_ORB_NAME = "fireOrb";
 	public static final String WATER_ORB_NAME = "waterOrb";
