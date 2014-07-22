@@ -20,7 +20,7 @@ minecraft {
     runDir = "eclipse/assets"
 }
 archivesBaseName = "MysticMods"
-version = "0.1(1.7.2)"
+version = "0.1(1.7.10)"
 sourceSets.main.java{srcDirs project.projectDir.getPath() include("mysticores/**", "mysticruins/**" , "mysticstones/**", "mysticworld/**")}
 sourceSets.main.resources{srcDirs project.projectDir.getPath() include("assets/**" , "*.info")}
 processResources {
