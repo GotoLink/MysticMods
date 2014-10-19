@@ -2,7 +2,6 @@ package mysticores.items;
 
 import java.util.List;
 
-import mysticores.MysticOres;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -20,7 +19,6 @@ public class ItemResource extends Item {
 	public ItemResource() {
 		super();
 		this.setHasSubtypes(true);
-		this.setCreativeTab(MysticOres.MysticOresTab);
 	}
 
 	@Override

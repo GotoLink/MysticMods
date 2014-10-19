@@ -72,7 +72,7 @@ public class ItemHandler {
         for(Field f:ItemHandler.class.getFields()){
             try{
                 Item item = (Item)f.get(null);
-                GameRegistry.registerItem(item,item.getUnlocalizedName());
+                GameRegistry.registerItem(item,item.getUnlocalizedName().substring(5));
             }catch (Exception e){}
         }
 	}

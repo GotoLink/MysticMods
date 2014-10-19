@@ -48,14 +48,10 @@ public class MysticStones {
                     return Item.getItemFromBlock(MysticStones.reinforcedBricks);
                 }
             };
-            planks = new BlockPlanks();
-            stones = new BlockStones();
-            stoneBricks = new BlockStoneBricks();
-            reinforcedBricks = new BlockReinforced();
-            GameRegistry.registerBlock(planks, ItemBlockMulti.class, "Planks", "mysticstones", PLANK_TYPE);
-            GameRegistry.registerBlock(stones, ItemBlockMulti.class, "Stones", "mysticstones", STONE_TYPES);
-            GameRegistry.registerBlock(stoneBricks, ItemBlockMulti.class, "StoneBricks", "mysticstones", STONEBRICK_TYPES);
-            GameRegistry.registerBlock(reinforcedBricks, ItemReinforced.class, "Reinforcedbricks", "mysticstones");
+            planks = GameRegistry.registerBlock(new BlockPlanks(), ItemBlockMulti.class, "Planks", PLANK_TYPE);
+            stones = GameRegistry.registerBlock(new BlockStones(), ItemBlockMulti.class, "Stones", STONE_TYPES);
+            stoneBricks = GameRegistry.registerBlock(new BlockStoneBricks(), ItemBlockMulti.class, "StoneBricks", STONEBRICK_TYPES);
+            reinforcedBricks = GameRegistry.registerBlock(new BlockReinforced(), ItemReinforced.class, "Reinforcedbricks");
             RecipeHandler.craftPlanks();
             RecipeHandler.craftStoneBricks();
             RecipeHandler.craftReinforced();

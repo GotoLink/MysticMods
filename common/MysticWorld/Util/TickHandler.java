@@ -19,8 +19,8 @@ public class TickHandler {
 
 	@SubscribeEvent
 	public void tickStart(TickEvent.PlayerTickEvent event) {
-        if(event.phase== TickEvent.Phase.START && event.side.isServer() && event.player.worldObj.getWorldTime()%20==0)
-		    pillarTick(event.player, event.player.worldObj, new Random());
+        if(event.phase == TickEvent.Phase.START && event.side.isServer() && event.player.worldObj.getWorldTime()%20==0)
+		    pillarTick(event.player, event.player.worldObj, event.player.getRNG());
 	}
 
 	private static void pillarTick(EntityPlayer player, World world, Random rand) {
@@ -67,7 +67,7 @@ public class TickHandler {
 				if (itemStack != null
 						&& (itemStack.getItem() == Items.wooden_pickaxe || itemStack.getItem() == Items.stone_pickaxe || itemStack.getItem() == Items.iron_pickaxe
 								|| itemStack.getItem() == Items.golden_pickaxe || itemStack.getItem() == Items.diamond_pickaxe)) {
-					if (itemStack.isItemEnchanted() != true && player.experienceLevel >= 10) {
+					if (!itemStack.isItemEnchanted() && player.experienceLevel >= 10) {
 						player.experienceLevel -= 10;
 						itemStack.addEnchantment(enchantmentsPick[rand.nextInt(3)], rand.nextInt(4) + 1);
 					}

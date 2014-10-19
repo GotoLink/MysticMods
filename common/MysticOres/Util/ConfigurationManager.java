@@ -9,7 +9,7 @@ import net.minecraftforge.common.config.Configuration;
 public class ConfigurationManager {
 	public static void initialize(File file) {
 		Configuration config = new Configuration(file);
-        MysticOres.instance.ENABLE = config.get("General", "Enable", true).getBoolean(true);
+        MysticOres.instance.ENABLE = config.get("General", "Enable", true).getBoolean();
 		Rarity.VERDITE = config.get("Ore Rarity", "Verdite Ore", Rarity.VERDITE).getInt();
 		Rarity.MITHRIL = config.get("Ore Rarity", "Mithril Ore", Rarity.MITHRIL).getInt();
 		Rarity.ADAMANTINE = config.get("Ore Rarity", "Adamantine Ore", Rarity.ADAMANTINE).getInt();

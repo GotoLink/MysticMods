@@ -1,6 +1,5 @@
 package mysticores.items;
 
-import mysticores.MysticOres;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -11,8 +10,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemSatchel extends Item {
 	public ItemSatchel() {
 		super();
-		setCreativeTab(MysticOres.MysticOresTab);
-		setMaxStackSize(1);
 	}
 
 	@Override
@@ -27,11 +24,5 @@ public class ItemSatchel extends Item {
 			player.displayGUIChest(player.getInventoryEnderChest());
 		}
 		return is;
-	}
-
-	@Override
-	@SideOnly(Side.CLIENT)
-	protected String getIconString() {
-		return "mysticores:" + this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1);
 	}
 }
