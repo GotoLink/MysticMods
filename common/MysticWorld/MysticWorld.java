@@ -1,10 +1,13 @@
 package mysticworld;
 
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
+import cpw.mods.fml.common.registry.GameData;
 import mysticworld.biome.BiomeHandler;
 import mysticworld.blocks.BlockHandler;
 import mysticworld.entity.EntityHandler;
 import mysticworld.items.ItemHandler;
+import mysticworld.lib.Booleans;
 import mysticworld.tiles.TileEntityHandler;
 import mysticworld.util.Config;
 import mysticworld.util.RecipeHandler;
@@ -34,7 +37,8 @@ public class MysticWorld {
 	public void load(FMLInitializationEvent event) {
         if(ENABLE){
             FMLCommonHandler.instance().bus().register(new TickHandler());
-            GameRegistry.registerWorldGenerator(new WorldGenerators(), 100);
+            if(Booleans.ENABLE_IMBUED_STONE_GEN||Booleans.ENABLE_BUSH_GEN)
+                GameRegistry.registerWorldGenerator(new WorldGenerators(), 100);
             EntityHandler.init();
             proxy.registerRenders();
         }
@@ -57,4 +61,13 @@ public class MysticWorld {
             RecipeHandler.init();
         }
 	}
+
+    @EventHandler
+    public void onRemap(FMLMissingMappingsEvent event){
+        for(FMLMissingMappingsEvent.MissingMapping missingMapping : event.get()){
+            if(missingMapping.type.name().equals("ITEM") && missingMapping.name.contains("item.")){
+                missingMapping.remap(GameData.getItemRegistry().getObject(missingMapping.name.replace("item.mysticworld:", "").replace("item.", "")));
+            }
+        }
+    }
 }

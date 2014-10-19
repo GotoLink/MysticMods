@@ -1,5 +1,7 @@
 package mysticores;
 
+import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
+import cpw.mods.fml.common.registry.GameData;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mysticores.blocks.BlockHandler;
@@ -68,4 +70,13 @@ public class MysticOres implements IFuelHandler {
             GameRegistry.registerFuelHandler(this);
         }
 	}
+
+    @EventHandler
+    public void onRemap(FMLMissingMappingsEvent event){
+        for(FMLMissingMappingsEvent.MissingMapping missingMapping : event.get()){
+            if(missingMapping.type.name().equals("ITEM") && missingMapping.name.contains("item.")){
+                missingMapping.remap(GameData.getItemRegistry().getObject(missingMapping.name.replace("item.mysticores:r", "R").replace("item.", "")));
+            }
+        }
+    }
 }
