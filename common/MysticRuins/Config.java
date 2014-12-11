@@ -1,13 +1,5 @@
 package mysticruins;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-
 import cpw.mods.fml.common.registry.GameData;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,8 +7,11 @@ import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.DungeonHooks.DungeonMob;
+import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
+import java.util.*;
 
 public class Config {
 	public static Configuration config;

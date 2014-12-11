@@ -1,12 +1,12 @@
 package mysticores.worldgen;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+
+import java.util.Random;
 
 public class NetherGenHelper extends WorldGenerator {
 	private Block minableBlockId;

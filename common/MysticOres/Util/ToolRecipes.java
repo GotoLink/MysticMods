@@ -1,10 +1,10 @@
 package mysticores.util;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticores.MysticOres;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ToolRecipes {
 	public static void advancedAxe(Item output, Object input) {

@@ -1,5 +1,10 @@
 package mysticstones;
 
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mysticstones.blocks.*;
@@ -9,17 +14,12 @@ import mysticstones.worldgen.WorldGeneratorStones;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 @Mod(modid = "mysticstones", name = "Mystic Stones", version = "0.2")
-public class MysticStones {
+public final class MysticStones {
 	@Instance("mysticstones")
 	public static MysticStones instance;
     public static boolean ENABLE = true;

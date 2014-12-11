@@ -1,14 +1,14 @@
 package mysticstones.blocks;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ItemReinforced extends ItemBlockMulti {
 	public static final ArrayList<String> BRICK_TYPE = new ArrayList<String>(Arrays.asList("Mithril Bricks", "Verdite Bricks", "Iridium Bricks", "Adamantine Bricks", "Tourmaline Bricks", "Topaz Bricks", "Amethyst Bricks",

@@ -1,8 +1,7 @@
 package mysticworld.blocks;
 
-import java.util.List;
-import java.util.Random;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mysticworld.MysticWorld;
 import mysticworld.items.ItemHandler;
 import net.minecraft.block.Block;
@@ -20,8 +19,9 @@ import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import java.util.List;
+import java.util.Random;
 
 public class BlockBushes extends BlockBush {
 	IIcon[] textures;

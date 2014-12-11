@@ -1,7 +1,5 @@
 package mysticworld.blocks;
 
-import java.util.Random;
-
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mysticworld.MysticWorld;
@@ -9,6 +7,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class BlockPillarPlatform extends Block {
 	public BlockPillarPlatform() {

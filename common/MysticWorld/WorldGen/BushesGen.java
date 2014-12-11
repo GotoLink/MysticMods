@@ -1,11 +1,11 @@
 package mysticworld.worldgen;
 
-import java.util.Random;
-
 import mysticworld.blocks.BlockHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+
+import java.util.Random;
 
 public class BushesGen extends WorldGenerator {
 	@Override

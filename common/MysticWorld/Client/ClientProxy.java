@@ -1,16 +1,14 @@
 package mysticworld.client;
 
+import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import mysticworld.CommonProxy;
 import mysticworld.blocks.BlockHandler;
 import mysticworld.blocks.BlockPillarInsert;
 import mysticworld.client.fx.LightCubeFX;
 import mysticworld.client.fx.PowerAirFX;
 import mysticworld.client.fx.PowerFX;
-import mysticworld.entity.EntityChargeAir;
-import mysticworld.entity.EntityChargeEarth;
-import mysticworld.entity.EntityChargeEnergy;
-import mysticworld.entity.EntityChargeFire;
-import mysticworld.entity.EntityChargeWater;
+import mysticworld.entity.*;
 import mysticworld.items.ItemHandler;
 import mysticworld.renderer.*;
 import mysticworld.tiles.TileEntityPillarInsert;
@@ -19,8 +17,6 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
-import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {
 	public final Minecraft mc = Minecraft.getMinecraft();

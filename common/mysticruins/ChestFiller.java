@@ -1,12 +1,12 @@
 package mysticruins;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class ChestFiller {
 	public static List<ItemStack> rares = new ArrayList<ItemStack>();

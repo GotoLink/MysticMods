@@ -1,11 +1,11 @@
 package mysticstones.util;
 
-import java.util.List;
-import java.io.File;
-import java.util.ArrayList;
-
 import mysticstones.MysticStones;
 import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Config {
 	public static final String[] keys = { "anorthosite", "limestone", "marble", "migmatite", "orthogneiss", "slate", "travertine" };

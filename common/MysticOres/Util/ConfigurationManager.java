@@ -1,10 +1,10 @@
 package mysticores.util;
 
-import java.io.File;
-
 import mysticores.MysticOres;
 import mysticores.lib.Rarity;
 import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
 
 public class ConfigurationManager {
 	public static void initialize(File file) {

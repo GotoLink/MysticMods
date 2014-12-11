@@ -1,5 +1,6 @@
 package mysticores.util;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticores.MysticOres;
 import mysticores.blocks.BlockHandler;
 import mysticores.items.Items;
@@ -8,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 import java.util.HashMap;
 import java.util.Map;

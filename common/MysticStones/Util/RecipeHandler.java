@@ -1,12 +1,12 @@
 package mysticstones.util;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticstones.MysticStones;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeHandler {
 	public static final String[] MATERIALS = { "ingotMithril", "ingotVerdite", "ingotIridium", "ingotAdamantine", "gemTourmaline", "gemTopaz", "gemAmethyst", "gemAgate" };

@@ -1,14 +1,14 @@
 package mysticores.worldgen;
 
-import java.util.Random;
-
+import cpw.mods.fml.common.IWorldGenerator;
 import mysticores.blocks.BlockHandler;
 import mysticores.lib.Rarity;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import cpw.mods.fml.common.IWorldGenerator;
+
+import java.util.Random;
 
 public class WorldGenOres implements IWorldGenerator {
 	public static final WorldGenMinable adamantine = new WorldGenMinable(BlockHandler.BlockBase, 0, 3, Blocks.stone);

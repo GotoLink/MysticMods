@@ -1,10 +1,9 @@
 package mysticworld.renderer;
 
-import org.lwjgl.opengl.GL11;
-
 import cpw.mods.fml.client.FMLClientHandler;
 import mysticworld.model.ModelOrb;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 public class OrbItemRenderer extends BaseItemRenderer {
 	private final ModelOrb modelOrb = new ModelOrb();

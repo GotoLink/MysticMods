@@ -1,10 +1,10 @@
 package mysticworld.util;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticores.items.Items;
 import mysticworld.items.ItemHandler;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class RecipeHandler {
 	public static void init() {

@@ -1,7 +1,13 @@
 package mysticores;
 
+import cpw.mods.fml.common.IFuelHandler;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameData;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mysticores.blocks.BlockHandler;
@@ -12,16 +18,10 @@ import mysticores.worldgen.WorldGenOres;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.IFuelHandler;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = "mysticores", name = "Mystic Ores", version = "0.1")
-public class MysticOres implements IFuelHandler {
+public final class MysticOres implements IFuelHandler {
 	@Instance("mysticores")
 	public static MysticOres instance;
     public boolean ENABLE = true;

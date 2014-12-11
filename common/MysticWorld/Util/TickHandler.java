@@ -1,7 +1,5 @@
 package mysticworld.util;
 
-import java.util.Random;
-
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import mysticworld.blocks.BlockHandler;
@@ -13,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class TickHandler {
 	public static final Enchantment[] enchantmentsPick = { Enchantment.efficiency, Enchantment.fortune, Enchantment.silkTouch, Enchantment.unbreaking };

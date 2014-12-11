@@ -1,10 +1,10 @@
 package mysticworld.biome;
 
-import java.util.Random;
-
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenMegaJungle;
 import net.minecraft.world.gen.feature.WorldGenTrees;
+
+import java.util.Random;
 
 public class BiomeGenJungle extends net.minecraft.world.biome.BiomeGenJungle {
 	public BiomeGenJungle(int par1) {

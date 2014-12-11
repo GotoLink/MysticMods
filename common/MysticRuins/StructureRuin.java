@@ -1,13 +1,13 @@
 package mysticruins;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.DungeonHooks;
+
+import java.util.Random;
 
 public class StructureRuin extends WorldGenerator {
 	public StructureRuin() {

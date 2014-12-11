@@ -1,8 +1,8 @@
 package mysticworld.entity;
 
+import cpw.mods.fml.common.registry.EntityRegistry;
 import mysticworld.MysticWorld;
 import mysticworld.lib.Strings;
-import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class EntityHandler {
     //Entity IDs

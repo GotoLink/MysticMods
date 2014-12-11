@@ -1,8 +1,8 @@
 package mysticworld.blocks;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import mysticworld.lib.Strings;
 import net.minecraft.block.Block;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 import java.util.ArrayList;
 import java.util.Arrays;

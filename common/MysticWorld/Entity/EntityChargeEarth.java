@@ -1,7 +1,5 @@
 package mysticworld.entity;
 
-import java.util.Random;
-
 import mysticworld.MysticWorld;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,6 +10,8 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class EntityChargeEarth extends EntityCharge {
 	public EntityChargeEarth(World par1World) {

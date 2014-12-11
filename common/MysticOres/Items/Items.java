@@ -1,13 +1,13 @@
 package mysticores.items;
 
-import java.lang.reflect.Field;
-
 import cpw.mods.fml.common.registry.GameRegistry;
 import mysticores.MysticOres;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemSword;
+
+import java.lang.reflect.Field;
 
 public class Items {
 	public static Item VerditeSword, VerditePickaxe, VerditeShovel, VerditeAxe, VerditeHoe;

@@ -1,5 +1,7 @@
 package mysticstones.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mysticstones.MysticStones;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -8,8 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockStones extends BlockMulti {
 	public BlockStones() {

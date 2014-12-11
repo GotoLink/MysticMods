@@ -1,10 +1,10 @@
 package mysticworld.util;
 
-import java.io.File;
-
 import mysticworld.MysticWorld;
 import mysticworld.lib.Booleans;
 import net.minecraftforge.common.config.Configuration;
+
+import java.io.File;
 
 public class Config {
 	public static void initialize(File file) {

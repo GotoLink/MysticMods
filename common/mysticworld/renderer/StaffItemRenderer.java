@@ -1,10 +1,9 @@
 package mysticworld.renderer;
 
-import org.lwjgl.opengl.GL11;
-
 import cpw.mods.fml.client.FMLClientHandler;
 import mysticworld.model.ModelStaff;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 public class StaffItemRenderer extends BaseItemRenderer {
 	private final ModelStaff model = new ModelStaff();

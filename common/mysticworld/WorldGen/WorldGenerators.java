@@ -1,13 +1,12 @@
 package mysticworld.worldgen;
 
-import java.util.Random;
-
+import cpw.mods.fml.common.IWorldGenerator;
 import mysticworld.lib.Booleans;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-import cpw.mods.fml.common.IWorldGenerator;
+import java.util.Random;
 
 public class WorldGenerators implements IWorldGenerator {
 	public static final WorldGenerator bushes = new BushesGen();
