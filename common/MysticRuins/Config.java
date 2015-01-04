@@ -87,13 +87,13 @@ public class Config {
 						} catch (IllegalArgumentException l) {
 						}
 					}
-				} else if (i < 1 && txt.contains("[") && txt.contains("]")) {
+				} else if (i < 2 && txt.contains("[") && txt.contains("]")) {
 					boolean remove = txt.trim().startsWith("-");
-					txt = txt.substring(txt.indexOf("["), txt.indexOf("]"));
-					if (txt.split(";").length == 2) {
+					String[] results = txt.substring(txt.indexOf("[")+1, txt.indexOf("]")).split(";");
+					if (results.length == 2) {
 						try {
-							int a = Integer.parseInt(txt.split(";")[0]);
-							int b = Integer.parseInt(txt.split(";")[1]);
+							int a = Integer.parseInt(results[0]);
+							int b = Integer.parseInt(results[1]);
 							int c;
 							if (a > b) {
 								c = a;
@@ -141,7 +141,8 @@ public class Config {
 				}
 			}
 		}
-		config.save();
+		if(config.hasChanged())
+			config.save();
 	}
 
 	private static void setChest(String type, String list, List<ItemStack> valuables) {
